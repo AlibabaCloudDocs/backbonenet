@@ -7,7 +7,7 @@ For example, a CEN instance is bound to a 20 Mbps bandwidth package connecting M
 ## Set a cross-region interconnection bandwidth {#section_gtq_n5n_tdb .section}
 
 1.  Log on to the [CEN console](http://cen.console.aliyun.com/).
-2.  On the Instances page, click the ID of the target instance.
+2.  On the Instancespage, click the ID of the target instance.
 3.  Click **Region Connections**, and then click **Set Region Connection**.
 4.  Configure the cross-region bandwidth:
 
@@ -21,7 +21,7 @@ For example, a CEN instance is bound to a 20 Mbps bandwidth package connecting M
 ## Modify cross-region interconnection bandwidth {#section_iqv_xvn_tdb .section}
 
 1.  Log on to the [CEN console](http://cen.console.aliyun.com/).
-2.  On the Instances page, click the ID of the target instance.
+2.  On the Instancespage, click the ID of the target instance.
 3.  Click **Region Connections**, and then click **Modify** in the **Bandwidth** column of the target cross-region interconnection bandwidth.
 4.  In the displayed dialog box, enter the bandwidth and click **OK**.
 
@@ -31,7 +31,7 @@ For example, a CEN instance is bound to a 20 Mbps bandwidth package connecting M
 ## Delete a cross-region interconnection bandwidth {#section_jbg_pwn_tdb .section}
 
 1.  Log on to the [CEN console](http://cen.console.aliyun.com/).
-2.  On the Instances page, click the ID of the target instance.
-3.  Click **Region Connections**, and then click **Delete** in the **Bandwidth** column of the target cross-region interconnection bandwidth.
+2.  On the Instancespage, click the ID of the target instance.
+3.  Click **Region Connections**, and then click **Delete** in the **Bandwidth**column of the target cross-region interconnection bandwidth.
 4.  In the displayed dialog box, click **OK**.
 
