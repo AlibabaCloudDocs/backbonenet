@@ -16,13 +16,13 @@ CEN consists of the following components:
 
 -   Networks
 
-    Networks are the network resources that you want to connect using CEN. The networks attached to a CEN instance can communicate with one another across the regions you have selected. The supported networks include both VPC and VBR.
+    Networks are the network resources that you want to connect using CEN. The networks attached to a CEN instance can communicate with one another across the regions you have selected. The supported networks include both VPC and VBR. For more information, see [What is VPC](../../../../../intl.en-US/VPC product introduction/What is VPC.md#) and [边界路由器](../../../../../intl.en-US/Product Introduction/边界路由器.md#).
 
 -   Bandwidth package
 
-    A bandwidth package is required only for cross-region communications. When purchasing a bandwidth package, you must specify the interconnection areas for the network resources to communicate. Areas of communication include Mainland China, Asia Pacific, United States of America, and Europe.
+    A bandwidth package is required only for cross-region communications. When purchasing a bandwidth package, you must specify the interconnection areas for the network resources to communicate. An area is a collection of Alibaba Cloud regions. Areas of communication include Mainland China, Asia Pacific, United States of America, and Europe.
 
-    **Note:** For example, if you want to connect a network in China \(Beijing\) with a network in US \(Silicon Valley\), the interconnection areas are China Mainland and North America.
+    **Note:** No bandwidth package is required for interconnection in the same region. No need to purchase bandwidth packages if you want to connect networks in the same region; However, a bandwidth package is required if you want to connect networks in different regions. \(By default, 1 Kbps bandwidth is provided for connectivity test. To run normal business, you must buy a bandwidth package and set a proper interconnection bandwidth\).
 
     The relationship between areas and regions are shown in the following table:
 
