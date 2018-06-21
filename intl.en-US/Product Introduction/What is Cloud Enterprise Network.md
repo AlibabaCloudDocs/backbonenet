@@ -16,7 +16,7 @@ CEN consists of the following components:
 
 -   Networks
 
-    Networks are the network resources that you want to connect using CEN. The networks attached to a CEN instance can communicate with one another across the regions you have selected. The supported networks include both VPC and VBR. For more information, see [What is VPC](../../../../../intl.en-US/VPC product introduction/What is VPC.md#) and [边界路由器](../../../../../intl.en-US/Product Introduction/边界路由器.md#).
+    Networks are the network resources that you want to connect using CEN. The networks attached to a CEN instance can communicate with one another across the regions you have selected. The supported networks include both VPC and VBR. For more information, see [What is VPC](../../../../../intl.en-US/VPC product introduction/What is VPC.md#) and [Virtual border router](../../../../../intl.en-US/Product Introduction/Virtual border router.md#).
 
 -   Bandwidth package
 
