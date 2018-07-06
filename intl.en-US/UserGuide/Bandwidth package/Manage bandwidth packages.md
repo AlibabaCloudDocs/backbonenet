@@ -24,9 +24,9 @@ To connect networks in different regions, you must buy a bandwidth package and s
 To buy a bandwidth package, complete these steps:
 
 1.  Log on to the [CEN console](http://cen.console.aliyun.com/).
-2.  Click the ID of the target CEN instance.
+2.  Click the ID of the target cloud enterprise instance.
 3.  On the Bandwidth Packages page, click **Buy Bandwidth Package**, and then click **Buy Bandwidth Package \(Subscription\)**.
-4.  Configure the bandwidth package according to the following information and complete the payment.
+4.  Configure the bandwidth package according to the following information:
 
     |Configuration|Description|
     |:------------|:----------|
@@ -42,15 +42,18 @@ To buy a bandwidth package, complete these steps:
 
 You can unbind bandwidth packets from an instance of cloud enterprise network, this bandwidth package can then be bound to other cloud Enterprise Network instances.
 
-**Note:** Before deleting a bandwidth package, delete region connections using the bandwidth package.
+**Note:** 
+
+-   Before deleting a bandwidth package, delete region connections using the bandwidth package.
+-   The bandwidth package is still charged even if it is unbound from a CEN instance. To avoid additional charges, open a ticket to delete the bandwidth package.
 
 To unbind a bandwidth package, complete these steps:
 
 1.  Log on to the [CEN console](http://cen.console.aliyun.com/).
-2.  Click the ID of the target CEN instance.
+2.  Click the ID of the target cloud enterprise instance.
 3.  On the CEN page, click **Bandwidth Packages**.
 4.  Click the **Unbind** option under the **Action** column of the target bandwidth package.
-5.  In the displayed dialog box, click **OK**.
+5.  In the displayed dialog, click **Confirm**.
 
 ## Bind bandwidth package {#section_btf_m1j_tdb .section}
 
@@ -59,10 +62,10 @@ You can bind an unbound bandwidth package to another CEN instance.
 To bind a bandwidth package, complete these steps:
 
 1.  Log on to the [CEN console](http://cen.console.aliyun.com/).
-2.  Click the ID of the target CEN instance.
+2.  Click the ID of the target cloud enterprise instance.
 3.  On the CEN page, click the **Bandwidth Packages** tab.
 4.  Click the **Bind** option under the **Action** column of the target bandwidth package.
-5.  In the displayed dialog box, click **OK**.
+5.  In the displayed dialog, click **Confirm**.
 
 ## Modify bandwidth {#section_gg4_z1j_tdb .section}
 
@@ -71,9 +74,9 @@ You can change the bandwidth of the bandwidth package at any time, and the chang
 To modify the bandwidth, complete these steps:
 
 1.  Log on to the [CEN console](http://cen.console.aliyun.com/).
-2.  Click the ID of the target CEN instance.
+2.  Click the ID of the target cloud enterprise instance.
 3.  On the CEN page, click the **Bandwidth Packages** tab.
-4.  Click the **Downgrade**  or the **Upgrade** option under the **Bandwidth** column of the target bandwidth package.
+4.  Click the **Downgrade** or the **Upgrade** option under the **Bandwidth** column of the target bandwidth package.
 5.  Modify the bandwidth, and then complete the payment.
 
 ## Renew a bandwidth package {#section_qjq_4bj_tdb .section}
@@ -81,7 +84,7 @@ To modify the bandwidth, complete these steps:
 To renew a bandwidth package, complete these steps:
 
 1.  Log on to the [CEN console](http://cen.console.aliyun.com/).
-2.  Click the ID of the target CEN instance.
+2.  Click the ID of the target cloud enterprise instance.
 3.  On the CEN page, click the **Bandwidth Packages** tab.
 4.  Click the **Renew** option under the **Action** column of the target bandwidth package.
 
