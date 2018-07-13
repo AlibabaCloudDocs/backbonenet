@@ -27,7 +27,10 @@ The following table lists the route entries that can be published to CEN:
 |CenId|String |Yes |The ID of the CEN instance where the route entry is published.|
 |ChildInstanceRegionId|String |Yes |The ID of the region where the attached VBR or VPC is located.|
 |ChildInstanceId|String |Yes |The ID of the attached network \(VPC or VBR\).|
-|ChildInstanceType|String |Yes |The type of the network.|
+|ChildInstanceType|String |Yes |The type of the network, value:-   VPC
+-   VBR
+
+|
 |ChildInstanceRouteTableId|String |Yes |The route table of the attached VBR or VPC.|
 |DestinationCidrBlock|String |Yes |The destination CIDR block of the route entry to publish.|
 
