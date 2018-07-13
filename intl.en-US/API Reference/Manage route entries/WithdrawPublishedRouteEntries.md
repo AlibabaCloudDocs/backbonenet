@@ -14,7 +14,10 @@ Remove the route entries that have been advertised to CEN from the route table o
 |CenId|String|Yes|The ID of the CEN instance from which the route entries are removed.|
 |ChildInstanceRegionId|String|Yes|The ID of the region where the attached VBR or VPC is located.|
 |ChildInstanceId|String|Yes|The ID of the attached network \(VPC or VBR\).|
-|ChildInstanceType|String|Yes|The type of the network.|
+|ChildInstanceType|String|Yes|The type of the network, value:-   VPC
+-   VBR
+
+|
 |ChildInstanceRouteTableId|String|Yes|The route table of the attached VBR or VPC.|
 |DestinationCidrBlock|String|Yes|The destination CIDR block of the route entry to be removed.|
 
