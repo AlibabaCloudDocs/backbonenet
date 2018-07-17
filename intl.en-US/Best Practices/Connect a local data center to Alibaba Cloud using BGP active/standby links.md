@@ -61,15 +61,15 @@ You can set the routing priority by configuring the AS-Path length. The shorter 
 |Interface IP|172.16.1.1/24|172.16.2.1/24|
 |As-Path|B,A|C,B,A|
 
-The CEN can automatically learn routing entries from the attached networks, and also distribute its own routing entries to them. After routing is configured, the CEN synchronizes the routing configurations to the networks attached to it based on the routing weights.
+CEN can automatically learn routing entries from the attached networks, and also propagate its own routing entries to them. After a VBR learns a route from IDC, CEN synchronizes the route to the networks attached to it with route weight.
 
 -   BGP routing in VBR
 
     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/7116_en-US.png)
 
-    As shown in the following figure, the routing tables of VBR1 and VBR2 contain routing information and next hops learned from the BGP peers of VBR1 and VBR2. The VBRs, which are attached to the CEN, send the BGP routing information learned from the local data center to the CEN, including AS-Path configurations.
+    As shown in the following figure, the routing tables of VBR1 and VBR2 contain routing information and next hops learned from the BGP peers of VBR1 and VBR2. The VBRs, which are attached to the CEN, send the BGP routing information learned from the local data center to the CEN, including AS-Path properties.
 
--   Complete routing configurations
+-   Full routing table
 
     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/7117_en-US.png)
 
