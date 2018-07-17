@@ -23,9 +23,9 @@ Complete these steps to configure an active/standby link that enables access to 
     You can set the routing priority by configuring the length of the AS-Path. For more information, see [Advertise the BGP network and set the routing weights at the local IDC](#section_kvd_hqn_l2b).
 
 
-## Network structure {#section_nhs_nnn_l2b .section}
+## Network architecture {#section_nhs_nnn_l2b .section}
 
-The network structure used in this tutorial is as follows:
+The network architecture used in this tutorial is as follows:
 
 -   The local data center is already connected to Alibaba Cloud VBRs with two redundant leased lines. The BGP protocol is used between the local data center and the VBRs.
 -   Three VPCs are already created in China \(Beijing\), China \(Shanghai\), and China \(Hong Kong\) regions.
@@ -58,7 +58,7 @@ You can set the routing priority by configuring the AS-Path length. The shorter 
 |Vlan Tag|110|120|
 |Network|10.1.1.0/24|10.1.1.0/24|
 |BGP ASN|XXX|XXX|
-|Interface IP|172.16.100.0/24|172.16.2.1/24|
+|Interface IP|172.16.1.1/24|172.16.2.1/24|
 |As-Path|B,A|C,B,A|
 
 The CEN can automatically learn routing entries from the attached networks, and also distribute its own routing entries to them. After routing is configured, the CEN synchronizes the routing configurations to the networks attached to it based on the routing weights.
