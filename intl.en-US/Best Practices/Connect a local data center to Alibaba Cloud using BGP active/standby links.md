@@ -73,12 +73,12 @@ CEN can automatically learn routing entries from the attached networks, and also
 
     ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/7117_en-US.png)
 
-    After attaching the VPC and VBR to CEN, the BGP routes that the VBR learns are distributed to the CEN. The CEN then synchronizes the routes to all attached networks based on the routing weights.
+    After attaching the VPC and VBR to CEN, the BGP route that the VBR learned are propagated to CEN. The CEN then synchronizes the routes to all attached networks based on the routing property.
 
-    The BGP routes that the VBRs learn from the local data center share the same destination CIDR block but have different routing weights. The leased line connected to VBR1 acts as the active link \(the AS-Path is shorter\), and the one connected to VBR2 acts as the standby link. CEN will synchronize this routing configuration to other networks attached to it, such as VPCs. As shown in the routing VPC tables, all routes destined for 10.1.1.0/24 point to VBR1.
+    The BGP route that the VBRs learned from the local data center has the same destination CIDR but have different routing property. The leased line connected to VBR1 acts as the active link \(the AS-Path is shorter\), and the one connected to VBR2 acts as the standby link. CEN will synchronize this route information to other networks attached to it, such as VPCs. As shown in the VPC routing tables, all routes to 10.1.1.0/24 point to VBR1.
 
-    Additionally, CEN redistributes CEN system routes to the BGP network. Therefore, the routing table of the local data center includes the learned CEN routes and the next hops are the IP addresses of the two VBR interfaces.
+    Additionally, CEN propagates CEN system routes into BGP network. Therefore, the routing table of the local data center includes the CEN routes and the next hops are the IP addresses of the two VBR interfaces.
 
-    Similarly, if you want to configure an active/standby link that connects the local IDC to the Alibaba Cloud IP address \(192.168. X. 0/24\), you can do this by configuring the BGP AS-Path.  Configure weights for the routes learned from different BGP peers \(192.168. X. 0/24\).
+    Similarly, if you want to configure an active/standby route that from the local IDC to the Alibaba Cloud \(192.168. x. 0/24\), you can do this by configuring the BGP properties like weight.
 
 
