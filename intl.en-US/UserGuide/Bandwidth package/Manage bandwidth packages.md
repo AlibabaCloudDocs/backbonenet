@@ -14,6 +14,7 @@ The relationship between a region and a region is shown in the following table:
 |North America|US \(Silicon Valley\), US \(Virginia\)|
 |Asia Pacific|Hong Kong, Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)|
 |Europe|Germany \(Frankfurt\)|
+|Australia|Australia \(Sydney\)|
 
 ## Buy a bandwidth package {#section_xlq_3w3_tdb .section}
 
@@ -88,7 +89,7 @@ To renew a bandwidth package, complete these steps:
 3.  On the CEN page, click the **Bandwidth Packages** tab.
 4.  Click the **Renew** option under the **Action** column of the target bandwidth package.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3050/877_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3050/1532657407877_en-US.png)
 
 5.  Select the renew duration and complete the payment.
 
