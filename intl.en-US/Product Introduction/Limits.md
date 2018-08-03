@@ -1,13 +1,14 @@
 # Limits {#concept_rzs_nc1_tdb .concept}
 
-Before using the Cloud Enterprise Network \(CEN\), please read the product limitation.
+Before using CEN, read the limits first.
 
-|Resource|Default limits|Apply for more quota|
-|:-------|:-------------|:-------------------|
-|CEN instances per account|5| Submit a ticket|
-|Attached networks per region|5| Submit a ticket|
-|Bandwidth packages of the same interconnection areas per account|1|No exception|
-|Regions added per CEN instance|5| Submit a ticket|
-|VPC with ClassicLink enabled|Cannot use the 10.0.0.0/8 IP address range|No exception|
-|Networks|Cannot attach the networks \(VPC and VBR\) that are already configured with Express Connect|No exception|
+|Resource|Default limit|Exception|
+|:-------|:------------|:--------|
+|The number of CEN instances per account|5|Submit a ticket|
+|The number of attached networks per region|5|Submit a ticket|
+|The number of bandwidth packages in the same interconnection area per account|1|No exception|
+|The number of contained regions per CEN instance|5|Submit a ticket|
+|Limits on VPC with ClassicLink enabled|The VPC cannot use the IP address range 10.0.0.0/8.|No exception|
+|Networks|You cannot attach VPCs or VBRs that are using Express Connect to a CEN instance.|No exception|
+|The number of route entries in a CEN instance|100| Submit a ticket|
 
