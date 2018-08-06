@@ -39,7 +39,7 @@ The network architecture used in this tutorial is as follows:
     |Hong Kong VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/7114_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15335477367114_en-US.png)
 
 ## Advertise the BGP network and set the routing weights at the local IDC {#section_kvd_hqn_l2b .section}
 
@@ -47,7 +47,7 @@ Assume that the local data center and the VBRs have both created BGP peers \(for
 
 You must configure a BGP route \(10.1.1.0/24\) advertised to Alibaba Cloud and configure routing weights by setting the AS-Path at the local data center to implement active/standby routing from Alibaba Cloud to IDC.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/7115_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15335477367115_en-US.png)
 
 As shown in the preceding figure, the green link \(CPE1\) is the active link and the red one \(CPE2\) is the standby link. The BGP configurations of these two CPEs are as follows.
 
@@ -65,13 +65,13 @@ CEN can automatically learn routing entries from the attached networks, and also
 
 -   BGP routing in VBR
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/7116_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15335477367116_en-US.png)
 
     As shown in the following figure, the routing tables of VBR1 and VBR2 contain routing information and next hops learned from the BGP peers of VBR1 and VBR2. The VBRs, which are attached to the CEN, send the BGP routing information learned from the local data center to the CEN, including AS-Path properties.
 
 -   Full routing table
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/7117_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15335477367117_en-US.png)
 
     After attaching the VPC and VBR to CEN, the BGP route that the VBR learned are propagated to CEN. The CEN then synchronizes the routes to all attached networks based on the routing property.
 
