@@ -35,15 +35,15 @@ The network architecture used in this tutorial is as follows:
     |:------|:---------|
     |Local data center|10.1.1.0/24|
     |Beijing VPC|192.168.1.0/24|
-    |Shanghai VPC|192.168.1.0/24|
+    |Shanghai VPC|192.168.2.0/24|
     |Hong Kong VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335366918693_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335479418693_en-US.png)
 
 ## IDC and VBR static route configuration {#section_kvd_hqn_l2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335366918694_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335479418694_en-US.png)
 
 The routing configurations in this tutorial are as follows:
 
@@ -63,18 +63,18 @@ The routing configurations in this tutorial are as follows:
     |Configuration|VBR1|VBR2|
     |:------------|:---|:---|
     |Destination CIDR Block|10.1.1.0/24|10.1.1.0/24|
-    |Next hop|172.16.100.0/24|172.16.2.1/24|
+    |Next hop|172.16.1.1/24|172.16.2.1/24|
 
 -   CEN routes
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335366918695_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335479418695_en-US.png)
 
     After configuring routes for the VBRs, the CEN publishes the configured static routes to the CEN. In CEN, the two leased lines form ECMP and are in active-active status.
 
 
 ## Redundant disaster tolerance {#section_gxw_wlc_r2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335366918696_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335479418696_en-US.png)
 
 When a leased line fails \(such as the line from VBR1 to CPE1\), data from Alibaba Cloud to the IDC is forwarded to VBR2. This solution achieves disaster tolerance by automatically switching the link.
 
