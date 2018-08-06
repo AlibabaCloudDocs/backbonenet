@@ -33,14 +33,14 @@ The network architecture used in this tutorial is as follows:
     |Beijing VPC|192.168.1.0/24|
     |Hong Kong VPC|192.168.2.0/24|
     |Shanghai VPC|192.168.3.0/24|
-    |Hangzhou VPC|192.168.3.0/24|
+    |Hangzhou VPC|192.168.4.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335482678697_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335483148697_en-US.png)
 
 ## IDC route configuration {#section_kvd_hqn_l2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335482678698_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335483148698_en-US.png)
 
 An IPsec-VPN connection has been established between the IDC and the VPN Gateway, and the route entry pointing to the Alibaba Cloud have been configured.
 
@@ -57,7 +57,7 @@ An IPsec-VPN connection has been established between the IDC and the VPN Gateway
 
 ## VPC route configuration {#section_gxw_wlc_r2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335482688708_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335483148708_en-US.png)
 
 To enable the communication between the IDC and the VPCs, you need to configure a route entry pointing to the IDC \(VPN Gateway\) in the VPC connected to the VPN Gateway and publish the route to the CEN.
 
@@ -65,29 +65,29 @@ A route entry pointing to Alibaba Cloud is already created in the IDC, so traffi
 
 As shown in the following figure, you need to configure a custom route entry pointing to the VPN Gateway \(IDC\) in the Hangzhou VPC:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335482688709_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335483148709_en-US.png)
 
 You can see the route entry pointing to the VPN Gateway in the route table of the Hangzhou VPC:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335482688710_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335483148710_en-US.png)
 
 ## Publish route entries to CEN {#section_u2m_dkd_r2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335482688711_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335483148711_en-US.png)
 
 To mark other VPCs attached to the CEN instance learn the route pointing to the IDC, you need to publish the route entry pointing to the VPN Gateway to the CEN instance so that other attached VPCs can learn the route.
 
 The following figure shows the route table before the route entry is published.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335482688712_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335483148712_en-US.png)
 
 The following figure shows the route table after the route entry is published.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335482688713_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335483148713_en-US.png)
 
 The following figure shows the route table of other VPCs attached to the CEN.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335482688714_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17034/15335483148714_en-US.png)
 
 After the previous operations, other VPCs attached to the CEN instance have learned the route entry pointing to the IDC. Therefore, the IDC can communicate with any VPC attached to the CEN instance.
 
@@ -104,7 +104,7 @@ This solution is one of the scenarios where a network attached to a CEN instance
 |A route entry pointing to a local IDC|VBR|Yes|
 |A BGP route entry|VBR|Yes|
 
-All these route entries published to CEN can be withdrawn.  After a route entry is withdrawn, the route entry no longer exists in CEN.
+All these route entries published to CEN can be withdrawn. After a route entry is withdrawn, the route entry no longer exists in CEN.
 
 If a custom route entry is published to a CEN and then is deleted from the VPC to which it belongs, the route entry is also deleted from the CEN.
 
