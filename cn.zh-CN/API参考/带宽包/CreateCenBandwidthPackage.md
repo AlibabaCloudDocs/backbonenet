@@ -10,6 +10,7 @@
 |北美|美国（硅谷）、美国（弗吉尼亚）|
 |亚太|香港、新加坡、马来西亚（吉隆坡）、日本（东京）、印度（孟买）、印度尼西亚（雅加达）|
 |欧洲|德国（法兰克福）|
+|澳洲|澳大利亚（悉尼）|
 
 ## 请求参数 {#section_cch_pjg_mdb .section}
 
@@ -38,9 +39,10 @@
 
  |
 |Period|String|是|带宽包的购买时长，默认值为1。|
-|AutoPay|String|否| 指定是否开启自动续费。
+|AutoPay|String|否| 是否自动支付账单。取值：
 
- 取值：true | false，默认值为false。
+-   true
+-   false （默认值）
 
  |
 |ClientToken|String|否| 客户端token，用于保证请求的幂等性。
