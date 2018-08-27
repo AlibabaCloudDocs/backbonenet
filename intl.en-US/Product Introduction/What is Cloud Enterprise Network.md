@@ -2,7 +2,7 @@
 
 Cloud Enterprise Network \(CEN\) is a service that allows you to create a global network for rapidly building a distributed business system with a hybrid cloud computing solution. CEN enables you to build a secure, private, and enterprise-class interconnected network between VPCs in different regions and your local data centers. CEN provides enterprise-class scalability that automatically responds to your dynamic computing requirements.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3038/1532657334856_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3038/1535375497856_en-US.png)
 
 ## Components {#section_vyj_tlz_sdb .section}
 
@@ -16,7 +16,7 @@ CEN consists of the following components:
 
 -   Networks
 
-    Networks are the network resources that you want to connect using CEN. The networks attached to a CEN instance can communicate with one another across the regions you have selected. The supported networks include both VPC and VBR. For more information, see [What is VPC](../../../../../intl.en-US/VPC product introduction/What is VPC.md#) and [Virtual border router](../../../../../intl.en-US/Product Introduction/Virtual border router.md#).
+    Networks are the network resources that you want to connect using CEN. The networks attached to a CEN instance can communicate with one another across the regions you have selected. The supported networks include both VPC and VBR. For more information, see [What is VPC?](../../../../../intl.en-US/VPC product introduction/What is VPC?.md#) and [Virtual border router](../../../../../intl.en-US/Product Introduction/Virtual border router.md#).
 
 -   Bandwidth package
 
