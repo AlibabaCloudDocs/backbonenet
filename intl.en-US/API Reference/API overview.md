@@ -2,7 +2,7 @@
 
 The following are CEN APIs.
 
--   For more API resources, visit[API Explorer](https://api.aliyun.com/).
+-   For more API resources, visit [API Explorer](https://api.aliyun.com/).
 -   For VPC APIs, see VPC API Reference.
 
 |API|Description|
