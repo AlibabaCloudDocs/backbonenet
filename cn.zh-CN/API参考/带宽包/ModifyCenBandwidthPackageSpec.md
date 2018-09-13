@@ -12,11 +12,7 @@
 
  |
 |CenBandwidthPackageId|String|是|带宽包的ID。|
-|Bandwidth|String|是|带宽包的带宽峰值，单位为Mbps。10Mbps起售。-   带宽峰值为10 - 100Mbps时，步长为10Mbps。
--   带宽峰值为100 - 2000Mbps时，步长为100Mbps。
--   带宽峰值为2000 - 10000Mbps时，步长为500Mbps。
-
-|
+|Bandwidth|String|是|带宽包的带宽峰值，单位为Mbps，最小为2Mbps。|
 
 ## 返回参数 {#section_ugs_f1g_cz .section}
 
