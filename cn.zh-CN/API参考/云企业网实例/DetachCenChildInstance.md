@@ -15,7 +15,8 @@
 |ChildInstanceId|String|是|指定待解绑的网络实例ID。|
 |ChildInstanceType|String|是|网络实例的类型。|
 |ChildInstanceRegionId|String|是|网络实例所在的地域。|
-|ChildInstanceOwnerId|LONG|否|网络实例所属账号的UID。|
+|ChildInstanceOwnerId|Long|否|网络实例所属账号的UID。|
+|ChildInstanceOwnerId|Long|否|CEN实例所属账号的UID。|
 
 ## 返回参数 {#section_ugs_f1g_cz .section}
 
