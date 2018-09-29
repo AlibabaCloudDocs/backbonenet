@@ -2,7 +2,7 @@
 
 Cloud Enterprise Network \(CEN\) is a service that allows you to create a global network for rapidly building a distributed business system with a hybrid cloud computing solution. CEN enables you to build a secure, private, and enterprise-class interconnected network between VPCs in different regions and your local data centers. CEN provides enterprise-class scalability that automatically responds to your dynamic computing requirements.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3038/1537882733856_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3038/1538231553856_en-US.png)
 
 ## Components {#section_vyj_tlz_sdb .section}
 
@@ -28,12 +28,12 @@ CEN consists of the following components:
 
     |Area|Included regions|
     |:---|:---------------|
-    |Mainland China|China \(Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hangzhou\), China \(Shanghai\), China \(Hohhot\)|
+    |Mainland China|China \(Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hangzhou\), China \(Shanghai\), China \(Hohhot\), China \(Wuhan\)|
     |North America|US \(Silicon Valley\), US \(Virginia\)|
     |Asia Pacific|Hong Kong, Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)|
-    |Europe|Germany \(Frankfurt\)|
+    |Europe|Germany \(Frankfurt\), UK \(London\)|
     |Australia|Australia \(Sydney\)|
 
-    For example, if you want to connect a network in China \(Beijing\) with a network in US \(Silicon Valley\), the interconnection areas are China Mainland and North America. For more information, see [Scenarios](intl.en-US/Product Introduction/Scenarios.md#).
+    For example, if you want to connect a network in China \(Beijing\) with a network in US \(Silicon Valley\), the interconnection areas are China Mainland and North America. For more information, see [Scenarios](reseller.en-US/Product Introduction/Scenarios.md#).
 
 
