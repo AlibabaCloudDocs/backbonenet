@@ -38,7 +38,7 @@
 4.  在**云企业网跨账号授权信息**区域，单击**云企业网跨账号授权**。
 5.  在弹出的对话框中，输入对方账号ID和对方云企业网实例ID，然后单击**确定**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/926_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/1538297174926_zh-CN.png)
 
 
 ## 步骤三 账号A加载网络实例 {#section_nr2_g34_tdb .section}
@@ -54,7 +54,7 @@
     -   **地域**：选择所选实例的地域。本操作选择**华北2**。
     -   **实例**：选择要加载的实例。本操作选择一个VPC实例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3047/928_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3047/1538297174928_zh-CN.png)
 
 
 ## 步骤四 购买带宽包 {#section_yrm_1rn_tdb .section}
