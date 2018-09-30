@@ -22,14 +22,14 @@
         -   **地域**：选择所选实例的地域。本操作选择**华北1**。
         -   **实例**：选择要加载的实例。本操作选择一个VPC实例。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3044/859_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3044/1538296720859_zh-CN.png)
 
 
 ## 步骤二 加载网络实例 { .section}
 
 1.  在云企业网实例页面，单击已创建的云企业网实例的**操作**列下的**管理**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3044/860_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3044/1538296720860_zh-CN.png)
 
 2.  在**加载网络实例**页面，单击**加载网络实例**，配置网络实例：
     -   **账号**：选择**同账号**。
@@ -37,7 +37,7 @@
     -   **地域**：选择所选实例的地域。本操作选择**华北1**。
     -   **实例**：选择要加载的实例。本操作选择一个VPC实例。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3044/5956_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3044/15382967205956_zh-CN.png)
 
 
 ## 步骤三 互通验证 {#section_ucp_y3b_tdb .section}
