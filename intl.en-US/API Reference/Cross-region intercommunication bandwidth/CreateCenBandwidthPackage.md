@@ -6,10 +6,10 @@ An area is a collection of Alibaba Cloud regions. Areas in CEN include Mainland 
 
 |Area|Included regions|
 |:---|:---------------|
-|Mainland China|China \(Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hangzhou\), China \(Shanghai\), China \(Hohhot\)|
+|Mainland China|China \(Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hangzhou\), China \(Shanghai\), China \(Hohhot\), China \(Wuhan\)|
 |North America|US \(Silicon Valley\), US \(Virginia\)|
 |Asia Pacific|Hong Kong, Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)|
-|Europe|Germany \(Frankfurt\)|
+|Europe|Germany \(Frankfurt\), UK \(London\)|
 |Australia|Australia \(Sydney\)|
 
 ## Request parameters {#section_cch_pjg_mdb .section}
@@ -76,7 +76,7 @@ https://cbn.aliyuncs.com/?Action=CreateCenBandwidthPackage
 &CommonParameters
 ```
 
-**返回示例**
+**Response example**
 
 -   XML format
 
