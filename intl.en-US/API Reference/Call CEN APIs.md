@@ -14,7 +14,7 @@ Where:
 
 -   Endpoint is the entry of the Alibaba Cloud service to call. The endpoint of CEN is `cbn.aliyuncs.com`.
 -   Action is the action to perform. For example, use the DescribeCens action to query created CEN instances.
--   Version is the version of API to call. The API version of CEN is 2017-09-12.
+-   Version is the version of API to call. The API version of CEN is 09/12/2017.
 -   Parameters are request parameters separated by ampersands \(&\).
 
     Request parameters consist of common parameters and API specific parameters. Common parameters include VPI version, credentials and more.
@@ -41,7 +41,7 @@ https://cbn.aliyuncs.com/?Action=CreateCen
 
 For the security of your account, we recommend that you use a RAM user to call APIs. Before using a RAM user to call an API, you must grant the RAM user the corresponding permission to call the API by creating an authorization policy and attaching the policy to the RAM user.
 
-For more information, see [RAM authentication](reseller.en-US/API Reference/RAM authentication.md#).
+For more information, see [RAM authentication](intl.en-US/API Reference/RAM authentication.md#).
 
 ## API signature {#section_jtc_ymf_mdb .section}
 
