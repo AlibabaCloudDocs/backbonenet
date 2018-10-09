@@ -6,7 +6,7 @@ Create a CEN instance. After you create a CEN instance, you can attach networks 
 
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
-|Action|String|是| The action to perform. Valid value:
+|Action|String|Yes| The action to perform. Valid value:
 
  CreateCen
 
@@ -31,7 +31,7 @@ Create a CEN instance. After you create a CEN instance, you can attach networks 
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|Cenid|String|The ID of the request.|
+|CenId|String|The ID of the request.|
 
 ## Examples {#section_ix5_h1g_cz .section}
 
@@ -43,7 +43,7 @@ https://cbn.aliyuncs.com/?Action=CreateCen
 &Common parameters
 ```
 
-**Return example**
+**Response example**
 
 -   XML format
 
