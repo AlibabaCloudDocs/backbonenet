@@ -22,7 +22,7 @@ An area is a collection of Alibaba Cloud regions. Areas in CEN include Mainland 
 
  |
 |BandwidthPackageChargeType|String|No|The billing method. Valid value: PrePaid|
-|Bandwidth|String|Yes|The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 1 Mbps.|
+|Bandwidth|String|Yes|The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 2 Mbps.|
 |GeographicRegionAId|String|Yes| The other area to connect.
 
  Valid value: China | North-America | Asia-Pacific | Europe | Middle-East
