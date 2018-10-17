@@ -8,7 +8,7 @@ You can view routes of networks in other regions learned by the CEN instance. Fo
 
 To view the learned routes, complete these steps:
 
-1.  Log on to the [CEN console](https://cen.console.aliyun.com/).
+1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
 2.  Click the ID of the target CEN instance.
 3.  Click **Routes** and select the region to query.
 
@@ -21,7 +21,7 @@ To view the learned routes, complete these steps:
     |**Destination Region**|The region of the learned CIDR block.|
     |**Destination Network ID**|The network to which the destination CIDR block belongs.|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3052/1538231845913_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3052/1539746444913_en-US.png)
 
 
 ## View learned CEN routes in a VPC {#section_r3b_wxn_tdb .section}
@@ -33,7 +33,7 @@ To view the learned routes and conflict routes in a VPC, complete these steps:
 3.  Click the ID of the target route table, then you can view CEN route entries in the **Route Entry List**.
 4.  Click the icon next to the next hop of the CEN route entry to view the detailed information.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3052/1538231845914_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3052/1539746444914_en-US.png)
 
 
 ## View learned CEN routes in a VBR {#section_zkp_hyn_tdb .section}
