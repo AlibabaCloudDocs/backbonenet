@@ -13,7 +13,7 @@ Create a CEN instance. After you create a CEN instance, you can attach networks 
  |
 |Name|String|No| The name of the instance.
 
- The name can contain \[2,128\] characters and numbers, underlines, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
+ The name can contain \[2,128\] characters and numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
 
  |
 |Description|String|No| The description of the instance.
