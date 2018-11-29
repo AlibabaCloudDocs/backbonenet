@@ -4,8 +4,8 @@ Detach a specified network from a CEN instance.
 
 ## Request parameters {#section_cch_pjg_mdb .section}
 
-|Name|Parameters|Required|Description|
-|:---|:---------|:-------|:----------|
+|Name|Type|Required|Description|
+|:---|:---|:-------|:----------|
 |Action|String |Required| The action to perform. Valid value: 
 
  DetachCenChildInstance
@@ -18,11 +18,11 @@ Detach a specified network from a CEN instance.
 |ChildInstanceOwnerId|Long|No|The account ID to which the network belongs.|
 |ChildInstanceOwnerId|Long|No|The account ID to which the CEN instance belongs.|
 
-## Response parameter {#section_ugs_f1g_cz .section}
+## Response parameters {#section_ugs_f1g_cz .section}
 
 |Name |Type|Required|
 |:----|:---|:-------|
-|Requestid|String|The ID of the request.|
+|RequestId|String|The ID of the request.|
 
 ## Examples {#section_ix5_h1g_cz .section}
 
@@ -37,7 +37,7 @@ https://cbn.aliyuncs.com/?Action=DetachCenChildInstance
 &CommonParameters
 ```
 
-**Response parameter**
+**Response example**
 
 -   XML format
 
