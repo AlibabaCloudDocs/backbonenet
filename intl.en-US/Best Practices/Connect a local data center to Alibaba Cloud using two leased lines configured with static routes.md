@@ -8,15 +8,15 @@ To connect a local IDC to Alibaba Cloud, complete these steps:
 
 1.  Build redundant leased lines
 
-    Create redundant leased lines to connect the local data center to Alibaba Cloud. Configure static routes between the IDC and the VBRs. For more information, see [Redundant physical connection](../../../../intl.en-US/User Guide/Redundant physical connection.md#). 
+    Create redundant leased lines to connect the local data center to Alibaba Cloud. Configure static routes between the IDC and the VBRs. For more information, see [Redundant leased line access](../../../../reseller.en-US/Archives/Redundant leased line access.md#). 
 
 2.  Configure health check \(required\)
 
-    Configure health check. Therefore, the traffic can be automatically routed to the standby link when the active link fails. When configuring health check, you can set any unused private IP address in a VPC attached to the CEN instance as the source IP address, and set the IP address of the CPE interface connected to the VBR as the destination IP address. For more information, see [Health check](../../../../intl.en-US/UserGuide/Health check.md#). 
+    Configure health check. Therefore, the traffic can be automatically routed to the standby link when the active link fails. When configuring health check, you can set any unused private IP address in a VPC attached to the CEN instance as the source IP address, and set the IP address of the CPE interface connected to the VBR as the destination IP address. For more information, see [Health check](../../../../reseller.en-US/User Guide/Health check.md#). 
 
 3.  Attach networks
 
-    Attach the VBRs and VPCs to the created CEN instance. For more information, see [Attach networks](../../../../intl.en-US/UserGuide/Networks.md#section_s4y_4mh_tdb). 
+    Attach the VBRs and VPCs to the created CEN instance. For more information, see [Attach networks](../../../../reseller.en-US/User Guide/Networks.md#section_s4y_4mh_tdb). 
 
 4.  Configure and publish routes
 
@@ -39,11 +39,11 @@ The network architecture used in this tutorial is as follows:
     |Hong Kong VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335479418693_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15434926258693_en-US.png)
 
 ## IDC and VBR static route configuration {#section_kvd_hqn_l2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335479418694_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15434926258694_en-US.png)
 
 The routing configurations in this tutorial are as follows:
 
@@ -67,14 +67,14 @@ The routing configurations in this tutorial are as follows:
 
 -   CEN routes
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335479418695_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15434926258695_en-US.png)
 
     After configuring routes for the VBRs, the CEN publishes the configured static routes to the CEN. In CEN, the two leased lines form ECMP and are in active-active status.
 
 
 ## Redundant disaster tolerance {#section_gxw_wlc_r2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15335479418696_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15434926258696_en-US.png)
 
 When a leased line fails \(such as the line from VBR1 to CPE1\), data from Alibaba Cloud to the IDC is forwarded to VBR2. This solution achieves disaster tolerance by automatically switching the link.
 
