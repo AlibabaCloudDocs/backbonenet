@@ -6,14 +6,14 @@ Query the detailed information of CEN routes, including from which region and wh
 
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
-|Action|String|是| The action to perform.  Valid value:
+|Action|String|Yes| The action to perform.  Valid value:
 
  DescribeCenRegionDomainRouteEntries
 
  |
 |CenId|String|Yes| The ID of the CEN instance to query.|
 |CenRegionId|String|Yes|The ID of the region to query.|
-|PageNumber|Integer|No| The number of pages to return. Default value is 1.
+|PageNumber|Integer|No| The number of pages to return. The default value is 1.
 
  |
 |PageSize|Integer|No| The number of rows per page. The maximum value is 50 and the default value is 10.
@@ -27,7 +27,7 @@ Query the detailed information of CEN routes, including from which region and wh
 |RequestId|String|The ID of the request.|
 |TotalCount|String|The number of queried entries.|
 |PageNumber|Integer|The current page number.|
-|PageSize|String|The number of entries in the current page.|
+|PageSize|String|The number of entries on the current page.|
 |CenRouteEntries|List|The detailed information of CEN route entries.|
 
 |Name|Type|Description|
@@ -49,7 +49,7 @@ https://cbn.aliyuncs.com/?Action=DescribeCenRegionDomainRouteEntries
 &Common parameters
 ```
 
-**Return example**
+**Response example**
 
 -   XML format
 
