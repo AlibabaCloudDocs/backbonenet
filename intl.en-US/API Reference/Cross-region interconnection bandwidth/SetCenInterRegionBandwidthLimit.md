@@ -6,7 +6,7 @@ Configure the cross-regional interconnection bandwidth. Ensure that you have add
 
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
-|Action|String|是| The action to perform. Valid value:
+|Action|String|Yes| The action to perform. Valid value:
 
  SetCenInterRegionBandwidthLimit
 
@@ -35,7 +35,7 @@ https://cbn.aliyuncs.com/?Action=SetCenInterRegionBandwidthLimit
 &CommonParameters
 ```
 
-**Return example**
+**Response example**
 
 -   XML format
 
