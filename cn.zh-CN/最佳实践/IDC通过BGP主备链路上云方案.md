@@ -4,20 +4,17 @@
 
 ## 方案概述 {#section_mch_fwn_l2b .section}
 
-完成以下操作配置主备选路（主链路优先）接入阿里云：
+完成以下操作，配置主备选路（主链路优先）接入阿里云：
 
 1.  搭建冗余物理专线
 
-    创建冗余物理专线，将本地IDC接入阿里云。本地IDC和边界路由器之间配置BGP路由。详情参见[冗余物理专线接入](../../../../intl.zh-CN/用户指南/冗余物理专线接入.md#)。
+    创建冗余物理专线，将本地IDC接入阿里云。本地IDC和边界路由器之间配置BGP路由。详情参见[../../../../dita-oss-bucket/SP\_72/DNexpressconnect1891408/ZH-CN\_TP\_13851.md\#](../../../../intl.zh-CN/历史文档/冗余物理专线接入.md#)。
 
-2.  配置健康检查。
+2.  配置健康检查
 
     设置健康检查，是保障等价冗余专线链路中一条链路中断后，流量可以切换到另外一条链路的前提。详情参见[健康检查](../../../../intl.zh-CN/用户指南/健康检查.md#)。
 
-3.  加载网络实例
-
-    将需要互通的VBR和VPC加载到已创建的云企业网实例中。详情参见[同账号跨地域VPC和VBR互通](../../../../intl.zh-CN/快速入门/同账号跨地域VPC和VBR互通.md#)。
-
+3.  加载网络实例将需要互通的VBR和VPC加载到已创建的云企业网实例中。详情参见[../../../../dita-oss-bucket/SP\_17/DNBACK1834571/ZH-CN\_TP\_3049.md\#section\_s4y\_4mh\_tdb](../../../../intl.zh-CN/用户指南/网络实例.md#section_s4y_4mh_tdb)。
 4.  配置路由
 
     您可以通过设置AS-Path的长度来确定路由选路的优先级。详情参见[IDC侧宣告BGP路由并设置权重](#section_kvd_hqn_l2b)。
@@ -39,15 +36,15 @@
     |香港VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15329553877114_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15434925977114_zh-CN.png)
 
 ## IDC侧宣告BGP路由并设置权重 {#section_kvd_hqn_l2b .section}
 
-假设IDC和边界路由器之间分别已经建立起BGP邻居关系（详情参见[创建BGP邻居](../../../../intl.zh-CN/用户指南/BGP/管理BGP邻居.md#section_fxm_rbb_ydb)）。
+假设IDC和边界路由器之间分别已经建立起BGP邻居关系（详情参见[创建BGP邻居](../../../../intl.zh-CN/历史文档/BGP/管理BGP邻居.md#section_fxm_rbb_ydb)）。
 
 现在需要在IDC侧配置向阿里云宣告的BGP路由（10.1.1.0/24），并通过设置AS-Path来确定选路权重，实现阿里云到IDC路由的主备模式。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15329553877115_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15434925977115_zh-CN.png)
 
 如上图所示绿色链路（CPE1）为主链路，红色链路（CPE2）为备份链路，则IDC侧分别在两个CPE的BGP配置如下表所示。
 
@@ -65,13 +62,13 @@
 
 -   边界路由器BGP路由
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15329553877116_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15434925977116_zh-CN.png)
 
     如下图所示，在VBR1和VBR2可以看到从对端邻居学到的路由信息和下一跳。由于VBR已经加载到云企业网中，所以VBR会将从IDC侧学来的BGP路由信息发送到云企业网，包括AS-Path。
 
 -   全量路由配置
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15329553877117_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15434925977117_zh-CN.png)
 
     由于VBR和VPC均已加载到云企业网中，那么从VBR上学来的BGP路由也会发布到云企业网中，云企业网会基于选路权重等信息，将路由同步到云企业网内部。
 
