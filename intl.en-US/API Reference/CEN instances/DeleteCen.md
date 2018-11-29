@@ -6,7 +6,7 @@ Delete a CEN instance.
 
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
-|Action|String|是| The action to perform. Valid value:
+|Action|String|Yes| The action to perform. Valid value:
 
  DeleteCen
 
@@ -31,7 +31,7 @@ https://cbn.aliyuncs.com/?Action=DeleteCen
 &Common parameters
 ```
 
-**Return example**
+**Response example**
 
 -   XML format
 
