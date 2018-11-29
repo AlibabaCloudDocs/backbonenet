@@ -6,7 +6,7 @@ Modify the name and description of a CEN instance.
 
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
-|Action|String|是| The action to perform. Valid value:
+|Action|String|Yes| The action to perform. Valid value:
 
  ModifyCenAttribute
 
@@ -16,7 +16,7 @@ Modify the name and description of a CEN instance.
  |
 |Name|String|No| The name of the instance.
 
- The name can contain \[2,128\] characters and numbers, underlines, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
+ The name can contain \[2,128\] characters and numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
 
  |
 |Description|String|No| The description of the instance.
@@ -42,7 +42,7 @@ https://cbn.aliyuncs.com/?Action=ModifyCenAttribute
 &Common parameters
 ```
 
-**Return example**
+**Response example**
 
 -   XML format
 
