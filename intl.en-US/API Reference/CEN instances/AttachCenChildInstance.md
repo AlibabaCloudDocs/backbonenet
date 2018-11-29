@@ -2,11 +2,11 @@
 
 Attach a network \(VPC or VBR\) to a CEN instance. The attached networks \(VPC or VBR\) can communicate with each other.
 
-## Request Parameters {#section_cch_pjg_mdb .section}
+## Request parameters {#section_cch_pjg_mdb .section}
 
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
-|Action|String|是| The action to perform.  Valid value:
+|Action|String|Yes| The action to perform.  Valid value:
 
  AttachCenChildInstance
 
@@ -14,8 +14,8 @@ Attach a network \(VPC or VBR\) to a CEN instance. The attached networks \(VPC o
 |CenId|String|Yes|The ID of the CEN instance.|
 |ChildInstanceId|String|Yes|The ID of the network to attach.|
 |ChildInstanceType|String|Yes|The type of the network to attach.|
-|ChildInstanceRegionId|String|Yes|The ID of the region where the network is located.The ID of the region where the network is located.|
-|ChildInstanceOwnerId|LONG|No|The account ID to which the network belongs.|
+|ChildInstanceRegionId|String|Yes|The ID of the region where the network is located. The ID of the region where the network is located.|
+|ChildInstanceOwnerId|String|No|The account ID to which the network belongs.|
 
 ## Response parameters {#section_ugs_f1g_cz .section}
 
@@ -36,7 +36,7 @@ https://cbn.aliyuncs.com/?Action=AttachCenChildInstance
 &Common parameters
 ```
 
-**Return example**
+**Response example**
 
 -   XML format
 
