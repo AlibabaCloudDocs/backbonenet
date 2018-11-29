@@ -6,7 +6,7 @@ Modify the name and description of a bandwidth package.
 
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
-|Action|String|是| The action to perform. Valid value:
+|Action|String|Yes| The action to perform. Valid value:
 
  ModifyCenBandwidthPackageAttribute
 
@@ -16,12 +16,12 @@ Modify the name and description of a bandwidth package.
  |
 |Name|String|No| The name of the bandwidth package.
 
- The name can contain \[2,128\] characters and numbers, underlines, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
+ The name can contain \[2,128\] characters and numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
 
  |
 |Description|String|No| The description of the bandwidth package.
 
- The description can contain \[2,256\] characters and numbers, underlines, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
+ The description can contain \[2,256\] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
 
  |
 
@@ -42,7 +42,7 @@ https://cbn.aliyuncs.com/?Action=ModifyCenBandwidthPackageAttribute
 &Common parameters
 ```
 
-**Return example**
+**Response example**
 
 -   XML format
 
