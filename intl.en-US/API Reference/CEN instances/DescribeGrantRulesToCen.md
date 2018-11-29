@@ -8,7 +8,7 @@ Query the networks that have been authorized to CEN.
 
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
-|Action|String|是| The action to perform.  Valid value:
+|Action|String|Yes| The action to perform.  Valid value:
 
  DescribeGrantRulesToCen
 
@@ -45,7 +45,7 @@ https://vpc.aliyuncs.com/?Action=DescribeGrantRulesToCen
 &CommonParameters
 ```
 
-**Return example**
+**Response example**
 
 -   XML format
 
