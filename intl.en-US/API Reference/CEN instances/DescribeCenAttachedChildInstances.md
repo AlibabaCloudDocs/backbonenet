@@ -6,15 +6,15 @@ Query the networks attached to a CEN instance.
 
 |Name|Type| Required|Description|
 |:---|:---|:--------|:----------|
-|Action|String|是| The action to perform.  Valid value:
+|Action|String|Yes| The action to perform.  Valid value:
 
  DescribeCenAttachedChildInstances
 
  |
-|CenId|String|YES| The ID of the CEN instance.
+|CenId|String|Yes| The ID of the CEN instance.
 
  |
-|PageNumber|Integer|No| The number of pages to return. Default value is 1.
+|PageNumber|Integer|No| The number of pages to return. The default value is 1.
 
  |
 |PageSize|Integer|No| The number of rows per page. The maximum value is 50 and the default value is 10.
@@ -36,7 +36,7 @@ Query the networks attached to a CEN instance.
 |CenId|String|The ID of the CEN instance.|
 |ChildInstanceId|String|The ID of the network.|
 |ChildInstanceType|String|The type of the network.|
-|ChildInstanceRegionId|String|he ID of the region where the network is located.|
+|ChildInstanceRegionId|String|The ID of the region where the network is located.|
 |Status|Status|The status of the network: attaching, attached, and detaching.|
 |ChildInstanceOwnerId|Long|The account ID to which the network belongs.|
 
@@ -50,7 +50,7 @@ https://cbn.aliyuncs.com/?Action=DescribeCenAttachedChildInstances
 &Common parameters
 ```
 
-**Return example**
+**Response example**
 
 -   XML format
 
