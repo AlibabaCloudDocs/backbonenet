@@ -8,7 +8,7 @@
 
 1.  搭建冗余物理专线
 
-    创建冗余物理专线，将本地IDC接入阿里云。本地IDC和边界路由器之间配置静态路由。详情参见[../../../../dita-oss-bucket/SP\_72/DNexpressconnect1891408/ZH-CN\_TP\_13851.md\#](../../../../intl.zh-CN/历史文档/冗余物理专线接入.md#)。
+    创建冗余物理专线，将本地IDC接入阿里云。本地IDC和边界路由器之间配置静态路由。
 
 2.  配置健康检查（必须配置）
 
@@ -16,7 +16,7 @@
 
 3.  加载网络实例
 
-    将需要互通的VBR和VPC加载到已创建的云企业网实例中。详情参见[../../../../dita-oss-bucket/SP\_17/DNBACK1834571/ZH-CN\_TP\_3049.md\#section\_s4y\_4mh\_tdb](../../../../intl.zh-CN/用户指南/网络实例.md#section_s4y_4mh_tdb)。
+    将需要互通的VBR和VPC加载到已创建的云企业网实例中。
 
 4.  配置和发布路由
 
@@ -39,11 +39,11 @@
     |香港VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15434926188693_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15439900068693_zh-CN.png)
 
 ## IDC和VBR静态路由配置 {#section_kvd_hqn_l2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15434926188694_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15439900068694_zh-CN.png)
 
 本方案中的路由配置如下：
 
@@ -67,14 +67,14 @@
 
 -   云企业网路由
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15434926188695_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15439900068695_zh-CN.png)
 
     通过在VBR上进行以上路由配置，云企业网会分别将VBR1和VBR2上配置的静态路由同步到云企业网内部。从云企业网内部看，两条专线已形成等价路由（ECMP），并且处于双活状态。
 
 
 ## 冗余容灾 {#section_gxw_wlc_r2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15434926188696_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15439900068696_zh-CN.png)
 
 当某条专线断掉后（如VBR1到CPE1），云企业网会对路由进行切换，云上所有到IDC的数据会走VBR2，从而实现了链路的切换和容灾效果。
 
