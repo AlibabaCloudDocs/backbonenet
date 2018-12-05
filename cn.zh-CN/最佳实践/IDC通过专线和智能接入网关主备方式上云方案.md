@@ -21,7 +21,7 @@
 
 -   智能接入网关和专线侧的边界路由器已经加载到云企业网中。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154349270530839_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154399002930839_zh-CN.png)
 
 
 ## 方案概述 {#section_ds1_lsn_sfb .section}
@@ -43,26 +43,26 @@
 |BGP ASN|xxx|
 |Interface IP|172.16.1.1/24|
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154349270530840_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154399002930840_zh-CN.png)
 
 **2. 智能接入网关配置**
 
 1.  在智能接入网关控制台，选择和智能接入网关做主备的专线（专线永远是主链路）。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154349270530841_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154399002930841_zh-CN.png)
 
 2.  在智能接入网关控制台，配置智能接入网关所连接的IDC业务地址。
 
     智能接入网关已经加载到云企业网中，需要在智能接入网关中配置IDC的业务地址段10.1.1.0/24。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154349270530842_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154399002930842_zh-CN.png)
 
 
-**说明：** 在配置专线和智能接入网关的主备链路时，必须按照以上顺序操作。先配置主备专线，再配置智能接入网关的业务地址。如果配置顺序相反，例如先配置IP地址，由于智能接入网关已经加载到云企业网中，会出现地址冲突而不能添加IP地址的问题。配置详情参见[主备链路配置教程](../../../../intl.zh-CN/最佳实践/专线备份配置教程/ 配置概览.md#)。
+**说明：** 在配置专线和智能接入网关的主备链路时，必须按照以上顺序操作。先配置主备专线，再配置智能接入网关的业务地址。如果配置顺序相反，例如先配置IP地址，由于智能接入网关已经加载到云企业网中，会出现地址冲突而不能添加IP地址的问题。
 
 **3. 云企业网内路由处理**
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154349270530843_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154399002930843_zh-CN.png)
 
 本教程中专线侧通过BGP路由协议向云企业网宣告了10.1.1.0/24网段 ，智能接入网关配置了业务地址10.1.1.0/24，由于VBR和CCN分别已加载到了云企业网内，那么该地址10.1.1.0/24也会同步到云企业网内。由于云企业网对相同网段的专线路由和智能接入网关路由处理优先级是：专线路由优先处理。那么从云企业网内的其他网络实例看到达10.1.1.0/24目标地址的下一跳是专线方向的VBR。当专线出现故障，备用链路便生效，从云上到IDC的路径会切换到智能接入网关的链路。
 
