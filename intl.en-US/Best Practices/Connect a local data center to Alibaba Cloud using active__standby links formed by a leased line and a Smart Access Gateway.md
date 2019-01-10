@@ -21,7 +21,7 @@ The network architecture is as follows:
 
 -   The Smart Access Gateway and the VBR connected to the leased line are attached to the CEN.
 
-    ![](images/30839_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154712496130839_en-US.png)
 
 
 ## Overview {#section_ds1_lsn_sfb .section}
@@ -43,26 +43,23 @@ Now you need to configure the BGP CIDR block 10.1.1.0/24 advertised to Alibaba C
 |BGP ASN|xxx|
 |Interface IP|172.16.100.0/24|
 
-![](images/30840_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154712496130840_en-US.png)
 
 **2. Configure the Smart Access Gateway**
 
 1.  On the Smart Access Gateway console, select the leased line that forms the active/standby links with the Smart Access Gateway \(The leased line always acts as the active link\).
-
-    ![](images/30841_en-US.png)
-
 2.  On the Smart Access Gateway console, configure the CIDR block of the local IDC.
 
     The Smart Access Gateway has been attached to the CEN. You need to configure the CIDR block 10.1.1.0/24 of the local IDC in the Smart Access Gateway.
 
-    ![](images/30842_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154712496130842_en-US.png)
 
 
 **Note:** You must follow the preceding order when you configure the active/standby links. You must configure the active/standby links first and configure the local IDC CIDR block in the Smart Access Gateway second. If you configure the local IDC CIDR block in the Smart Access Gateway first, the CIDR block cannot be added because the Smart Access Gateway has been attached to the CEN and address conflict occurs.
 
 **3. Routes in CEN**
 
-![](images/30843_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/60922/154712496230843_en-US.png)
 
 In this tutorial, the leased line advertises the CIDR block 10.1.1.0/24 to CEN through BGP and the CIDR block 10.1.1.0/24 is also configured in Smart Access Gateway. Because both the VBR and the CCN are attached to the CEN, the CIDR block 10.1.1.0/24 is also synchronized to the CEN. For a leased line and a Smart Access Gateway destined to the same CIDR block, CEN adopts the following priority: the leased line takes precedence over Smart Access Gateway. Therefore, the next hop of routes destined for 10.1.1.0/24 in other networks attached to the CEN is the VBR. When the leased line fails, the standby line takes effect and traffic from Alibaba Cloud to IDC will be distributed to the Smart Access Gateway.
 
