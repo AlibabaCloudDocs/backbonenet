@@ -1,55 +1,52 @@
 # Connect a local data center to Alibaba Cloud using BGP active/standby links {#concept_h3t_bnn_l2b .concept}
 
-This tutorial introduces how to use a Cloud Enterprise Network \(CEN\) and leased lines to build a hybrid cloud with active/standby links.
+This tutorial introduces how to use physical connections and CEN to connect a local data center to Alibaba Cloud, and enable the local data center to communicate with VPCs in different regions.
 
-## Solution overview {#section_mch_fwn_l2b .section}
+## Overview {#section_mch_fwn_l2b .section}
 
-Complete these steps to configure an active/standby link that enables access to Alibaba Cloud:
+To configure active/standby links to access Alibaba Cloud, follow these steps:
 
-1.  Build redundant leased lines
+1.  Build redundant physical connections
 
-    Create redundant leased lines to connect the local data center to Alibaba Cloud. Configure BGP routing between the local data center and the VBRs. For more information, see [Redundant leased line access](../../../../reseller.en-US/Archives/Redundant leased line access.md#).
+    Create redundant physical connections to connect the local data center to Alibaba Cloud. Configure BGP routing between the local data center and the VBRs.
 
-2.  Configure health check
+2.  Configure health checks
 
-    Configure health check so that when the active link fails, traffic will automatically be sent on the standby link instead. For more information, see [Health check](../../../../reseller.en-US/User Guide/Health check.md#).
+    Configure health checks so that when the active link fails, traffic is distributed to the standby link. For more information, see [Health check](../../../../../intl.en-US/User Guide/Health check.md#).
 
-3.  Attach networks
+3.  Attach the VBRs and VPCs that the local data center requires to connect to the created CEN instance.
+4.  Configure routes
 
-    Attach VBRs and VPCs to the created CEN instance. For more information, see [Connect network instances in different regions using same account](../../../../reseller.en-US/Quick Start/Connect network instances in different regions using same account.md#).
-
-4.  Configure routing
-
-    You can set the routing priority by configuring the length of the AS-Path. For more information, see [Advertise the BGP network and set the routing weights at the local IDC](#section_kvd_hqn_l2b).
+    You can set the routing priority by configuring the length of the AS-Path. For more information, see [Advertise BGP routes and set the routing weights at the local data center](#section_kvd_hqn_l2b).
 
 
-## Network architecture {#section_nhs_nnn_l2b .section}
+## Network topology {#section_nhs_nnn_l2b .section}
 
-The network architecture used in this tutorial is as follows:
+The network topology used in this tutorial is as follows:
 
--   The local data center is already connected to Alibaba Cloud VBRs with two redundant leased lines. The BGP protocol is used between the local data center and the VBRs.
--   Three VPCs are already created in China \(Beijing\), China \(Shanghai\), and China \(Hong Kong\) regions.
--   The CIDR blocks of networks used in this tutorial are as follows:
+-   The local data center is already connected to different VBRs through redundant physical connections. The BGP protocol is used between the local data center and the VBRs.
+-   Separate VPCs are already created in the China \(Beijing\), China \(Shanghai\), and Hong Kong regions.
+-   The CIDR blocks used in this tutorial are as follows:
 
-    |Network|CIDR Block|
+    |Network|CIDR block|
     |:------|:---------|
     |Local data center|10.1.1.0/24|
     |Beijing VPC|192.168.1.0/24|
-    |Shanghai VPC|192.168.1.0/24|
+    |Shanghai VPC|192.168.2.0/24|
     |Hong Kong VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15434926057114_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15471240907114_en-US.png)
 
-## Advertise the BGP network and set the routing weights at the local IDC {#section_kvd_hqn_l2b .section}
+## Advertise BGP routes and set the routing weights at the local data center {#section_kvd_hqn_l2b .section}
 
-Assume that the local data center and the VBRs have both created BGP peers \(for more information, see [Create a BGP peer](../../../../reseller.en-US/Archives/BGP/Manage BGP peers.md#section_fxm_rbb_ydb)\).
+Assume that BGP peering sessions have been established between the local data center and each VBR \(for more information, see [Create a BGP peer](../../../../../intl.en-US/Archives/BGP/Manage BGP peers.md#section_fxm_rbb_ydb)\).
 
-You must configure a BGP route \(10.1.1.0/24\) advertised to Alibaba Cloud and configure routing weights by setting the AS-Path at the local data center to implement active/standby routing from Alibaba Cloud to IDC.
+You must configure the BGP route \(10.1.1.0/24\) advertised to Alibaba Cloud and set the AS-Path to determine the routing weights at the local data center to implement active/standby routes from Alibaba Cloud to IDC.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15434926057115_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15471240907115_en-US.png)
 
-As shown in the preceding figure, the green link \(CPE1\) is the active link and the red one \(CPE2\) is the standby link. The BGP configurations of these two CPEs are as follows.
+As shown in the preceding figure, the green line \(CPE1\) is the active link and the red line \(CPE2\) is the standby link. The BGP configurations of the two CPEs are as follows.
 
 You can set the routing priority by configuring the AS-Path length. The shorter the As-Path length, the higher the priority.
 
@@ -58,27 +55,27 @@ You can set the routing priority by configuring the AS-Path length. The shorter 
 |Vlan Tag|110|120|
 |Network|10.1.1.0/24|10.1.1.0/24|
 |BGP ASN|XXX|XXX|
-|Interface IP|172.16.1.1/24|172.16.2.1/24|
+|Interface IP|172.16.100.0/24|172.16.2.1/24|
 |As-Path|B,A|C,B,A|
 
-CEN can automatically learn routing entries from the attached networks, and also propagate its own routing entries to them. After a VBR learns a route from IDC, CEN synchronizes the route to the networks attached to it with route weight.
+The CEN can automatically learn and distribute route entries. After routes are configured, the CEN synchronizes the routes to attached networks based on the routing weights.
 
--   BGP routing in VBR
+-   BGP routes in VBRs
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15434926057116_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15471240907116_en-US.png)
 
-    As shown in the following figure, the routing tables of VBR1 and VBR2 contain routing information and next hops learned from the BGP peers of VBR1 and VBR2. The VBRs, which are attached to the CEN, send the BGP routing information learned from the local data center to the CEN, including AS-Path properties.
+    As shown in the following figure, the route tables of VBR1 and VBR2 contain routes and next hops learned from the BGP peers of VBR1 and VBR2. The VBRs, which are attached to the CEN, send the BGP routes learned from the local data center to the CEN, including AS-Path configurations.
 
--   Full routing table
+-   All routes in the CEN
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15434926057117_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15471240907117_en-US.png)
 
-    After attaching the VPC and VBR to CEN, the BGP route that the VBR learned are propagated to CEN. The CEN then synchronizes the routes to all attached networks based on the routing property.
+    After the VPCs and VBRs are attached to CEN, the BGP routes learned from the VBRs are distributed to the CEN. The CEN then synchronizes the routes to all attached networks based on the routing weights.
 
-    The BGP route that the VBRs learned from the local data center has the same destination CIDR but have different routing property. The leased line connected to VBR1 acts as the active link \(the AS-Path is shorter\), and the one connected to VBR2 acts as the standby link. CEN will synchronize this route information to other networks attached to it, such as VPCs. As shown in the VPC routing tables, all routes to 10.1.1.0/24 point to VBR1.
+    The BGP routes that the VBRs learn from the local data center share the same destination CIDR block but have different routing weights. The physical connection connected to VBR1 acts as the active link \(the AS-Path is shorter\), and the one connected to VBR2 acts as the standby link. CEN will synchronize this routing configuration to other attached networks, such as VPCs. As shown in the route tables of the VPCs, all routes destined for 10.1.1.0/24 point to VBR1.
 
-    Additionally, CEN propagates CEN system routes into BGP network. Therefore, the routing table of the local data center includes the CEN routes and the next hops are the IP addresses of the two VBR interfaces.
+    Additionally, CEN redistributes CEN system routes to the BGP network. Therefore, the BGP route table of the local data center includes the learned CEN routes and the next hops are the interface IPs of the two VBRs.
 
-    Similarly, if you want to configure an active/standby route that from the local IDC to the Alibaba Cloud \(192.168. x. 0/24\), you can do this by configuring the BGP properties like weight.
+    Similarly, if you want to configure active/standby links that connect the local data center to the Alibaba Cloud IP address \(192.168. X. 0/24\), you can do this by configuring the BGP AS-Path. Configure weights for the routes learned from different BGP peers \(192.168. X. 0/24\).
 
 
