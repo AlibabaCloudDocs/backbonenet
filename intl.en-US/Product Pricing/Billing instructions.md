@@ -25,6 +25,8 @@ When purchasing a bandwidth package, you must specify the interconnected areas. 
 
  Mainland China and Europe
 
+ Mainland China and Australia
+
  |
 |Global intercommunication| Asia Pacific and North America
 
@@ -35,6 +37,14 @@ When purchasing a bandwidth package, you must specify the interconnected areas. 
  North America and North America
 
  North America and Europe
+
+ Australia and Europe
+
+ Australia and North America
+
+ Australia and Asia Pacific
+
+ Australia and Australia
 
  |
 
