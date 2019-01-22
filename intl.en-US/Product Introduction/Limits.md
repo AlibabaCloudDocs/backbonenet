@@ -5,7 +5,9 @@ Before using CEN, read the limits first.
 |Resource|Default limit|Exception|
 |:-------|:------------|:--------|
 |The number of CEN instances per account|5|Open a ticket|
-|The number of attached networks per region|5|No exception|
+|The number of attached networks per region|5|Open a ticket**Note:** You can apply for up to 3 more, and the total number cannot exceed 8.
+
+|
 |The number of bandwidth packages in the same connected areas per account|1|No exception|
 |The number of associated regions per CEN instance|5|Open a ticket|
 |Limits on VPC with ClassicLink enabled|The VPC cannot use the IP address range 10.0.0.0/8.|No exception|
