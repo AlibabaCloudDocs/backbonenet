@@ -6,10 +6,9 @@ The communications between networks within the same region are free of charge an
 
 Each bandwidth package is billed based on the bandwidth, and the bandwidth costs of different interconnection areas are different.
 
+-   Billing item: Bandwidth, the minimum bandwidth is 2 Mpbs
 -   Billing method: Subscription
-
 -   Billing cycle: per month
-
 
 ## Bandwidth package type {#section_lwt_sgb_tdb .section}
 
