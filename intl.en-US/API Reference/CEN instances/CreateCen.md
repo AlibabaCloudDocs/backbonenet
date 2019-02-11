@@ -13,12 +13,12 @@ Create a CEN instance. After you create a CEN instance, you can attach networks 
  |
 |Name|String|No| The name of the instance.
 
- The name can contain \[2,128\] characters and numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
+ The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores \(\_\), and hyphens \(-\), but cannot start with `http://` or `https://`.
 
  |
 |Description|String|No| The description of the instance.
 
- The description can contain \[2,256\] characters and must start with English letters, but cannot start with `http://` or `https://`.
+ The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores \(\_\), and hyphens \(-\), but cannot start with `http://` or `https://`.
 
  |
 |ClientToken|String|No| A client token used to guarantee the idempotence of requests.
