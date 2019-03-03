@@ -13,13 +13,13 @@ It takes Account A and Account B as an example to introduce how to attach a netw
 
 ## Step 1 Account A creates a CEN instance {#section_snn_y3b_tdb .section}
 
-1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
+1.  Log on to the [CEN console](https://cen.console.aliyun.com).
 2.  On the Instances page, click Create CEN instance.
 3.  Configure the CEN instance.
     -   **Name**: The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores \(\_\), and hyphens \(-\), but cannot start with `http://` or `https://`. In this tutorial, enter **DifferentAccountDifferentRegion**.
     -   **Attach a network**:
 
-        -   **Account**: Select **Different Account**.
+        -   **Account**: Select **Your Account**.
         -   **Network Type**: Select the network to connect. You can attach a VPC or a VBR. In this tutorial, select **VPC**.
         -   **Region**: Select the region of the network. In this tutorial, select **China North 1**.
         -   **Networks**: Select the instance to attach. In this tutorial, select a VPC instance.
@@ -38,7 +38,7 @@ To attach a network belonging to a different account, you must get authorized. T
 4.  On the **VPC Details** page, click **CEN Cross Account Authorization**.
 5.  In the displayed dialog box, enter the ID of the account and the CEN instance to authorize, and then click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/1549870221926_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/1551611464926_en-US.png)
 
 
 ## Step 3 Account A attaches the network {#section_nr2_g34_tdb .section}
@@ -54,7 +54,7 @@ After the authorization is completed, Account A can attach the network of Accoun
     -   **Region**: Select the region of the network. In this tutorial, select **China North 1**.
     -   **Networks**: Select the instance to attach. In this tutorial, select a VPC instance.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3047/1549870221928_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3047/1551611464928_en-US.png)
 
 
 ## Step 4 Account A buys a bandwidth package {#section_yrm_1rn_tdb .section}
@@ -62,7 +62,8 @@ After the authorization is completed, Account A can attach the network of Accoun
 To connect networks in different regions, you must buy a bandwidth package:
 
 1.  On the Instances page, click the ID of the CEN instance, and then click the **Bandwidth Packages** tab.
-2.  Configure the bandwidth package as follows:
+2.  Click **Buy Bandwidth Package \(Subscription\)**.
+3.  Configure the bandwidth package as follows:
     -   **CEN**: Select the CEN instance that requires a bandwidth package.
     -   **Areas**: Select the areas to connect. An area consists of one or more Alibaba Cloud regions.
 
