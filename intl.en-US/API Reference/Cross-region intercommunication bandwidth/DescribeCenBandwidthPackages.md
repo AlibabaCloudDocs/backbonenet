@@ -54,7 +54,6 @@ Query all bandwidth packages under an account.
 |CenBandwidthPackageId|String|The ID of the bandwidth package.|
 |CenIds|List|A list of CEN instances corresponding to the bandwidth package.|
 |Name|String|The name of the bandwidth package.|
-|Description|String|The description of the bandwidth package.|
 |BusinessStatus|String|The billing status of the bandwidth package, including Normal, FinancialLocked, and SecurityLocked.|
 |Status|String|The status of the bandwidth package in the CEN instance, including Idle and InUse.|
 |Bandwidth|Integer|The peak bandwidth of the bandwidth package.|
