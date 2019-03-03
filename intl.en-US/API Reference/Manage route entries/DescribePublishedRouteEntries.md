@@ -14,6 +14,11 @@ Query the publish status of the route entries in the attached VPC or VBR.
 |CenId|String|Yes|The ID of the CEN instance to query.|
 |ChildInstanceRegionId|String|Yes|The ID of the region where the attached network \(VBR or VPC\) is located.|
 |ChildInstanceId|String|Yes|The ID of the network \(VBR or VPC\).|
+|ChildInstanceType|String|Yes|The attached network type:-   VPC
+-   VBR
+-   CCN
+
+|
 |ChildInstanceRouteTableId|String|No|The ID of the route table of the VPC or VBR.|
 |DestinationCidrBlock|String|No|The destination CIDR block of the route entry to query.|
 |PageNumber|Integer|No| The number of pages to return. The default value is 1.
@@ -68,6 +73,7 @@ Query the publish status of the route entries in the attached VPC or VBR.
 |:---|:---|:----------|
 |DestinationCidrBlock|String|The destination CIDR block of the conflicted route entry.|
 |RegionId|String|The ID of the region where the conflicted route entry is located.|
+|InstanceId|String|The conflicted instance ID.|
 |InstanceType|String| The type of the network.
 
  |

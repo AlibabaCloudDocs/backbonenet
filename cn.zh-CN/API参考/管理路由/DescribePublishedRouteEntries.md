@@ -16,6 +16,7 @@
 |ChildInstanceId|String|是|网络实例ID。|
 |ChildInstanceType|String|是|网络实例类型，取值：-   VPC：专有网络
 -   VBR：边界路由器接口
+-   CCN：云连接网
 
 |
 |ChildInstanceRouteTableId|String|否|网络实例的路由表ID。|
