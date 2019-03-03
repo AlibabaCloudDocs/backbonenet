@@ -41,7 +41,7 @@ https://cbn.aliyuncs.com/?Action=CreateCen
 
 For the security of your account, we recommend that you use a RAM user to call APIs. Before using a RAM user to call an API, you must grant the RAM user the corresponding permission to call the API by creating an authorization policy and attaching the policy to the RAM user.
 
-For more information, see [RAM authentication](intl.en-US/API Reference/RAM authentication.md#).
+For more information, see [RAM authentication](reseller.en-US/API Reference/RAM authentication.md#).
 
 ## API signature {#section_jtc_ymf_mdb .section}
 
@@ -77,7 +77,7 @@ Complete these steps to calculate the signature:
 
 2.  Compute the HMAC of the string to sign.
 
-    Append an ampersand \(&\) to the AccessKey Secret to use the new string as the key to compute the HMAC. In this example, the key is `testsecret&amp;`.
+    Append an ampersand \(&\) to the AccessKey Secret to use the new string as the key to compute the HMAC. In this example, the key is `testsecret&`.
 
     ```
     CT9X0VtwR86fNWSnsc6v8YGOjuE=
@@ -86,7 +86,7 @@ Complete these steps to calculate the signature:
 3.  Add the signature to the request URL:
 
     ```
-    http:/cbn.aliyuncs.com/? Action=DescribeCens
+    http:/cbn.aliyuncs.com/?Action=DescribeCens
     &Timestamp=2016-02-23T12:46:24Z
     &Format=XML
     &AccessKeyId=testid
