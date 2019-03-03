@@ -15,7 +15,7 @@ Attach a network \(VPC or VBR\) to a CEN instance. The attached networks \(VPC o
 |ChildInstanceId|String|Yes|The ID of the network to attach.|
 |ChildInstanceType|String|Yes|The type of the network to attach.|
 |ChildInstanceRegionId|String|Yes|The ID of the region where the network is located. The ID of the region where the network is located.|
-|ChildInstanceOwnerId|String|No|The account ID to which the network belongs.|
+|ChildInstanceOwnerId|LONG|No|The account ID to which the network belongs.|
 
 ## Response parameters {#section_ugs_f1g_cz .section}
 
