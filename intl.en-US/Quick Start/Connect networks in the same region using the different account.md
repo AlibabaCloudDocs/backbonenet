@@ -13,7 +13,7 @@ It takes Account A and Account B as an example to introduce how to attach a netw
 
 ## Step 1 Account A creates a CEN instance {#section_snn_y3b_tdb .section}
 
-1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
+1.  Log on to the [CEN console](https://cen.console.aliyun.com).
 2.  On the Instances page, click Create CEN instance.
 3.  Configure the CEN instance.
     -   **Name**: The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores \(\_\), and hyphens \(-\), but cannot start with `http://` or `https://`. In this tutorial, enter **SameRegionDifferentAccount**.
@@ -23,7 +23,7 @@ It takes Account A and Account B as an example to introduce how to attach a netw
         -   **Network Type**: Select the network to connect. You can attach a VPC or a VBR. In this tutorial, select **VPC**.
         -   **Region**: Select the region of the network. In this tutorial, select **China North 1**.
         -   **Networks**: Select the instance to attach. In this tutorial, select a VPC instance.
-4.  Step 2 Attach networks
+4.  Get the ID of the CEN instance.
 
     In this tutorial, the ID of the CEN instance is `cbn-xxxxxxxxxx4l7`.
 
@@ -38,7 +38,7 @@ Cross-account network instance loading requires authorization on the VPC or VBR 
 4.  On the **VPC Details** page, click **CEN Cross Account Authorization**.
 5.  In the displayed dialog box, enter the ID of the account and the CEN instance to authorize, and then click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/1549870238926_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/1551611391926_en-US.png)
 
 
 ## Step 3 Account A attaches the network {#section_nr2_g34_tdb .section}
@@ -54,7 +54,7 @@ After the authorization is completed, Account A can attach the network of Accoun
     -   **Region**: Select the region of the network. In this tutorial, select **China North 1**.
     -   **Networks**: Select the instance to attach. In this tutorial, select a VPC instance.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/1549870238927_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/1551611391927_en-US.png)
 
 
 ## Step 4 Test the connectivity {#section_ucp_y3b_tdb .section}
