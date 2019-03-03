@@ -63,10 +63,10 @@
  |
 |NextHopId|String|下一跳实例的ID。|
 |PublishStatus|String|在CEN中的发布状态：-   Published：已发布
--   Non-Published：未发布
+-   NonPublished：未发布
 
 |
-|RouteConflicts|String \(JSON Array\)|冲突路由列表。|
+|Conflicts|String \(JSON Array\)|冲突路由列表。|
 
 |名称|类型|描述|
 |:-|:-|:-|
