@@ -6,9 +6,9 @@
 
 |区域|包含的地域|
 |:-|:----|
-|中国大陆|华北1（青岛）、华北2（北京）、华北3（张家口）、华南1（深圳）、华东1（杭州）、华东2（上海）、华北5（呼和浩特）、武汉|
+|中国大陆|华北1（青岛）、华北2（北京）、华北3（张家口）、华南1（深圳）、华东1（杭州）、华东2（上海）、华北5（呼和浩特）|
 |北美|美国（硅谷）、美国（弗吉尼亚）|
-|亚太|香港、新加坡、马来西亚（吉隆坡）、日本（东京）、印度（孟买）、印度尼西亚（雅加达）|
+|亚太|香港、新加坡、马来西亚（吉隆坡）、日本（东京）、印度尼西亚（雅加达）、印度（孟买）|
 |欧洲|德国（法兰克福）、英国（伦敦）|
 |澳洲|澳大利亚（悉尼）|
 
@@ -21,16 +21,21 @@
  CreateCenBandwidthPackage
 
  |
-|BandwidthPackageChargeType|String|否|带宽包的付费类型，取值：PrePaid|
+|BandwidthPackageChargeType|String|否|带宽包的付费类型，取值：-   POSTPAY
+-   PREPAY
+
+**说明：** ：国际站支持预付费。
+
+|
 |Bandwidth|String|是|带宽包的带宽峰值，单位为Mbps，最小值为2。|
 |GeographicRegionAId|String|是| 网络实例所属的区域。
 
- 取值：China | North-America | Asia-Pacific | Europe | Middle-East
+ 取值：China | North-America | Asia-Pacific | Europe | Australia
 
  |
 |GeographicRegionBId|String|是| 网络实例所属的区域。
 
- 取值：China | North-America | Asia-Pacific | Europe | Middle-East
+ 取值：China | North-America | Asia-Pacific | Europe | Australiat
 
  |
 |PricingCycle|String|是| 带宽包的计费周期。
@@ -55,7 +60,6 @@
  长度为 2-128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-）。但不能以`http://` 或`https://`开头。
 
  |
-|CenId|String|否|指定与带宽包绑定的云企业网实例。|
 
 ## 返回参数 {#section_ugs_f1g_cz .section}
 

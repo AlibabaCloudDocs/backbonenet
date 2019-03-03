@@ -6,7 +6,7 @@ An area is a collection of Alibaba Cloud regions. Areas in CEN include Mainland 
 
 |Area|Included regions|
 |:---|:---------------|
-|Mainland China|China \(Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hangzhou\), China \(Shanghai\), China \(Hohhot\), China \(Wuhan\)|
+|Mainland China|China \(Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hangzhou\), China \(Shanghai\), China \(Hohhot\)|
 |North America|US \(Silicon Valley\), US \(Virginia\)|
 |Asia Pacific|Hong Kong, Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)|
 |Europe|Germany \(Frankfurt\), UK \(London\)|
@@ -21,16 +21,16 @@ An area is a collection of Alibaba Cloud regions. Areas in CEN include Mainland 
  CreateCenBandwidthPackage
 
  |
-|BandwidthPackageChargeType|String|No|The billing method. Valid value: PrePaid|
+|BandwidthPackageChargeType|String|No|The billing method. Valid value: PREPAY|
 |Bandwidth|String|Yes|The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 2 Mbps.|
-|GeographicRegionAId|String|Yes| The other area to connect.
+|GeographicRegionAId|String|Yes| The other area A to connect.
 
- Valid value: China | North-America | Asia-Pacific | Europe | Middle-East
+ Valid value: China | North-America | Asia-Pacific | Europe | Australia
 
  |
-|GeographicRegionBId|String|Yes| The other area to connect.
+|GeographicRegionBId|String|Yes| The other area B to connect.
 
- Valid value: China | North-America | Asia-Pacific | Europe | Middle-East
+ Valid value: China | North-America | Asia-Pacific | Europe | Australia
 
  |
 |PricingCycle|String|Yes| The pricing cycle.
@@ -55,7 +55,6 @@ An area is a collection of Alibaba Cloud regions. Areas in CEN include Mainland 
  The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with `http://` or `https://`.
 
  |
-|CenId|String|No|The ID of the CEN instance to bind.|
 
 ## Response parameters {#section_ugs_f1g_cz .section}
 
