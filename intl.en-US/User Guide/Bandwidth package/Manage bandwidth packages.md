@@ -6,7 +6,7 @@ To connect networks in different regions, you must buy a bandwidth package and s
 
 The CEN bandwidth package is an abstracted object that includes an interconnection bandwidth and interconnection areas. To buy a bandwidth package, you must specify the areas to connect. An area consists of one or more Alibaba Cloud regions. The areas in CEN include Mainland China, Asia Pacific, North America, and Europe.
 
-The relationship between a region and a region is shown in the following table:
+The relationship between an area and a region is shown in the following table:
 
 |Area|Included regions|
 |:---|:---------------|
@@ -26,7 +26,7 @@ To buy a bandwidth package, complete these steps:
 
 1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
 2.  Click the ID of the target cloud enterprise instance.
-3.  On the Bandwidth Packages page, click **Buy Bandwidth Package**, and then click **Buy Bandwidth Package \(Subscription\)**.
+3.  On the Bandwidth Packages page, click **Bandwidth Packages**, and then click **Buy Bandwidth Package \(Subscription\)**.
 4.  Configure the bandwidth package according to the following information:
 
     |Configuration|Description|
@@ -89,7 +89,7 @@ To renew a bandwidth package, complete these steps:
 3.  On the CEN page, click the **Bandwidth Packages** tab.
 4.  Click the **Renew** option under the **Action** column of the target bandwidth package.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3050/1548052666877_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3050/1551611617877_en-US.png)
 
 5.  Select the renew duration and complete the payment.
 
