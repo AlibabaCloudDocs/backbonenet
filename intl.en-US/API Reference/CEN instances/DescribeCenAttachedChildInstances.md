@@ -14,6 +14,8 @@ Query the networks attached to a CEN instance.
 |CenId|String|Yes| The ID of the CEN instance.
 
  |
+|ChildInstanceType|String|否|The type of the network instance. Valid value: VPC|VBR|CCN.|
+|ChildInstanceRegionId|String|No|The region ID of the attached network.|
 |PageNumber|Integer|No| The number of pages to return. The default value is 1.
 
  |
@@ -29,7 +31,7 @@ Query the networks attached to a CEN instance.
 |TotalCount|String|The number of queried entries.|
 |PageNumber|Integer|The current page number.|
 |PageSize|String|The number of entries on the current page.|
-|Cens.|List|A list of the attached networks.|
+|ChildInstances|List|A list of the attached networks.|
 
 |Name|Type|Description|
 |:---|:---|:----------|
