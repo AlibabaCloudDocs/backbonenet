@@ -11,7 +11,7 @@ Public request parameters are request parameter that each interface uses.
 |Format|String|No|The format of the response. Valid values:JSON\(default value\) | XML 
 
 |
-|Version|String|是|The version of the API in the format of `YYYY-MM-DD`. Valid value:2017-09-12
+|Version|String|Yes|The version of the API in the format of `YYYY-MM-DD`. Valid value:2017-09-12
 
 |
 |AccessKeyId|String|Yes|The AccessKey ID of the user who calls the API.|
