@@ -16,7 +16,7 @@ Detach a specified network from a CEN instance.
 |ChildInstanceType|String |Required|The type of the network to attach.|
 |ChildInstanceRegionId|String |Required|The ID of the region where the network is located.|
 |ChildInstanceOwnerId|Long|No|The account ID to which the network belongs.|
-|ChildInstanceOwnerId|Long|No|The account ID to which the CEN instance belongs.|
+|CenOwnerId|Long|No|The account ID to which the CEN instance belongs.|
 
 ## Response parameters {#section_ugs_f1g_cz .section}
 
