@@ -6,7 +6,7 @@ After creating a CEN instance, you can attach networks to the CEN instance, buy 
 
 To create a CEN instance, complete these steps:
 
-1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
+1.  Log on to the [CEN console](https://cen.console.aliyun.com/).
 2.  On the Instances page, click **Create CEN instance**.
 3.  Configure the CEN instance according to the following information:
 
@@ -22,7 +22,7 @@ To create a CEN instance, complete these steps:
  The description can contain from 2 to 256 characters and cannot begin with `http://` or `https://`.
 
  |
-    |**Attach networks**|You can attach networks of your account or other accounts to a CEN instance. For more information, see [Networks](reseller.en-US/User Guide/Networks.md#).|
+    |**Attach networks**|You can attach networks of your account or other accounts to a CEN instance. For more information, see [Networks](intl.en-US/User Guide/Networks.md#).|
 
 
 ## Delete a CEN instance {#section_tk3_4tn_tdb .section}
@@ -31,10 +31,10 @@ Before deleting a CEN instance, make sure there is no bandwidth package or netwo
 
 To create a CEN instance, complete these steps:
 
-1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
+1.  Log on to the [CEN console](https://cen.console.aliyun.com/).
 2.  Click **Delete** in the **Actions** column of the target CEN instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3048/1549870098905_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3048/1551609271905_en-US.png)
 
 3.  In the displayed dialog box, click **OK**.
 
