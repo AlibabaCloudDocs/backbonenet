@@ -29,7 +29,7 @@ Query the networks that have been authorized to CEN.
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|CenId|String|The ID of the CEN instance.|
+|CenInstanceId|String|The ID of the CEN instance.|
 |CenOwnerId|String|The account ID that the network belongs to.|
 |CreationTime|String|The time at which the network instance is authorized in the format of YYYY-MM-DDThh:mmZ.|
 
