@@ -20,7 +20,7 @@ To connect a local IDC to Alibaba Cloud, complete these steps:
 
 4.  Configure and publish routes
 
-    Configure routes in the IDC and VPCs. For more information, see [IDC and VBR static route configuration](#section_kvd_hqn_l2b).
+    Configure routes in the IDC and VPCs. For more information, see [IDC and VBR static route configuration](intl.en-US/Best Practices/Connect a local data center to Alibaba Cloud using two leased lines configured with static routes.md#section_kvd_hqn_l2b).
 
 
 ## Network architecture {#section_nhs_nnn_l2b .section}
@@ -39,11 +39,11 @@ The network structure used in this tutorial is as follows:
     |Hong Kong VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15471241198693_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15516877818693_en-US.png)
 
 ## IDC and VBR static route configuration {#section_kvd_hqn_l2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15471241198694_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15516877818694_en-US.png)
 
 The routing configurations in this tutorial are as follows:
 
@@ -67,14 +67,14 @@ The routing configurations in this tutorial are as follows:
 
 -   CEN routes
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15471241198695_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15516877818695_en-US.png)
 
     After configuring routes for the VBRs, the CEN publishes the configured static routes to the CEN. In CEN, the two leased lines form ECMP and are in active-active status.
 
 
 ## Redundant disaster tolerance {#section_gxw_wlc_r2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15471241198696_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15516877818696_en-US.png)
 
 When a leased line fails \(such as the line from VBR1 to CPE1\), data from Alibaba Cloud to the IDC is forwarded to VBR2. This solution achieves disaster tolerance by automatically switching the link.
 
