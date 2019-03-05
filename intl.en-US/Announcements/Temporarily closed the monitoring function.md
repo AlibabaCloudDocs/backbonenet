@@ -2,5 +2,5 @@
 
 Dear Alibaba Cloud Enterprise Network user:
 
-Due to system upgrades, the CEN \> Health Check \> Virtual Border Router function is temporarily closed from November 22, 2018 to March 1, 2019. Sorry for the inconvenience.
+Due to system upgrades, the CEN \> Health Check \> Virtual Border Router function is temporarily closed from November 22, 2018 to June 1, 2019. Sorry for the inconvenience.
 
