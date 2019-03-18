@@ -2,40 +2,40 @@
 
 Query the networks that have been authorized to CEN.
 
-**Note:** This API is an API of VPC. Therefore, the endpoint of the API is`vpc.aliyuncs.com` and the API  version is 2016-04-28.
+**Note:** This API is an API of VPC. Therefore, the endpoint of the API is`vpc.aliyuncs.com` and the API version is 2016-04-28.
 
 ## Request parameters {#section_dmr_mhp_tdb .section}
 
 |Name|Type|Required|Description|
 |:---|:---|:-------|:----------|
-|Action|String|Yes| The action to perform.  Valid value:
+| Action|String|Yes| The action to perform. Valid value:
 
- DescribeGrantRulesToCen
+  DescribeGrantRulesToCen 
 
  |
-|RegionId|String|Yes|The ID of the region where the network is located.|
-|InstanceId|String|Yes|The ID of the network.|
-|InstanceType|String|Yes|The type of the network. Valid value: VPC | VBR|
+| RegionId|String|Yes|The ID of the region where the network is located.|
+| InstanceId|String|Yes|The ID of the network.|
+| InstanceType|String|Yes|The type of the network. Valid value: VPC | VBR |
 
 ## Response parameters {#section_ugs_f1g_cz .section}
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|RequestId|String|The ID of the request.|
-|TotalCount|String|The number of queried entries.|
-|PageNumber|Integer|The current page number.|
-|PageSize|String|The number of entries on the current page.|
-|CenGrantRules|List|A list of the authorized networks.|
+| RequestId|String|The ID of the request.|
+| TotalCount|String|The number of queried entries.|
+| PageNumber|Integer|The current page number.|
+| PageSize|String|The number of entries on the current page.|
+| CenGrantRules|List|A list of the authorized networks.|
 
 |Name|Type|Description|
 |:---|:---|:----------|
-|CenInstanceId|String|The ID of the CEN instance.|
-|CenOwnerId|String|The account ID that the network belongs to.|
-|CreationTime|String|The time at which the network instance is authorized in the format of YYYY-MM-DDThh:mmZ.|
+| CenInstanceId|String|The ID of the CEN instance.|
+| CenOwnerId|String|The account ID that the network belongs to.|
+| CreationTime|String|The time at which the network instance is authorized in the format of YYYY-MM-DDThh:mmZ.|
 
 ## Examples {#section_ix5_h1g_cz .section}
 
-**Request example**
+ **Request example**
 
 ``` {#createVPCpub}
 https://vpc.aliyuncs.com/?Action=DescribeGrantRulesToCen
@@ -45,7 +45,7 @@ https://vpc.aliyuncs.com/?Action=DescribeGrantRulesToCen
 &CommonParameters
 ```
 
-**Response example**
+ **Response example** 
 
 -   XML format
 
@@ -57,7 +57,7 @@ https://vpc.aliyuncs.com/?Action=DescribeGrantRulesToCen
         <CbnGrantRules>
             <CbnGrantRule>
                 <CbnInstanceId>cbn-6ugox0vl0zff4gl0b8</CbnInstanceId>
-                <Cbnownerid> 1016647762843556 </cbnownerid>
+                <Cbnownerid> 101664776284**** </cbnownerid>
                 <CreationTime>2018-01-18T11:49:09Z</CreationTime>
             </CbnGrantRule>
         </CbnGrantRules>
@@ -76,7 +76,7 @@ https://vpc.aliyuncs.com/?Action=DescribeGrantRulesToCen
         "CbnGrantRule": [
           {
             "CbnInstanceId": "cbn-6ugox0vl0zff4gl0b8",
-            "CbnOwnerId": 1016647762843556,
+            "CbnOwnerId": 101664776284****,
             "CreationTime": "2018-01-18T11:49:09Z"
           }
         ]
