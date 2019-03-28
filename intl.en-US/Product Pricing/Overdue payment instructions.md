@@ -8,5 +8,5 @@ When a bill is overdue but does not exceed 15 days, the corresponding bandwidth 
 
 ## Release bandwidth packages {#section_qmv_t5w_5db .section}
 
-If you do not pay your overdue bill 15 days after the service is stopped, the bandwidth package is released. Related configurations are also deleted, and cannot be restored.
+If you do not pay your overdue bill 30 days after the service is stopped, the bandwidth package is released. Related configurations are also deleted, and cannot be restored.
 
