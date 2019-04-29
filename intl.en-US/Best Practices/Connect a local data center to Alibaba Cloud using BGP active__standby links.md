@@ -12,7 +12,7 @@ To configure active/standby links to access Alibaba Cloud, follow these steps:
 
 2.  Configure health checks
 
-    Configure health checks so that when the active link fails, traffic is distributed to the standby link. For more information, see [Health check](../../../../../intl.en-US/User Guide/Health check.md#).
+    Configure health checks so that when the active link fails, traffic is distributed to the standby link. For more information, see [Health check](../../../../reseller.en-US/User Guide/Health check.md#).
 
 3.  Attach the VBRs and VPCs that the local data center requires to connect to the created CEN instance.
 4.  Configure routes
@@ -32,19 +32,19 @@ The network topology used in this tutorial is as follows:
     |:------|:---------|
     |Local data center|10.1.1.0/24|
     |Beijing VPC|192.168.1.0/24|
-    |Shanghai VPC|192.168.2.0/24|
-    |Hong Kong VPC|192.168.3.0/24|
+    |Hong Kong VPC|192.168.2.0/24|
+    |Shanghai VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15471240907114_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156737114_en-US.png)
 
 ## Advertise BGP routes and set the routing weights at the local data center {#section_kvd_hqn_l2b .section}
 
-Assume that BGP peering sessions have been established between the local data center and each VBR \(for more information, see [Create a BGP peer](../../../../../intl.en-US/Archives/BGP/Manage BGP peers.md#section_fxm_rbb_ydb)\).
+Assume that BGP peering sessions have been established between the local data center and each VBR \(for more information, see [Create a BGP peer](../../../../reseller.en-US/Archives/BGP/Manage BGP peers.md#section_fxm_rbb_ydb)\).
 
 You must configure the BGP route \(10.1.1.0/24\) advertised to Alibaba Cloud and set the AS-Path to determine the routing weights at the local data center to implement active/standby routes from Alibaba Cloud to IDC.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15471240907115_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156737115_en-US.png)
 
 As shown in the preceding figure, the green line \(CPE1\) is the active link and the red line \(CPE2\) is the standby link. The BGP configurations of the two CPEs are as follows.
 
@@ -62,13 +62,13 @@ The CEN can automatically learn and distribute route entries. After routes are c
 
 -   BGP routes in VBRs
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15471240907116_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156737116_en-US.png)
 
     As shown in the following figure, the route tables of VBR1 and VBR2 contain routes and next hops learned from the BGP peers of VBR1 and VBR2. The VBRs, which are attached to the CEN, send the BGP routes learned from the local data center to the CEN, including AS-Path configurations.
 
 -   All routes in the CEN
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15471240907117_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156737117_en-US.png)
 
     After the VPCs and VBRs are attached to CEN, the BGP routes learned from the VBRs are distributed to the CEN. The CEN then synchronizes the routes to all attached networks based on the routing weights.
 

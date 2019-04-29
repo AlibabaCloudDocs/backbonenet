@@ -32,11 +32,11 @@
     |:-|:-|
     |本地IDC|10.1.1.0/24|
     |北京VPC|192.168.1.0/24|
-    |上海VPC|192.168.2.0/24|
-    |香港VPC|192.168.3.0/24|
+    |香港VPC|192.168.2.0/24|
+    |上海VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15439899627114_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156687114_zh-CN.png)
 
 ## IDC侧宣告BGP路由并设置权重 {#section_kvd_hqn_l2b .section}
 
@@ -44,7 +44,7 @@
 
 现在需要在IDC侧配置向阿里云宣告的BGP路由（10.1.1.0/24），并通过设置AS-Path来确定选路权重，实现阿里云到IDC路由的主备模式。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15439899627115_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156687115_zh-CN.png)
 
 如上图所示绿色链路（CPE1）为主链路，红色链路（CPE2）为备份链路，则IDC侧分别在两个CPE的BGP配置如下表所示。
 
@@ -62,13 +62,13 @@
 
 -   边界路由器BGP路由
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15439899627116_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156687116_zh-CN.png)
 
     如下图所示，在VBR1和VBR2可以看到从对端邻居学到的路由信息和下一跳。由于VBR已经加载到云企业网中，所以VBR会将从IDC侧学来的BGP路由信息发送到云企业网，包括AS-Path。
 
 -   全量路由配置
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15439899627117_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156687117_zh-CN.png)
 
     由于VBR和VPC均已加载到云企业网中，那么从VBR上学来的BGP路由也会发布到云企业网中，云企业网会基于选路权重等信息，将路由同步到云企业网内部。
 
