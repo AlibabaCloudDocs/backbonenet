@@ -12,7 +12,7 @@
 
 2.  配置健康检查（必须配置）
 
-    设置健康检查，是保障等价冗余专线链路中一条链路中断后，流量可以切换到另外一条链路的前提。在配置健康检查时，您可以将CEN中加载的VPC中任何一个未被使用的私网IP配置为源IP，将和VBR互联的CPE接口IP配置为目标IP。详情参见[健康检查](../../../../../intl.zh-CN/用户指南/健康检查.md#)。
+    设置健康检查，是保障等价冗余专线链路中一条链路中断后，流量可以切换到另外一条链路的前提。在配置健康检查时，您可以将CEN中加载的VPC中任何一个未被使用的私网IP配置为源IP，将和VBR互联的CPE接口IP配置为目标IP。详情参见[健康检查](../../../../intl.zh-CN/用户指南/健康检查.md#)。
 
 3.  加载网络实例
 
@@ -35,15 +35,15 @@
     |:-|:-|
     |本地IDC|10.1.1.0/24|
     |北京VPC|192.168.1.0/24|
-    |上海VPC|192.168.2.0/24|
-    |香港VPC|192.168.3.0/24|
+    |香港VPC|192.168.2.0/24|
+    |上海VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15516880808693_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15565157508693_zh-CN.png)
 
 ## IDC和VBR静态路由配置 {#section_kvd_hqn_l2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15516880808694_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15565157508694_zh-CN.png)
 
 本方案中的路由配置如下：
 
@@ -67,14 +67,14 @@
 
 -   云企业网路由
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15516880808695_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15565157508695_zh-CN.png)
 
     通过在VBR上进行以上路由配置，云企业网会分别将VBR1和VBR2上配置的静态路由同步到云企业网内部。从云企业网内部看，两条专线已形成等价路由（ECMP），并且处于双活状态。
 
 
 ## 冗余容灾 {#section_gxw_wlc_r2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15516880808696_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15565157508696_zh-CN.png)
 
 当某条专线断掉后（如VBR1到CPE1），云企业网会对路由进行切换，云上所有到IDC的数据会走VBR2，从而实现了链路的切换和容灾效果。
 

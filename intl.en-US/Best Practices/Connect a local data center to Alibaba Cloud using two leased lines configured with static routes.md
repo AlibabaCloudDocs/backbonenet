@@ -12,7 +12,7 @@ To connect a local IDC to Alibaba Cloud, complete these steps:
 
 2.  Configure health check \(required\)
 
-    Configure health check. Therefore, the traffic can be automatically routed to the standby link when the active link fails. When configuring health check, you can set any unused private IP address in a VPC attached to the CEN instance as the source IP address, and set the IP address of the CPE interface connected to the VBR as the destination IP address. For more information, see [Health check](../../../../../intl.en-US/User Guide/Health check.md#).
+    Configure health check. Therefore, the traffic can be automatically routed to the standby link when the active link fails. When configuring health check, you can set any unused private IP address in a VPC attached to the CEN instance as the source IP address, and set the IP address of the CPE interface connected to the VBR as the destination IP address. For more information, see [Health check](../../../../reseller.en-US/User Guide/Health check.md#).
 
 3.  Attach networks
 
@@ -20,7 +20,7 @@ To connect a local IDC to Alibaba Cloud, complete these steps:
 
 4.  Configure and publish routes
 
-    Configure routes in the IDC and VPCs. For more information, see [IDC and VBR static route configuration](intl.en-US/Best Practices/Connect a local data center to Alibaba Cloud using two leased lines configured with static routes.md#section_kvd_hqn_l2b).
+    Configure routes in the IDC and VPCs. For more information, see [IDC and VBR static route configuration](reseller.en-US/Best Practices/Connect a local data center to Alibaba Cloud using two leased lines configured with static routes.md#section_kvd_hqn_l2b).
 
 
 ## Network topology {#section_nhs_nnn_l2b .section}
@@ -35,15 +35,15 @@ The network topology used in this tutorial is as follows:
     |:------|:---------|
     |Local data center|10.1.1.0/24|
     |Beijing VPC|192.168.1.0/24|
-    |Shanghai VPC|192.168.3.0/24|
-    |Hong Kong VPC|192.168.2.0/24|
+    |Hong Kong VPC|192.168.3.0/24|
+    |Shanghai VPC|192.168.2.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15541811988693_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15565157558693_en-US.png)
 
 ## IDC and VBR static route configuration {#section_kvd_hqn_l2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15541811988694_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15565157558694_en-US.png)
 
 The routing configurations in this tutorial are as follows:
 
@@ -67,14 +67,14 @@ The routing configurations in this tutorial are as follows:
 
 -   CEN routes
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15541811988695_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15565157558695_en-US.png)
 
     After configuring routes for the VBRs, the CEN publishes the configured static routes to the CEN. In CEN, the two leased lines form ECMP and are in active-active status.
 
 
 ## Redundant disaster tolerance {#section_gxw_wlc_r2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15541811988696_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17033/15565157568696_en-US.png)
 
 When a leased line fails \(such as the line from VBR1 to CPE1\), data from Alibaba Cloud to the IDC is forwarded to VBR2. This solution achieves disaster tolerance by automatically switching the link.
 
