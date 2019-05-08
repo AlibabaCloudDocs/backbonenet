@@ -9,14 +9,34 @@ You can specify the resource that a RAM user has permission to operate in the au
 |ceninstance|`acs:cen:*:$accountid: ceninstance /$ceninstanceidacs:cen:*:$accountid: ceninstance`|
 |cenbandwidthpackage|`acs:cen:*:$accountid: cenbandwidthpackage /$ cenbandwidthpackageidacs:cen:*:$accountid: cenbandwidthpackage/*`|
 
-|Authorization action| Authorization rule|
-|:-------------------|:------------------|
+|Authorization action|Authorization rule|
+|:-------------------|:-----------------|
 |cen: CreateCen|`acs:cen:*:$accountid:ceninstance/*`|
 |cen: ModifyCenAttribute|`acs:cen: *:$accountid:ceninstance/$ceninstanceid`|
 |cen: DeleteCen|`acs:cen: *:$accountid:ceninstance/$ceninstanceid`|
 |cen: DescribeCens|`acs:cen: *:$accountid: ceninstance/*`|
-|cen: AttachCenChildInstance|`acs:cen:*:$accountid: ceninstance/$ceninstanceidVPC:acs:vpc:$regionid:$accountid:vpc/$vpcidVBR:acs:vpc:$regionid:$accountid:virtualborderrouter/$virtualborderrouterid`|
-|cen: DetachCenChildInstance|`acs:cen:*:$accountid: ceninstance/$ ceninstanceidVPC:acs:vpc:$regionid:$accountid:vpc/$vpcidVBR:acs:vpc:$regionid:$accountid:virtualborderrouter/$virtualborderrouterid`|
+|cen: AttachCenChildInstance| -   `acs:cen:*:$accountid: ceninstance/$ceninstanceid`
+-   VPC:
+
+`acs:vpc:$regionid:$accountid:vpc/$vpcid`
+
+-   Virtual Border Router \(VBR\):
+
+`acs:vpc:$regionid:$accountid:virtualborderrouter/$virtualborderrouterid`
+
+
+ |
+|cen: DetachCenChildInstance| -   `acs:cen:*:$accountid: ceninstance/$ ceninstanceid`
+-   VPC:
+
+`acs:vpc:$regionid:$accountid:vpc/$vpcid`
+
+-   VBR:
+
+`acs:vpc:$regionid:$accountid:virtualborderrouter/$virtualborderrouterid`
+
+
+ |
 |cen: DescribeCenAttachedChildInstances|`acs:cen:*:$accountid: ceninstance/$ceninstanceid`|
 |cen: DescribeCenRegionDomainRouteEntries|`acs:cen:*:$accountid: ceninstance/$ceninstanceid`|
 |cen: EnableCenVbrHealthCheck|`acs:cen:*:$accountid: ceninstance/$ceninstanceidacs:vpc:$regionid:$accountid:virtualborderrouter/$virtualborderrouterid`|
@@ -36,6 +56,15 @@ acs:cen:*:$accountid:cenbandwidthpackage/$cenbandwidthpackageid
 |cen: DescribeCenGeographicSpanRemainingBandwidth|`acs:cen:*:$accountid: ceninstance/$ceninstanceid`|
 |cen: SetCenInterRegionBandwidthLimit|`acs:cen:*:$accountid: ceninstance/$ceninstanceid`|
 |cen: DescribeCenInterRegionBandwidthLimits|`acs:cen:*:$accountid: ceninstance/$ceninstanceid`|
-|cen: DescribeRouteConflict|`VPC:acs:vpc:$regionid:$accountid:vpc/$vpcid VBR:acs:vpc:$regionid:$accountid:virtualborderrouter/$virtualborderrouterid`|
+|cen: DescribeRouteConflict| -   VPC:
+
+`acs:vpc:$regionid:$accountid:vpc/$vpcid`
+
+-   VBR:
+
+`acs:vpc:$regionid:$accountid:virtualborderrouter/$virtualborderrouterid`
+
+
+ |
 |cen: DescribeGeographicRegionMembership|No authentication required.|
 
