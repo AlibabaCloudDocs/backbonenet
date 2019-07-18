@@ -131,6 +131,12 @@
 
 ## 返回数据 {#resultMapping .section}
 
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|54B48E3D-DF70-471B-AA93-08E683A1B457|请求ID。
+
+ |
+
 ## 示例 {#demo .section}
 
 请求示例
