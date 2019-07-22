@@ -1,19 +1,18 @@
 # Limits {#concept_rzs_nc1_tdb .concept}
 
-The following table describes the limits of different items in Cloud Enterprise Network \(CEN\) and whether a ticket can be opened to adjust the limit.
+The following table describes the limits that apply to Cloud Enterprise Networks \(CENs\) and whether you can open a ticket to change these limits.
 
-|Item|Limit|Can I open a ticket?|
-|:---|:----|:-------------------|
-|The number of CEN instances per account|5|Yes|
-|The number of attached networks per region|10|Yes. You can apply for up to 15 networks.|
-|The number of bandwidth packages in the same connected areas per account in a CEN instance|1|No|
-|The number of associated regions per CEN instance|5|Yes|
-|Limits on VPCs with ClassicLink enabled|The VPC cannot use the IP address range 10.0.0.0/8.|No|
-|Networks|You cannot attach VPCs or VBRs that are using Express Connect to a CEN instance.|No|
-|The number of route entries per CEN instance|100|Yes|
-|Can I share NAT Gateway through CEN?|No|No|
-|Is cross-region access to cloud resources supported?|No|No|
-|Can cloud resources access networks attached to CEN?|No|No|
-|Subnet routing|If a VPC has more than one route table, CEN only learns route entries of the primary route table and does not learn route entries from the customized route tables. Similarly, the route entries that a VPC learned from CEN are added to the primary route table only.|No|
-|Is Ant Financial Cloud supported?|No|No|
+|Item|Limit|Changes allowed?|
+|:---|:----|:---------------|
+|The number of CEN instances that can be created for each account|5|Yes. Open a ticket.|
+|The number of CEN instances that can be added to each region|10|Yes. Open a ticket to apply for a quota of up to 15 CEN instances.|
+|The number of bandwidth packages that you can purchase in either of the interconnected regions in each CEN|1|No.|
+|The number of regions in each CEN instance|5|Yes. Open a ticket.|
+|Limits on VPCs whose ClassicLink feature is enabled|VPCs cannot use the 10.0.0.0/8 CIDR block.|No.|
+|Network instance|No Express Connect can be created for network instances that are added to the CEN.|No.|
+|The number of route entries that can be created in each CEN|100|Yes. Open a ticket.|
+|Sharing of NAT Gateways through CEN|No|No.|
+|Support for cross-region access to cloud services|No|No.|
+|Support for cloud services to access network instances in CEN|No|No.|
+|Subnet routing|If a VPC has multiple route tables, CEN learns route entries of the primary route table rather than those of the secondary route table. Similarly, the route entries that a VPC learns from CEN can only be added to the primary route table of the VPC.|No.|
 
