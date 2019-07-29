@@ -54,7 +54,7 @@
 |API|描述|
 |---|--|
 |[EnableCenVbrHealthCheck](cn.zh-CN/API参考/健康检查/EnableCenVbrHealthCheck.md)|调用EnableCenVbrHealthCheck开启边界路由器（VBR）的健康检查，确保及时发现出现故障的物理专线。|
-|[DescribeCenVbrHealthCheck](cn.zh-CN/API参考/健康检查/DescribeCenVbrHealthCheck.md)|调用DescribeCenVbrHealthCheck查询指定地域内物理专线健康检查的状态。|
+|[DescribeCenVbrHealthCheck](cn.zh-CN/API参考/健康检查/DescribeCenVbrHealthCheck.md#)|调用DescribeCenVbrHealthCheck查询指定地域内物理专线健康检查的状态。|
 |[DisableCenVbrHealthCheck](cn.zh-CN/API参考/健康检查/DisableCenVbrHealthCheck.md)|调用DisableCenVbrHealthCheck关闭指定边界路由器（VBR）的健康检查。|
 
 ## 流日志 {#section_psr_6zx_byb .section}
