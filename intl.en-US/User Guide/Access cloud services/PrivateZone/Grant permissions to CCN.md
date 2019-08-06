@@ -14,7 +14,7 @@ If the CCN, the VPC that is configured with PrivateZone, and the CEN instance al
 
 After you grant permissions to the CCN, the system automatically creates a RAM role named **AliyunSmartAGAccessingPVTZRole**. You can view the RAM role on the RAM Roles page of the [RAM console](https://ram.console.aliyun.com/roles).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156438075938863_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156508377238863_en-US.png)
 
 ## Same CEN and VPC account, but different CCN account {#section_igl_bp1_qgb .section}
 
@@ -38,7 +38,7 @@ To grant permissions to the CCN, follow these steps:
 6.  In the search box, enter **AliyunSmartAGAccessingPVTZRole** and click the displayed role name.
 7.  Click the Trust Policy Management tab and then click **Edit Trust Policy**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156438075938865_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156508377238865_en-US.png)
 
 8.  In Service, add a record of `account ID of the CCN@smartag.aliyuncs.com` and click **OK**.
 
@@ -61,17 +61,17 @@ To grant permissions to the CCN, follow these steps:
     -   **Select Trusted Service**: Select **smartag Smart Access Gateway**.
     -   **RAM Role Name**: Enter **AliyunSmartAGAccessingPVTZRole**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156438076038428_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156508377238428_en-US.png)
 
 4.  Click the created RAM role name.
 5.  On the Permissions tab, click **Add Permissions**.
 6.  In the search box, enter **pvtz** and click the displayed **AliyunPvtzReadOnlyAccess** policy.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156438076038429_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156508377338429_en-US.png)
 
 7.  Go back to the RAM role details page, and click the Trust Policy Management tab to view the permission information.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156438076038430_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156508377338430_en-US.png)
 
 
 ## Three different accounts {#section_ul3_qv1_qgb .section}
@@ -86,11 +86,11 @@ If the CCN, the VPC that is configured with PrivateZone, and the CEN instance be
 
 1.  Use the account of the VPC to create a RAM role and grant it permissions. For more information, see [Same CCN and VPC account, but different CEN account](#section_aw1_mt1_qgb).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156438076038430_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156508377338430_en-US.png)
 
 2.  Use the account of the VPC to modify the policy associated with the corresponding RAM role by adding the CCN service in the format of `CCN account ID@aliyuncs.com`. For more information, see [Same CEN and VPC account, but different CCN account](#section_igl_bp1_qgb).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156438076038427_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156508377338427_en-US.png)
 
 
 To allow multiple CCNs to access the PrivateZone service, add all the CCNs to the trust policy, as shown in the following figure.
@@ -103,5 +103,5 @@ To allow multiple CCNs to access the PrivateZone service, add all the CCNs to th
 |CCN|444444|
 |CCN|555555|
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156438076038431_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122769/156508377338431_en-US.png)
 
