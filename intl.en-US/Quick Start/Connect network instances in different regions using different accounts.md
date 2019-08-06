@@ -38,7 +38,7 @@ To attach a network belonging to a different account, you must get authorized. T
 4.  On the **VPC Details** page, click **CEN Cross Account Authorization**.
 5.  In the displayed dialog box, enter the ID of the account and the CEN instance to authorize, and then click **OK**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/1551611464926_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3046/1565083665926_en-US.png)
 
 
 ## Step 3 Account A attaches the network {#section_nr2_g34_tdb .section}
@@ -54,7 +54,7 @@ After the authorization is completed, Account A can attach the network of Accoun
     -   **Region**: Select the region of the network. In this tutorial, select **China North 1**.
     -   **Networks**: Select the instance to attach. In this tutorial, select a VPC instance.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3047/1551611464928_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3047/1565083665928_en-US.png)
 
 
 ## Step 4 Account A buys a bandwidth package {#section_yrm_1rn_tdb .section}
