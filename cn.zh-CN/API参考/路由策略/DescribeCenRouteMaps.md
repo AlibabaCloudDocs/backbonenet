@@ -2,9 +2,9 @@
 
 调用DescribeCenRouteMaps接口查询路由策略。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=Cbn&api=DescribeCenRouteMaps)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=Cbn&api=DescribeCenRouteMaps&type=RPC&version=2017-09-12)
 
 ## 请求参数 {#parameters .section}
 
@@ -28,10 +28,16 @@
 |RouteMapId|String|否|cenrmap-abcdedfghij\*\*\*\*|路由策略的ID。
 
  |
-|TransmitDirection|String|否|RegionIn|策略生效方向，取值：
+|TransmitDirection|String|否|RegionIn|路由策略应用的方向，取值：
 
- -   **RegionIn**：流入云企业网节点的方向。
--   **RegionOut**：流出云企业网节点的方向。
+ -   **RegionIn**：路由传入云企业网地域网关的方向。
+
+例如路由从本地域网络实例发布到本地域网关，或其他地域的路由发布到本地域网关。
+
+-   **RegionOut**：路由传出云企业网地域网关的方向。
+
+例如路由从本地域网关发布到本地域下其他网络实例，或发布到其他地域网关。
+
 
  |
 
@@ -53,8 +59,8 @@
  |
 |AsPathMatchMode|String|Include|匹配as-path模式，为match语句，取值：
 
- -   **Include**：模糊匹配。
--   **Complete**：精确匹配。
+ -   **Include**：模糊匹配，匹配条件中的AS Path与被匹配路由的AS Path有重叠即判定为匹配成功。
+-   **Complete**：精确匹配，匹配条件中的AS Path必须与被匹配路由的AS Path一致，才判定为匹配成功。
 
  |
 |CenId|String|cen-7qthudw0ll6jmc\*\*\*\*|云企业网的ID。
@@ -65,14 +71,20 @@
  |
 |CidrMatchMode|String|Include|匹配前缀模式，为match语句，取值：
 
- -   **Include**：模糊匹配。
--   **Complete**：精确匹配。
+ -   **Include**：模糊匹配。匹配条件中的路由前缀包含被匹配路由的路由前缀即判定为匹配成功。
+
+例如：定义1.1.0.0/16的策略可以模糊匹配到1.1.1.0/24的路由。
+
+-   **Complete**：精确匹配。匹配条件中的路由前缀必须与被匹配路由的路由前缀一致，才判定为匹配成功。
+
+例如：定义1.1.0.0/16的策略仅可以精确匹配到1.1.0.0/16的路由。
+
 
  |
 |CommunityMatchMode|String|Include|匹配community模式，为match语句，取值：
 
- -   **Include**：模糊匹配。
--   **Complete**：精确匹配。
+ -   **Include**：模糊匹配，匹配条件中的Community与被匹配路由的Community有重叠即判定为匹配成功。
+-   **Complete**：精确匹配，匹配条件中的Community必须与被匹配路由的Community一致，才判定为匹配成功。
 
  |
 |CommunityOperateMode|String|Additive|操作community的模式，为action语句，取值：
@@ -86,11 +98,15 @@
  |
 |DestinationChildInstanceTypes| |VPC,VBR|匹配路由的目的实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
 
+ 目的实例类型仅策略应用方向为出地域网关方向时有效。
+
  |
 |DestinationCidrBlocks| |1.1.1.0/10, 2.0.0.0/16|匹配路由的前缀列表，为match语句。
 
  |
 |DestinationInstanceIds| |vpc-a, vpc-b, vbr-a|匹配路由的目的实例ID列表，为match语句。
+
+ 目的实例ID列表仅策略应用方向为出地域网关方向时有效。
 
  |
 |DestinationInstanceIdsReverseMatch|Boolean|false|路由传递目的实例ID列表排除匹配模式，取值：
@@ -101,11 +117,13 @@
  |
 |DestinationRouteTableIds| |vtb-a, vtb-b|匹配路由的目的路由表ID列表，为match语句。
 
- |
-|MapResult|String|Permit|策略结果模式，取值：
+ 目的路由表仅策略应用方向为出地域网关方向时有效。
 
- -   **Permit**：当被匹配的路由满足节点中的所有match语句，则执行该节点中的执行语句并允许通过被匹配的路由，被匹配的路由不会再继续匹配下一个节点；当被匹配的路由与节点中有任何一个match语句不匹配 ，则被匹配的路由继续匹配下一个节点。
--   **Deny**：当被匹配的路由满足节点中的所有match语句，则拒绝通过被匹配的路由，被匹配的路由不会再继续匹配下一个节点，匹配过程立即结束；当被匹配的路由与节点中有任何一个match语句不匹配 ，则被匹配的路由继续匹配下一个节点。
+ |
+|MapResult|String|Permit|所有匹配条件通过后的策略行为，取值：
+
+ -   **Permit**：允许通过被匹配的路由。
+-   **Deny**：拒绝通过被匹配的路由。
 
  |
 |MatchAsns| |65501|匹配路由的as-path列表，为match语句。
@@ -114,7 +132,13 @@
 |MatchCommunitySet| |65501:1,65001:2,60011|匹配community集合，为match语句。
 
  |
-|NextPriority|Integer|33|关联的下一个路由策略节点的优先级，取值：**1**~**100**。
+|NextPriority|Integer|33|关联的下一条路由策略的优先级，取值：**1**~**100**。
+
+ -   当未配置关联优先级时，路由策略无关联的下一条路由策略。
+-   当关联优先级取值为1时，路由策略关联当前路由策略的下一条路由策略。
+-   当关联优先级取值非1时，路由策略关联优先级必须大于当前路由策略的优先级。
+
+ 仅策略行为是允许的路由策略通过路由后需要继续匹配关联优先级的路由策略。
 
  |
 |OperateCommunitySet| |65501:1,65001:2,60011|修改community的属性值，为action语句。
@@ -123,7 +147,7 @@
 |Preference|Integer|20|修改路由的优先级，为action语句。
 
  |
-|Priority|Integer|22|策略节点的优先级，取值：**1**~**100**。
+|Priority|Integer|22|路由策略的优先级，取值：**1**~**100**。优先级数字越小，优先级越高。
 
  |
 |RouteMapId|String|cenrmap-abcdedfghij\*\*\*\*|路由策略的ID。
@@ -131,9 +155,9 @@
  |
 |RouteTypes| |System,Custom,BGP|匹配路由的类型列表，为match语句，取值：
 
- -   **System**：系统路由。
--   **Custom**：用户路由。
--   **BGP**：BGP路由。
+ -   **System**：系统路由，由系统自动生成的路由。
+-   **Custom**：用户路由，由用户手动添加的自定义路由。
+-   **BGP**：BGP路由，通告至BGP中的路由。
 
  |
 |SourceChildInstanceTypes| |VPC,VBR,CCN|匹配路由的源实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
@@ -154,10 +178,16 @@
 |SourceRouteTableIds| |vtb-a, vtb-b|匹配路由的源路由表ID列表，为match语句。
 
  |
-|TransmitDirection|String|RegionIn|策略生效方向，取值：
+|TransmitDirection|String|RegionIn|路由策略应用的方向，取值：
 
- -   **RegionIn**：流入云企业网节点的方向。
--   **RegionOut**：流出云企业网节点的方向。
+ -   **RegionIn**：路由传入云企业网地域网关的方向。
+
+例如路由从本地域网络实例发布到本地域网关，或其他地域的路由发布到本地域网关。
+
+-   **RegionOut**：路由传出云企业网地域网关的方向。
+
+例如路由从本地域网关发布到本地域下其他网络实例，或发布到其他地域网关。
+
 
  |
 
@@ -179,22 +209,21 @@ http(s)://[Endpoint]/?Action=DescribeCenRouteMaps
 
 ``` {#xml_return_success_demo}
 <DescribeCenRouteMapsResponse>
-  <RouteMaps>
-    <RouteMap>
-      <Status>Active</Status>
-      <CenRegionId>cn-beijing</CenRegionId>
-      <RouteMapId>cenrmap-jumdfzmj5sgggl****</RouteMapId>
-      <MapResult>Permit</MapResult>
-      <TransmitDirection>RegionIn</TransmitDirection>
-      <CenId>cen-nh98vzx8gfhlwn****</CenId>
-      <Priority>20</Priority>
-    </RouteMap>
-  </RouteMaps>
-  <PageNumber>1</PageNumber>
-  <TotalCount>1</TotalCount>
-  <PageSize>10</PageSize>
+	  <RouteMaps>
+		    <RouteMap>
+			      <Status>Active</Status>
+			      <CenRegionId>cn-beijing</CenRegionId>
+			      <RouteMapId>cenrmap-jumdfzmj5sgggl****</RouteMapId>
+			      <MapResult>Permit</MapResult>
+			      <TransmitDirection>RegionIn</TransmitDirection>
+			      <CenId>cen-nh98vzx8gfhlwn****</CenId>
+			      <Priority>20</Priority>
+		    </RouteMap>
+	  </RouteMaps>
+	  <PageNumber>1</PageNumber>
+	  <TotalCount>1</TotalCount>
+	  <PageSize>10</PageSize>
 </DescribeCenRouteMapsResponse>
-
 ```
 
 `JSON` 格式
