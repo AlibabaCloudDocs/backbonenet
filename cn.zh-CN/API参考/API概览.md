@@ -2,7 +2,7 @@
 
 云企业网提供以下相关API接口。
 
-## 云企业网实例 {#section_mtk_qdu_46s .section}
+## 云企业网实例 {#section_dfc_mzm_dlf .section}
 
 |API|描述|
 |---|--|
@@ -18,7 +18,7 @@
 |[GrantInstanceToCen](cn.zh-CN/API参考/云企业网实例/GrantInstanceToCen.md)|在加载其他账号的网络实例前，需要在网络实例所在的账号下为云企业网实例授权。|
 |[RevokeInstanceFromCen](cn.zh-CN/API参考/云企业网实例/RevokeInstanceFromCen.md)|撤销网络实例对指定云企业网实例的授权。|
 
-## 带宽包 {#section_kcv_ck4_pqx .section}
+## 带宽包 {#section_rb2_wia_2bv .section}
 
 |API|描述|
 |---|--|
@@ -31,7 +31,7 @@
 |[DescribeCenGeographicSpanRemainingBandwidth](cn.zh-CN/API参考/带宽包/DescribeCenGeographicSpanRemainingBandwidth.md)|调用DescribeCenGeographicSpanRemainingBandwidth查询指定带宽包的剩余可用带宽值。|
 |[DeleteCenBandwidthPackage](cn.zh-CN/API参考/带宽包/DeleteCenBandwidthPackage.md)|调用DeleteCenBandwidthPackage删除带宽包。|
 
-## 跨地域互通带宽 {#section_izn_ttx_wb5 .section}
+## 跨地域互通带宽 {#section_ccp_uoe_ovi .section}
 
 |API|描述|
 |---|--|
@@ -39,7 +39,7 @@
 |[DescribeCenInterRegionBandwidthLimits](cn.zh-CN/API参考/跨地域互通带宽/DescribeCenInterRegionBandwidthLimits.md)|调用DescribeCenInterRegionBandwidthLimits查询各个地域之间的跨地域互通带宽。|
 |[DescribeGeographicRegionMembership](cn.zh-CN/API参考/跨地域互通带宽/DescribeGeographicRegionMembership.md)|调用DescribeGeographicRegionMembership查看指定区域内所有的地域。|
 
-## 管理路由 {#section_eef_o5c_jtf .section}
+## 管理路由 {#section_1sh_8ub_fvw .section}
 
 |API|描述|
 |---|--|
@@ -49,15 +49,15 @@
 |[DescribePublishedRouteEntries](cn.zh-CN/API参考/管理路由/DescribePublishedRouteEntries.md)|调用DescribePublishedRouteEntries查询已加载到CEN网络实例\(VPC和VBR\)的各条路由在CEN中的发布情况。|
 |[WithdrawPublishedRouteEntries](cn.zh-CN/API参考/管理路由/WithdrawPublishedRouteEntries.md)|调用WithdrawPublishedRouteEntries解除VPC或VBR网络实例中已发布到CEN的路由。|
 
-## 健康检查 {#section_hag_b7b_isd .section}
+## 健康检查 {#section_pc5_sd0_xsb .section}
 
 |API|描述|
 |---|--|
 |[EnableCenVbrHealthCheck](cn.zh-CN/API参考/健康检查/EnableCenVbrHealthCheck.md)|调用EnableCenVbrHealthCheck开启边界路由器（VBR）的健康检查，确保及时发现出现故障的物理专线。|
-|[DescribeCenVbrHealthCheck](cn.zh-CN/API参考/健康检查/DescribeCenVbrHealthCheck.md#)|调用DescribeCenVbrHealthCheck查询指定地域内物理专线健康检查的状态。|
+|[DescribeCenVbrHealthCheck](cn.zh-CN/API参考/健康检查/DescribeCenVbrHealthCheck.md)|调用DescribeCenVbrHealthCheck查询指定地域内物理专线健康检查的状态。|
 |[DisableCenVbrHealthCheck](cn.zh-CN/API参考/健康检查/DisableCenVbrHealthCheck.md)|调用DisableCenVbrHealthCheck关闭指定边界路由器（VBR）的健康检查。|
 
-## 流日志 {#section_mq8_cow_jea .section}
+## 流日志 {#section_56t_iuk_why .section}
 
 |API|描述|
 |---|--|
@@ -68,7 +68,7 @@
 |[DeactiveFlowLog](cn.zh-CN/API参考/流日志/DeactiveFlowLog.md)|调用DeactiveFlowLog接口停止流日志，停止后不再捕获指定资源的流量。|
 |[DeleteFlowlog](cn.zh-CN/API参考/流日志/DeleteFlowlog.md)|调用DeleteFlowlog接口删除流日志。|
 
-## 路由策略 {#section_rmb_6o7_uj8 .section}
+## 路由策略 {#section_7yr_csm_w5i .section}
 
 |API|描述|
 |---|--|
@@ -77,7 +77,7 @@
 |[ModifyCenRouteMap](cn.zh-CN/API参考/路由策略/ModifyCenRouteMap.md)|调用ModifyCenRouteMap接口修改路由策略。|
 |[DeleteCenRouteMap](cn.zh-CN/API参考/路由策略/DeleteCenRouteMap.md)|调用DeleteCenRouteMap接口删除路由策略。|
 
-## PrivateZone {#section_ckz_pop_o9b .section}
+## PrivateZone {#section_76o_fow_gsy .section}
 
 |API|描述|
 |---|--|
