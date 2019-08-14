@@ -2,7 +2,7 @@
 
 Creates a bandwidth package.
 
-## Issues to note {#description .section}
+## Note {#description .section}
 
 Before you connect the networks that are associated with a CEN instance and belong to different regions, you need to create a bandwidth package based on the area of these networks.
 
@@ -26,7 +26,7 @@ An area is a collection of Alibaba Cloud regions. Areas in CEN include Mainland 
  |
 | Asia Pacific
 
- | Hong Kong, Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)
+ | China \(Hong Kong\), Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)
 
  |
 | Europe
