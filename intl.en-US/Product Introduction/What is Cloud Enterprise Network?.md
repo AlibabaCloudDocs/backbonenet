@@ -2,7 +2,7 @@
 
 By using Cloud Enterprise Network \(CEN\), you can build private network communication channels between VPCs or between VPCs and on-premises data centers. CEN uses automatic route distribution and learning, which can improve the network convergence and the quality and security of cross-network communication, and achieve the interconnection of all network resources.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3038/1565800892856_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3038/1565801404856_en-US.png)
 
 ## Components {#section_vyj_tlz_sdb .section}
 
@@ -30,7 +30,7 @@ CEN consists of the following components:
     |:---|:---------------|
     |Mainland China|China \(Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hangzhou\), China \(Shanghai\), China \(Hohhot\)|
     |North America|US \(Silicon Valley\), US \(Virginia\)|
-    |Asia Pacific|Hong Kong, Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)|
+    |Asia Pacific|China \(Hong Kong\), Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)|
     |Europe|Germany \(Frankfurt\), UK \(London\)|
     |Australia|Australia \(Sydney\)|
 
