@@ -12,7 +12,7 @@ The relationship between an area and a region is shown in the following table:
 |:---|:---------------|
 |Mainland China|China \(Qingdao\), China \(Beijing\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Hangzhou\), China \(Shanghai\), China \(Hohhot\)|
 |North America|US \(Silicon Valley\), US \(Virginia\)|
-|Asia Pacific|Hong Kong, Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)|
+|Asia Pacific|China \(Hong Kong\), Singapore, Malaysia \(Kuala Lumpur\), Japan \(Tokyo\), India \(Mumbai\), Indonesia \(Jakarta\)|
 |Europe|Germany \(Frankfurt\), UK \(London\)|
 |Australia|Australia \(Sydney\)|
 
@@ -24,7 +24,7 @@ To connect networks in different regions, you must buy a bandwidth package and s
 
 To buy a bandwidth package, follow these steps:
 
-1.  Log on to the [CEN console](https://cen.console.aliyun.com/).
+1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
 2.  Click the ID of the target CEN instance.
 3.  On the CEN page, click the **Bandwidth Packages** tab and then click **Buy Bandwidth Package \(Subscription\)**.
 4.  Configure the bandwidth package according to the following information:
@@ -52,7 +52,7 @@ You can disassociate a bandwidth package from a CEN instance and associate this 
 
 To disassociate a bandwidth package, follow these steps:
 
-1.  Log on to the [CEN console](https://cen.console.aliyun.com/).
+1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
 2.  Click the ID of the target CEN instance.
 3.  On the CEN page, click the **Bandwidth Packages** tab.
 4.  Find the target bandwidth package and click **Unbind** in the **Actions** column.
@@ -64,7 +64,7 @@ You can associate a disassociated bandwidth package to another CEN instance.
 
 To associate a bandwidth package, follow these steps:
 
-1.  Log on to the [CEN console](https://cen.console.aliyun.com/).
+1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
 2.  Click the ID of the target CEN instance.
 3.  On the CEN page, click the **Bandwidth Packages** tab.
 4.  Find the target bandwidth package and click **Bind** in the **Actions** column.
@@ -76,7 +76,7 @@ You can change the bandwidth value of a bandwidth package at any time, and the c
 
 To modify the bandwidth, follow these steps:
 
-1.  Log on to the [CEN console](https://cen.console.aliyun.com/).
+1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
 2.  Click the ID of the target CEN instance.
 3.  On the CEN page, click the **Bandwidth Packages** tab.
 4.  Find the target bandwidth package and click **Downgrade** or **Upgrade** in the **Bandwidth** column.
@@ -90,7 +90,7 @@ To modify the bandwidth, follow these steps:
 
 To renew a bandwidth package, follow these steps:
 
-1.  Log on to the [CEN console](https://cen.console.aliyun.com/).
+1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
 2.  Click the ID of the target CEN instance.
 3.  On the CEN page, click the **Bandwidth Packages** tab.
 4.  Find the target bandwidth package and click **Renew** in the **Actions** column.
@@ -98,5 +98,5 @@ To renew a bandwidth package, follow these steps:
 
 ## References {#section_l1z_ear_pak .section}
 
-[What is Cloud Enterprise Network?](../intl.en-US/Product Introduction/What is Cloud Enterprise Network?.md#)
+[What is Cloud Enterprise Network?](../reseller.en-US/Product Introduction/What is Cloud Enterprise Network?.md#)
 
