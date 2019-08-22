@@ -4,12 +4,12 @@
 
 配置路由策略前，请确保满足以下条件：
 
--   本地IDC已经通过专线与阿里云连接。详细信息，请参见[自主申请物理专线接口](../../../../cn.zh-CN/物理专线连接/自主申请物理专线接口.md#)和[创建边界路由器](../../../../cn.zh-CN/边界路由器/创建边界路由器.md#)。
+-   本地IDC已经通过专线与阿里云连接。详细信息，请参见[自主申请物理专线接入](../../../../cn.zh-CN/快速入门/自主申请物理专线接入.md#)和[创建边界路由器](../../../../cn.zh-CN/边界路由器/创建边界路由器.md#)。
 -   您已经创建了云企业网实例，并将需要互通的网络实例加载到云企业网实例中。详细信息，请参见[创建云企业网实例](../../../../cn.zh-CN/用户指南/管理云企业网实例/创建云企业网实例.md#)和[加载网络实例](../../../../cn.zh-CN/用户指南/管理网络实例/加载网络实例.md#)。
 
 路由策略按照匹配规则允许或拒绝通过被匹配的路由，您可以通过设置路由策略规则修改允许通过的路由的属性。
 
-![同地域VBR通过路由策略实现主备路由](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1319148/156645523055143_zh-CN.png)
+![同地域VBR通过路由策略实现主备路由](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1319148/156645696455143_zh-CN.png)
 
 如上图，某公司在杭州拥有数据中心，该公司分别向两个运营商各申请一条专线，专线1的端口规格为10G，专线2的端口规格为1G。VPC、VBR1、VBR2均加入云企业网，前期该公司通过负载的方式将本地数据中心连接至阿里云，但由于专线2的端口规格较小，需将专线2备用，当专线1出现线路故障时，流量切换至专线2。
 
@@ -34,7 +34,7 @@
 
         **说明：** 默认情况下，允许通过的路由的优先级为50。您可以设置路由的优先级，取值范围为1~100，取值越小，优先级越高。
 
-    ![设置VBR1所在的线路为主用线路](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1319148/156645523155590_zh-CN.png)
+    ![设置VBR1所在的线路为主用线路](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1319148/156645696455590_zh-CN.png)
 
 
 ## 步骤2 设置VBR2所在线路为备用线路 {#section_ybz_m0g_4vl .section}
@@ -55,10 +55,10 @@
 
         **说明：** 默认情况下，允许通过的路由的优先级为50。您可以设置路由的优先级，取值范围为1~100，取值越小，优先级越高。
 
-    ![设置VBR2所在线路为备用线路](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1319148/156645523155591_zh-CN.png)
+    ![设置VBR2所在线路为备用线路](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1319148/156645696455591_zh-CN.png)
 
     添加路由策略后，您可以在**路由信息**页签下查看去往10.0.0.0/24的两条路由，其中一条为备用路由。
 
-    ![查看主备路由](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1319148/156645523155593_zh-CN.png)
+    ![查看主备路由](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1319148/156645696455593_zh-CN.png)
 
 
