@@ -4,7 +4,7 @@
 
 配置路由策略前，请确保满足以下条件：
 
--   本地IDC已经通过专线与阿里云连接。详细信息，请参见[自主申请物理专线接口](../../../../cn.zh-CN/物理专线连接/自主申请物理专线接口.md#)和[创建边界路由器](../../../../cn.zh-CN/边界路由器/创建边界路由器.md#)。
+-   本地IDC已经通过专线与阿里云连接。详细信息，请参见[自主申请物理专线接入](../../../../cn.zh-CN/快速入门/自主申请物理专线接入.md#)和[创建边界路由器](../../../../cn.zh-CN/边界路由器/创建边界路由器.md#)。
 -   您已经创建了云企业网实例，并将需要互通的网络实例加载到云企业网实例中。详细信息，请参见[创建云企业网实例](../../../../cn.zh-CN/用户指南/管理云企业网实例/创建云企业网实例.md#)和[加载网络实例](../../../../cn.zh-CN/用户指南/管理网络实例/加载网络实例.md#)。
 -   您已经购买了带宽包并设置了跨地域互通带宽。详细信息，请参见[购买带宽包](../../../../cn.zh-CN/用户指南/管理带宽包/购买带宽包.md#)和[设置跨地域互通带宽](../../../../cn.zh-CN/用户指南/管理跨地域互通带宽/设置跨地域互通带宽.md#)。
 
@@ -12,7 +12,7 @@
 
 **说明：** 删除默认路由策略可能造成路由环路，请您谨慎操作。
 
-![不同IDC间通过云企业网实现互通](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645514654882_zh-CN.png)
+![不同IDC间通过云企业网实现互通](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645693354882_zh-CN.png)
 
 如上图，IDC1位于北京，通过VBR1接入阿里云；IDC2位于杭州，通过VBR2接入阿里云。VBR1、VBR2均加入云企业网。默认情况下，IDC1与IDC2间不互通。如果您希望IDC1与IDC2间互通，您可以通过路由策略建立VBR1与VBR2间的互通关系。
 
@@ -33,11 +33,11 @@
         -   **源实例ID列表**：VBR2实例ID。
         -   **目的实例ID列表**：VBR1实例ID。
     -   **策略行为**：选择策略行为。本示例选择**允许**。
-    ![配置VBR1允许访问VBR2的路由策略](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645514655480_zh-CN.png)
+    ![配置VBR1允许访问VBR2的路由策略](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645693355480_zh-CN.png)
 
     添加路由策略后，您可以在**路由信息**页签下查看允许IDC1访问IDC2的路由。
 
-    ![设置允许IDC1访问IDC2的路由策略](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645514655562_zh-CN.png)
+    ![设置允许IDC1访问IDC2的路由策略](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645693355562_zh-CN.png)
 
 
 ## 步骤2 设置允许IDC2访问IDC1的路由策略 {#section_93p_493_xaj .section}
@@ -56,11 +56,11 @@
         -   **源实例ID列表**：VBR1实例ID。
         -   **目的实例ID列表**：VBR2实例ID。
     -   **策略行为**：选择策略行为。本示例选择**允许**。
-    ![设置允许IDC2访问IDC1的路由策略](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645514755486_zh-CN.png)
+    ![设置允许IDC2访问IDC1的路由策略](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645693355486_zh-CN.png)
 
     添加路由策略后，您可以在**路由信息**页签下查看允许IDC2访问IDC1的路由。
 
-    ![设置允许IDC2访问IDC1的路由策略](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645514755564_zh-CN.png)
+    ![设置允许IDC2访问IDC1的路由策略](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1280065/156645693355564_zh-CN.png)
 
 
 ## 步骤3 测试网络连通性 {#section_shj_1u8_ovm .section}
@@ -70,11 +70,11 @@
 1.  打开IDC1下PC的cmd窗口。
 2.  通过ping命令pingIDC2下PC的IP地址，验证通信是否正常。 经验证，IDC1下的PC可以访问IDC2下的PC。
 
-    ![IDC1下的PC可以访问IDC2下的PC](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1214245/156645514754781_zh-CN.png)
+    ![IDC1下的PC可以访问IDC2下的PC](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1214245/156645693454781_zh-CN.png)
 
 3.  打开IDC2下PC的cmd窗口。
 4.  通过ping命令pingIDC1下PC的IP地址，验证通信是否正常。 经验证，IDC2下的PC可以访问IDC1下的PC。
 
-    ![IDC2下的PC可以访问IDC1下的PC](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1214245/156645514754768_zh-CN.png)
+    ![IDC2下的PC可以访问IDC1下的PC](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1214245/156645693454768_zh-CN.png)
 
 
