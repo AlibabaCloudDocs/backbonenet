@@ -39,7 +39,7 @@
 -   当关联优先级取值为1时，路由策略关联当前路由策略的下一条路由策略。
 -   当关联优先级取值非1时，路由策略关联优先级必须大于当前路由策略的优先级。
 
- 仅策略行为是允许的路由策略通过路由后需要继续匹配关联优先级的路由策略。
+ 仅**MapResult**取值为**Permit**时，匹配通过的路由才会继续匹配关联的下一条路由策略。
 
  |
 |Description|String|否|test|路由策略的描述。
@@ -59,7 +59,7 @@
  |
 |DestinationInstanceIds.N|RepeatList|否|vpc-a|匹配路由的目的实例ID列表，为match语句。最多可输入32个实例ID。
 
- 目的实例ID列表仅策略应用方向为出地域网关方向时有效。
+ 目的实例ID列表仅策略应用方向为出地域网关方向且目的实例ID为本地域下实例时有效。
 
  |
 |DestinationInstanceIdsReverseMatch|Boolean|否|false|路由传递目的实例ID列表排除匹配模式，取值：
@@ -73,7 +73,7 @@
  |
 |DestinationRouteTableIds.N|RepeatList|否|vtb-a|匹配路由的目的路由表ID列表，为match语句。最多可输入32个路由表ID。
 
- 目的路由表仅策略应用方向为出地域网关方向时有效。
+ 目的路由表仅策略应用方向为出地域网关方向且目的路由表为本地域下路由表时有效。
 
  |
 |SourceChildInstanceTypes.N|RepeatList|否|VPC|匹配路由的源实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
@@ -81,7 +81,7 @@
  |
 |DestinationChildInstanceTypes.N|RepeatList|否|VPC|匹配路由的目的实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
 
- 目的实例类型仅策略应用方向为出地域网关方向时有效。
+ 目的实例类型仅策略应用方向为出地域网关方向且目的实例类型为本地域下实例类型时有效。
 
  |
 |DestinationCidrBlocks.N|RepeatList|否|1.1.1.0/10|匹配路由的前缀列表，为match语句。使用CIDR格式，最多可输入32个CIDR。
