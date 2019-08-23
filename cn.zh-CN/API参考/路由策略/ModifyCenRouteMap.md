@@ -33,10 +33,58 @@
 |Action|String|否|ModifyCenRouteMap|要执行的操作，取值：**ModifyCenRouteMap**。
 
  |
-|AsPathMatchMode|String|否|Include|匹配as-path模式，为match语句，取值：
+|NextPriority|Integer|否|20|关联的下一条路由策略的优先级，取值：**1**~**100**。
 
- -   **Include**：模糊匹配，匹配条件中的AS Path与被匹配路由的AS Path有重叠即判定为匹配成功。
--   **Complete**：精确匹配，匹配条件中的AS Path必须与被匹配路由的AS Path一致，才判定为匹配成功。
+ -   当未配置关联优先级时，路由策略无关联的下一条路由策略。
+-   当关联优先级取值为1时，路由策略关联当前路由策略的下一条路由策略。
+-   当关联优先级取值非1时，路由策略关联优先级必须大于当前路由策略的优先级。
+
+ 仅策略行为是允许的路由策略通过路由后需要继续匹配关联优先级的路由策略。
+
+ |
+|Description|String|否|test|路由策略的描述。
+
+ |
+|SourceRegionIds.N|RepeatList|否|cn-beijing|匹配路由的源地域ID列表，为match语句。最多可输入32个地域ID。
+
+ |
+|SourceInstanceIds.N|RepeatList|否|vpc-a|匹配路由的源实例ID列表，为match语句。最多可输入32个实例ID。
+
+ |
+|SourceInstanceIdsReverseMatch|Boolean|否|false|路由传递源实例ID列表排除匹配模式，取值：
+
+ -   **false**（默认）：路由传递源实例ID在`SourceInstanceIds`中时，匹配通过。
+-   **true**：路由传递源实例ID不在`SourceInstanceIds`中时，匹配通过。
+
+ |
+|DestinationInstanceIds.N|RepeatList|否|vpc-a|匹配路由的目的实例ID列表，为match语句。最多可输入32个实例ID。
+
+ 目的实例ID列表仅策略应用方向为出地域网关方向时有效。
+
+ |
+|DestinationInstanceIdsReverseMatch|Boolean|否|false|路由传递目的实例ID列表排除匹配模式，取值：
+
+ -   **false**（默认）：路由传递目的实例ID在`DestinationInstanceIds`中时，匹配通过。
+-   **true**：路由传递目的实例ID不在`DestinationInstanceIds`中时，匹配通过。
+
+ |
+|SourceRouteTableIds.N|RepeatList|否|vtb-a|匹配路由的源路由表ID列表，为match语句。最多可输入32个路由表ID。
+
+ |
+|DestinationRouteTableIds.N|RepeatList|否|vtb-a|匹配路由的目的路由表ID列表，为match语句。最多可输入32个路由表ID。
+
+ 目的路由表仅策略应用方向为出地域网关方向时有效。
+
+ |
+|SourceChildInstanceTypes.N|RepeatList|否|VPC|匹配路由的源实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
+
+ |
+|DestinationChildInstanceTypes.N|RepeatList|否|VPC|匹配路由的目的实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
+
+ 目的实例类型仅策略应用方向为出地域网关方向时有效。
+
+ |
+|DestinationCidrBlocks.N|RepeatList|否|1.1.1.0/10|匹配路由的前缀列表，为match语句。使用CIDR格式，最多可输入32个CIDR。
 
  |
 |CidrMatchMode|String|否|Include|匹配前缀模式，为match语句，取值：
@@ -51,6 +99,31 @@
 
 
  |
+|RouteTypes.N|RepeatList|否|System|匹配路由的类型列表，为match语句，取值：
+
+ -   **System**：系统路由，由系统自动生成的路由。
+-   **Custom**：用户路由，由用户手动添加的自定义路由。
+-   **BGP**：BGP路由，通告至BGP中的路由。
+
+ 支持输入多种类型。
+
+ |
+|MatchAsns.N|RepeatList|否|65501|匹配路由的as-path列表，为match语句。as-path是公认强制属性，描述了一条BGP路由在传递过程中所经过的AS的号码。
+
+ 仅支持AS SEQUENCE，不支持AS SET、AS CONFED SEQUENCE和AS CONFED SET，即只能是AS号列表，不支持集合和子列表。
+
+ |
+|AsPathMatchMode|String|否|Include|匹配as-path模式，为match语句，取值：
+
+ -   **Include**：模糊匹配，匹配条件中的AS Path与被匹配路由的AS Path有重叠即判定为匹配成功。
+-   **Complete**：精确匹配，匹配条件中的AS Path必须与被匹配路由的AS Path一致，才判定为匹配成功。
+
+ |
+|MatchCommunitySet.N|RepeatList|否|65501:1|匹配community集合，为match语句。每个community格式为nn:nn，nn取值范围为**1**~**65535**，最多输入32个community。community需要符合RFC 1997，不支持Large community（RFC 8092）。
+
+ **说明：** community配置错误可能导致路由不能发布到IDC侧。
+
+ |
 |CommunityMatchMode|String|否|Include|匹配community模式，为match语句，取值：
 
  -   **Include**：模糊匹配，匹配条件中的Community与被匹配路由的Community有重叠即判定为匹配成功。
@@ -63,85 +136,12 @@
 -   **Replace**：替换。
 
  |
-|Description|String|否|test|路由策略的描述。
-
- |
-|DestinationChildInstanceTypes.N|RepeatList|否|VPC,VBR,CCN|匹配路由的目的实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。多实例类型之间用逗号（,）分隔。
-
- 目的实例类型仅策略应用方向为出地域网关方向时有效。
-
- |
-|DestinationCidrBlocks.N|RepeatList|否|1.1.1.0/10, 2.0.0.0/16|匹配路由的前缀列表，为match语句。使用CIDR格式，多个CIDR用逗号（,）分隔，最多可输入32个CIDR。
-
- |
-|DestinationInstanceIds.N|RepeatList|否|vpc-a, vpc-b, vbr-a|匹配路由的目的实例ID列表，为match语句。多个实例ID之间用逗号（,）分隔，最多可输入32个实例ID。
-
- 目的实例ID列表仅策略应用方向为出地域网关方向时有效。
-
- |
-|DestinationInstanceIdsReverseMatch|Boolean|否|false|路由传递目的实例ID列表排除匹配模式，取值：
-
- -   **false**（默认）：路由传递目的实例ID在`DestinationInstanceIds`中时匹配不通过。
--   **true**：路由传递目的实例ID不在`DestinationInstanceIds`中时匹配通过。
-
- |
-|DestinationRouteTableIds.N|RepeatList|否|vtb-a, vtb-b|匹配路由的目的路由表ID列表，为match语句。多个路由表ID之间用逗号（,）分隔，最多可输入32个路由表ID。
-
- 目的路由表仅策略应用方向为出地域网关方向时有效。
-
- |
-|MatchAsns.N|RepeatList|否|65501|匹配路由的as-path列表，为match语句。as-path是公认强制属性，描述了一条BGP路由在传递过程中所经过的AS的号码。
-
- 仅支持AS SEQUENCE，不支持AS SET、AS CONFED SEQUENCE和AS CONFED SET，即只能是AS号列表，不支持集合和子列表。
-
- |
-|MatchCommunitySet.N|RepeatList|否|65501:1,65001:2,60011|匹配community集合，为match语句。每个community格式为nn:nn，nn取值范围为**1**~**65535**，每个community之间用逗号（,）分隔，最多输入32个community。community需要符合RFC 1997，不支持Large community（RFC 8092）。
-
- **说明：** community配置错误可能导致路由不能发布到IDC侧。
-
- |
-|NextPriority|Integer|否|20|关联的下一条路由策略的优先级，取值：**1**~**100**。
-
- -   当未配置关联优先级时，路由策略无关联的下一条路由策略。
--   当关联优先级取值为1时，路由策略关联当前路由策略的下一条路由策略。
--   当关联优先级取值非1时，路由策略关联优先级必须大于当前路由策略的优先级。
-
- 仅策略行为是允许的路由策略通过路由后需要继续匹配关联优先级的路由策略。
-
- |
-|OperateCommunitySet.N|RepeatList|否|65501:1,65001:2,60011|操作community的集合，为action语句。每个community格式为nn:nn，nn取值范围为**1**~**65535**，每个community之间用逗号（,）分隔，最多输入32个community。community需要符合RFC 1997，不支持Large community（RFC 8092）。
+|OperateCommunitySet.N|RepeatList|否|65501:1|操作community的集合，为action语句。每个community格式为nn:nn，nn取值范围为**1**~**65535**，最多输入32个community。community需要符合RFC 1997，不支持Large community（RFC 8092）。
 
  **说明：** community配置错误可能导致路由不能发布到IDC侧。
 
  |
 |Preference|Integer|否|22|修改路由的优先级，为action语句，取值：**1**~**100**，路由默认优先级为**50**，取值越小优先级越高。
-
- |
-|RouteTypes.N|RepeatList|否|System,Custom,BGP|匹配路由的类型列表，为match语句，取值：
-
- -   **System**：系统路由，由系统自动生成的路由。
--   **Custom**：用户路由，由用户手动添加的自定义路由。
--   **BGP**：BGP路由，通告至BGP中的路由。
-
- 支持输入多种类型，类型之间用逗号（,）分隔。
-
- |
-|SourceChildInstanceTypes.N|RepeatList|否|VPC,VBR,CCN|匹配路由的源实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。多实例类型之间用逗号（,）分隔。
-
- |
-|SourceInstanceIds.N|RepeatList|否|vpc-a, vpc-b, vbr-a|匹配路由的源实例ID列表，为match语句。多个实例ID之间用逗号（,）分隔，最多可输入32个实例ID。
-
- |
-|SourceInstanceIdsReverseMatch|Boolean|否|false|路由传递源实例ID列表排除匹配模式，取值：
-
- -   **false**（默认）：路由传递源实例ID在`SourceInstanceIds`中时匹配不通过。
--   **true**：路由传递源实例ID不在`SourceInstanceIds`中时匹配通过。
-
- |
-|SourceRegionIds.N|RepeatList|否|cn-beijing, cn-hangzhou|匹配路由的源地域ID列表，为match语句。多个地域ID之间用逗号（,）分隔，最多可输入32个地域ID。
-
- |
-|SourceRouteTableIds.N|RepeatList|否|vtb-a, vtb-b|匹配路由的源路由表ID列表，为match语句。多个路由表ID之间用逗号（,）分隔，最多可输入32个路由表ID。
 
  |
 
@@ -163,7 +163,6 @@ http(s)://[Endpoint]/?Action=ModifyCenRouteMap
 &CenId=cen-7qthudw0ll6jmc****
 &CenRegionId=cn-hangzhou
 &MapResult=Permit
-&NextPriority=20
 &Priority=10
 &RouteMapId=cenrmap-abcdedfghij****
 &<公共请求参数>
