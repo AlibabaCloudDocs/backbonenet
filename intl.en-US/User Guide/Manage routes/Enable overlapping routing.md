@@ -1,35 +1,34 @@
-# Enable overlapping routing {#concept_irn_snm_gfb .concept}
+# Enable overlapping routing {#task_1512598 .task}
 
-Cloud Enterprise Network \(CEN\) automatically learns routes from attached networks. If two routes overlap, the conflicted routes will be denied. With overlapping routing enabled, CEN can learn overlapping routes that have same prefix but different netmasks.
+This topic describes how to enable the overlapping routing function of a Cloud Enterprise Network \(CEN\) instance. After the overlapping routing function is enabled, CEN can learn overlapping routes that have the same prefix but different netmasks.
 
-## Enable overlapping routing {#section_p1w_tnm_gfb .section}
+**Note:** The overlapping routing function is enabled for CEN instances created after March 1, 2019 by default.
 
-For example, VPC-A is already attached to a CEN instance. A custom route entry with the destination CIDR block of 192.168.1.0/24 and next hop of an ECS instance is added to the VPC-A. By default, all learned the routes of IP address 192.168.1.0/x \(1<=x<=32\) published by other networks will be denied by CEN.
+## Before overlapping routing is enabled {#section_2vo_gid_68n .section}
 
-Similarly, if VPC-A has a route entry destined to 192.168.1.0/24 that is learned from CEN, you are not allowed to add a custom rout entry with the destination CIDR block 192.168.1.0/x \(1<=x<=32\), and all the routes with the destination CIDR block 192.168.1.0/x \(1<=x<=32\) will be denied by VPC-A.
+Assume that VPC-A is attached to a CEN instance. A custom route entry with the destination CIDR block of 192.168.1.0/24 and the next hop of an ECS instance is added to VPC-A. By default, CEN will deny all routes with destination IP addresses of 192.168.1.0/x \(1<=x<=32\) learnt from other attached networks.
 
-## After overlapping routing is enabled {#section_u2n_5nm_gfb .section}
+Similarly, if a route with the destination CIDR block 192.168.1.0/24 is learnt by VPC-A from CEN, you cannot create any route with the destination CIDR block 192.168.1.0/x \(1 <= x <= 32\) in VPC-A, and VPC-A rejects other routes that are sent from CEN with destination CIDR block of 192.168.1.0/x \(1 <= x <= 32\).
 
-With overlapping routing enabled, CEN can learn overlapping routes that have same prefix but different netmasks.
+## After overlapping routing is enabled {#section_bmm_rzb_9o0 .section}
 
-For example, VPC-A is already attached to a CEN instance. A custom route entry with the destination CIDR block of 192.168.1.0/24 and next hop of an ECS instance is added to the VPC-A. After overlapping routing is enabled, VPC-A can learn the route entry with the destination CIDR block 192.168.0.0/16 published by other networks in the CEN instance.
+With overlapping routing enabled, CEN can learn overlapping routes that have the same prefix but different netmasks.
 
-At the same time, the route entry with the CIDR block 168.1.0/24 and 192.168.0.0/16 can also be learned by CEN. CEN uses the longest prefix match algorithm to route traffic.
+Assume that a custom route with destination CIDR block of 192.168.1.0/24 and the next hop of ECS1 is added to VPC-A which has been attached to a CEN instance. After you enable overlapping routing, routes that are published from other networks in the CEN instance with destination CIDR block of 192.168.0.0/16 can still be accepted by VPC-A.
 
-## Exception {#section_cyx_xnm_gfb .section}
+Also, the routes with the destination CIDR blocks 192.168.1.0/24 and 192.168.0.0/16 can be learned by CEN. CEN uses the longest prefix match algorithm to route traffic.
 
-After this function is enabled, VPC will not accept routes that are subsets of a VSwitch. For example, the CIDR block of a VSwitch is 10.0.0.0/16, then the VPC that the VSwitch is located will not accept the route with the CIDR block 10.0.0.0/24 but will accept the route with the CIDR block 10.0.0.0/8.
+**Note:** After the overlapping routing function is enabled, VPC does not accept routes that are subsets of its VSwitch. Assume that the CIDR block of a VSwitch is 10.0.0.0/16. The VPC to which the VSwitch belongs does not accept routes with the CIDR block 10.0.0.0/24 but accepts routes with the CIDR block 10.0.0.0/8.
 
-## Procedure {#section_rcs_c4m_gfb .section}
+## Procedure {#section_5pu_dny_ybj .section}
 
-To enable the overlapping routing function, complete these steps:
+To enable the overlapping routing function, follow these steps:
 
 1.  Log on to the [CEN console](https://partners-intl.console.aliyun.com/#/cbn).
-2.  Click the ID of the target CEN instance.
-3.  In the **Basic Settings** area, click **Enable** next to the **Overlapping Routing Function** option.
+2.  On the Instances page, find the target CEN instance and click **Manage** in the **Actions** column.
+3.  In the Basic Settings section, click **Enable** next to **Overlapping Routing Function**.
+4.  In the Enable Overlapping Routing dialog box, click **OK**. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21814/154993471112715_en-US.png)
+    **Note:** After the overlapping routing function is enabled, it cannot be disabled.
 
-
-**Note:** Once the overlapping routing function is enabled, it cannot be disabled.
 
