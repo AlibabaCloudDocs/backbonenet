@@ -19,12 +19,6 @@
 |CenRegionId|String|否|cn-beijing|云企业网所在的地域。您可以通过调用[DescribeRegions](~~36063~~)接口获取地域ID。
 
  |
-|PageNumber|Integer|否|1|列表的页码，默认值为1。
-
- |
-|PageSize|Integer|否|10|分页查询时每页的行数，最大值为50，默认值为10。
-
- |
 |RouteMapId|String|否|cenrmap-abcdedfghij\*\*\*\*|路由策略的ID。
 
  |
@@ -40,20 +34,17 @@
 
 
  |
+|PageNumber|Integer|否|1|列表的页码，默认值为**1**。
+
+ |
+|PageSize|Integer|否|10|分页查询时每页的行数，最大值为**50**，默认值为**10**。
+
+ |
 
 ## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|PageNumber|Integer|1|当前页码。
-
- |
-|PageSize|Integer|10|每页包含的条目数。
-
- |
-|RequestId|String|54B48E3D-DF70-471B-AA93-08E683A1B45|请求ID。
-
- |
 |RouteMaps| | |路由策略信息。
 
  |
@@ -96,28 +87,28 @@
 |Description|String|abc|路由策略的描述信息。
 
  |
-|DestinationChildInstanceTypes| |VPC,VBR|匹配路由的目的实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
+|DestinationChildInstanceTypes| |VPC|匹配路由的目的实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
 
- 目的实例类型仅策略应用方向为出地域网关方向时有效。
-
- |
-|DestinationCidrBlocks| |1.1.1.0/10, 2.0.0.0/16|匹配路由的前缀列表，为match语句。
+ 目的实例类型仅策略应用方向为出地域网关方向且目的实例类型为本地域下实例类型时有效。
 
  |
-|DestinationInstanceIds| |vpc-a, vpc-b, vbr-a|匹配路由的目的实例ID列表，为match语句。
+|DestinationCidrBlocks| |1.1.1.0/10|匹配路由的前缀列表，为match语句。
 
- 目的实例ID列表仅策略应用方向为出地域网关方向时有效。
+ |
+|DestinationInstanceIds| |vpc-a|匹配路由的目的实例ID列表，为match语句。
+
+ 目的实例ID列表仅策略应用方向为出地域网关方向且目的实例ID为本地域下实例时有效。
 
  |
 |DestinationInstanceIdsReverseMatch|Boolean|false|路由传递目的实例ID列表排除匹配模式，取值：
 
- -   **false**（默认）：路由传递目的实例ID在`DestinationInstanceIds`中时匹配不通过。
--   **true**：路由传递目的实例ID不在`DestinationInstanceIds`中时匹配通过。
+ -   **false**（默认）：路由传递目的实例ID在`DestinationInstanceIds`中时，匹配通过。
+-   **true**：路由传递目的实例ID不在`DestinationInstanceIds`中时，匹配通过。
 
  |
-|DestinationRouteTableIds| |vtb-a, vtb-b|匹配路由的目的路由表ID列表，为match语句。
+|DestinationRouteTableIds| |vtb-a|匹配路由的目的路由表ID列表，为match语句。
 
- 目的路由表仅策略应用方向为出地域网关方向时有效。
+ 目的路由表仅策略应用方向为出地域网关方向且目的路由表为本地域下路由表时有效。
 
  |
 |MapResult|String|Permit|所有匹配条件通过后的策略行为，取值：
@@ -129,7 +120,7 @@
 |MatchAsns| |65501|匹配路由的as-path列表，为match语句。
 
  |
-|MatchCommunitySet| |65501:1,65001:2,60011|匹配community集合，为match语句。
+|MatchCommunitySet| |65501:1|匹配community集合，为match语句。
 
  |
 |NextPriority|Integer|33|关联的下一条路由策略的优先级，取值：**1**~**100**。
@@ -138,10 +129,10 @@
 -   当关联优先级取值为1时，路由策略关联当前路由策略的下一条路由策略。
 -   当关联优先级取值非1时，路由策略关联优先级必须大于当前路由策略的优先级。
 
- 仅策略行为是允许的路由策略通过路由后需要继续匹配关联优先级的路由策略。
+ 仅**MapResult**取值为**Permit**时，匹配通过的路由才会继续匹配关联的下一条路由策略。
 
  |
-|OperateCommunitySet| |65501:1,65001:2,60011|修改community的属性值，为action语句。
+|OperateCommunitySet| |65501:1|修改community的属性值，为action语句。
 
  |
 |Preference|Integer|20|修改路由的优先级，为action语句。
@@ -153,29 +144,35 @@
 |RouteMapId|String|cenrmap-abcdedfghij\*\*\*\*|路由策略的ID。
 
  |
-|RouteTypes| |System,Custom,BGP|匹配路由的类型列表，为match语句，取值：
+|RouteTypes| |System|匹配路由的类型列表，为match语句，取值：
 
  -   **System**：系统路由，由系统自动生成的路由。
 -   **Custom**：用户路由，由用户手动添加的自定义路由。
 -   **BGP**：BGP路由，通告至BGP中的路由。
 
  |
-|SourceChildInstanceTypes| |VPC,VBR,CCN|匹配路由的源实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
+|SourceChildInstanceTypes| |VPC|匹配路由的源实例类型列表，为match语句，取值：**VPC**|**VBR**|**CCN**。
 
  |
-|SourceInstanceIds| |vpc-a, vpc-b, vbr-a|匹配路由的源实例ID列表，为match语句。
+|SourceInstanceIds| |vpc-a|匹配路由的源实例ID列表，为match语句。
 
  |
 |SourceInstanceIdsReverseMatch|Boolean|false|路由传递源实例ID列表排除匹配模式，取值：
 
- -   **false**（默认）：路由传递源实例ID在`SourceInstanceIds`中时匹配不通过。
--   **true**：路由传递源实例ID不在`SourceInstanceIds`中时匹配通过。
+ -   **false**（默认）：路由传递源实例ID在`SourceInstanceIds`中时，匹配通过。
+-   **true**：路由传递源实例ID不在`SourceInstanceIds`中时，匹配通过。
 
  |
-|SourceRegionIds| |cn-beijing, cn-hangzhou|匹配路由的源地域ID列表，为match语句。
+|SourceRegionIds| |cn-beijing|匹配路由的源地域ID列表，为match语句。
 
  |
-|SourceRouteTableIds| |vtb-a, vtb-b|匹配路由的源路由表ID列表，为match语句。
+|SourceRouteTableIds| |vtb-a|匹配路由的源路由表ID列表，为match语句。
+
+ |
+|Status|String|Active|路由策略的状态，取值：
+
+ -   **Active**：可用。
+-   **Creating**：创建中。
 
  |
 |TransmitDirection|String|RegionIn|路由策略应用的方向，取值：
@@ -188,6 +185,18 @@
 
 例如路由从本地域网关发布到本地域下其他网络实例，或发布到其他地域网关。
 
+
+ |
+|PageSize|Integer|10|每页包含的条目数。
+
+ |
+|PageNumber|Integer|1|当前页码。
+
+ |
+|TotalCount|Integer|10|列表条目数。
+
+ |
+|RequestId|String|54B48E3D-DF70-471B-AA93-08E683A1B45|请求ID。
 
  |
 
