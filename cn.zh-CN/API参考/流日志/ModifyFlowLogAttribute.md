@@ -22,6 +22,9 @@
 |Action|String|否|ModifyFlowLogAttribute|要执行的操作，取值：**ModifyFlowLogAttribute**。
 
  |
+|ClientToken|String|否|02fb3da4-130e-11e9-8e44-0016e04115b|客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大值不超过64个ASCII字符。
+
+ |
 |Description|String|否|This is my Flowlog.|流日志描述。长度为2~256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
 
  |
@@ -33,7 +36,13 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|F7DDDC17-FA06-4AC2-8F35-59D2470FCFC1|请求ID。
+|RequestId|String|9A411874-2EC8-4633-9D30-9012DCE89DD1|请求ID。
+
+ |
+|Success|String|true|操作是否成功，取值：
+
+ -   **true**：操作成功。
+-   **false**：操作未成功。
 
  |
 
@@ -57,7 +66,8 @@ http(s)://[Endpoint]/?Action=ModifyFlowLogAttribute
 
 ``` {#xml_return_success_demo}
 <ModifyFlowLogAttributeResponse>
-	  <RequestId>F7DDDC17-FA06-4AC2-8F35-59D2470FCFC1</RequestId>
+	  <RequestId>9A411874-2EC8-4633-9D30-9012DCE89DD1</RequestId>
+      <Success>true</Success>
 </ModifyFlowLogAttributeResponse>
 ```
 
@@ -65,7 +75,8 @@ http(s)://[Endpoint]/?Action=ModifyFlowLogAttribute
 
 ``` {#json_return_success_demo}
 {
-	"RequestId":"F7DDDC17-FA06-4AC2-8F35-59D2470FCFC1"
+	"RequestId":"9A411874-2EC8-4633-9D30-9012DCE89DD1",
+	"Success":true
 }
 ```
 
