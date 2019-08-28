@@ -28,7 +28,7 @@
 -   **VBR**：边界路由器。
 
  |
-|DestinationCidrBlock|String|是|172.16.xx.xx/24|要解除的已发布目标路由网段。
+|DestinationCidrBlock|String|是|172.16.xx.xx/24|要解除的路由的目标网段。
 
  |
 |Action|String|否|WithdrawPublishedRouteEntries|要执行的操作，取值： **WithdrawPublishedRouteEntries**。
