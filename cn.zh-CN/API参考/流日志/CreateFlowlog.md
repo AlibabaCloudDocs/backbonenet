@@ -25,6 +25,9 @@
 |Action|String|否|CreateFlowlog|要执行的操作，取值：**CreateFlowLog**。
 
  |
+|ClientToken|String|否|02fb3da4-130e-11e9-8e44-0016e04115b|客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大值不超过64个ASCII字符。
+
+ |
 |Description|String|否|This is my Flowlog.|流日志的描述。长度为2~256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
 
  |
@@ -40,6 +43,12 @@
 
  |
 |RequestId|String|54B48E3D-DF70-471B-AA93-08E683A1B457|请求ID。
+
+ |
+|Success|String|true|操作是否成功，取值：
+
+ -   **true**：操作成功。
+-   **false**：操作未成功。
 
  |
 
@@ -64,8 +73,9 @@ http(s)://[Endpoint]/?Action=CreateFlowlog
 
 ``` {#xml_return_success_demo}
 <CreateFlowlogResponse>
-      <RequestId>54B48E3D-DF70-471B-AA93-08E683A1B457</RequestId>
-      <FlowLogId>flowlog-m5evbtbptxffgs****</FlowLogId>
+   	  <RequestId>3D6F9FD4-AE3E-416D-950F-FC3696E27977</RequestId>
+	  <FlowLogId>flowlog-kklh24tcz044ne****</FlowLogId>
+	  <Success>true</Success>
 </CreateFlowlogResponse>
 ```
 
@@ -73,8 +83,9 @@ http(s)://[Endpoint]/?Action=CreateFlowlog
 
 ``` {#json_return_success_demo}
 {
-	"RequestId":"54B48E3D-DF70-471B-AA93-08E683A1B457",
-	"FlowLogId":"flowlog-m5evbtbpt****"
+	"RequestId":"3D6F9FD4-AE3E-416D-950F-FC3696E27977",
+	"FlowLogId":"flowlog-kklh24tcz044ne****",
+	"Success":true
 }
 ```
 
