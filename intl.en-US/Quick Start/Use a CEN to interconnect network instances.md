@@ -8,11 +8,11 @@ To interconnect network instances under the same account in the same region, you
 
 Network instances
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741427954405_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741558058739_en-US.png)
 
 Procedure
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741427954406_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741558058740_en-US.png)
 
 ## Interconnect network instances under the same account in different regions {#section_7to_2q9_jcv .section}
 
@@ -20,11 +20,11 @@ To interconnect network instances under the same account in different regions, y
 
 Network instances
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741427954407_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741558058741_en-US.png)
 
 Procedure
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741427954408_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741558058742_en-US.png)
 
 ## Interconnect network instances under different accounts in the same region {#section_se0_12d_jdf .section}
 
@@ -32,11 +32,11 @@ To interconnect network instances under different accounts in the same region, y
 
 Network instances
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741427954409_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741558058743_en-US.png)
 
 Procedure
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741427954410_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741558058744_en-US.png)
 
 ## Interconnect network instances under different accounts in different regions {#section_e5r_fah_057 .section}
 
@@ -44,9 +44,9 @@ To interconnect network instances under different accounts in different regions,
 
 Network instances
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741428054411_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741558058745_en-US.png)
 
 Procedure
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741427954410_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227280/156741558058746_en-US.png)
 
