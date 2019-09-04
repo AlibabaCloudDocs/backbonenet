@@ -1,118 +1,160 @@
-# DescribeCenAttachedChildInstances {#reference_i4w_xmt_ndb .reference}
+# DescribeCenAttachedChildInstances {#doc_api_Cbn_DescribeCenAttachedChildInstances .reference}
 
-Query the networks attached to a CEN instance.
+Queries the networks associated with a CEN instance.
 
-## Request parameters {#section_cch_pjg_mdb .section}
+## Debug {#api_explorer .section}
 
-|Name|Type|Required|Description|
-|:---|:---|:-------|:----------|
-|Action|String|Yes| The action to perform. Valid value:
+[Use OpenAPI Explorer to perform debug operations and generate SDK code examples.](https://api.aliyun.com/#product=Cbn&api=DescribeCenAttachedChildInstances&type=RPC&version=2017-09-12)
 
- DescribeCenAttachedChildInstances
+## Request parameters {#parameters .section}
 
- |
-|CenId|String|Yes| The ID of the CEN instance.
-
- |
-|ChildInstanceType|String|No|The type of the network instance. Valid value: VPC|VBR|CCN.|
-|ChildInstanceRegionId|String|No|The region ID of the attached network.|
-|PageNumber|Integer|No| The number of pages to return. The default value is 1.
+|Parameter|Type|Required?|Example value|Description|
+|---------|----|---------|-------------|-----------|
+|CenId|String|Yes|cen-7qthudw0ll6jmcx\*\*\*\*| The ID of the CEN instance.
 
  |
-|PageSize|Integer|No| The number of rows per page. The maximum value is 50 and the default value is 10.
+|Action|String|No|DescribeCenAttachedChildInstances| Optional. The name of this action. Value: **DescribeCenAttachedChildInstances**
+
+ |
+|ChildInstanceRegionId|String|No|us-west-1| Optional. The region to which the network to be queried belongs.
+
+ |
+|ChildInstanceType|String|No|VPC| Optional. The type of the associated network. Valid values:
+
+ -   **VPC**
+-   **VBR**
+-   **CCN**
+
+ |
+|PageNumber|Integer|No|1| Optional. The page number. Default value: **1**
+
+ |
+|PageSize|Integer|No|10| Optional. The number of entries per page in the case of a paged query result. Maximum value: **50**. Default value: **10**
 
  |
 
-## Response parameters {#section_ugs_f1g_cz .section}
+## Response parameters {#resultMapping .section}
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|RequestId|String|The ID of the request.|
-|TotalCount|String|The number of queried entries.|
-|PageNumber|Integer|The current page number.|
-|PageSize|String|The number of entries on the current page.|
-|ChildInstances|List|A list of the attached networks.|
+|Parameter|Type|Example value|Description|
+|---------|----|-------------|-----------|
+|ChildInstances| | | A list of networks associated with the CEN instance.
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|CenId|String|The ID of the CEN instance.|
-|ChildInstanceId|String|The ID of the network.|
-|ChildInstanceType|String|The type of the network.|
-|ChildInstanceRegionId|String|The ID of the region where the network is located.|
-|Status|Status|The status of the network: attaching, attached, and detaching.|
-|ChildInstanceOwnerId|Long|The account ID to which the network belongs.|
+ |
+|CenId|String|cen-7qthudw0ll6jmx\*\*\*\*| The ID of the CEN instance.
 
-## Examples {#section_ix5_h1g_cz .section}
+ |
+|ChildInstanceAttachTime|String|2018-10-16T08:47Z| The time when the network is associated with the CEN instance.
 
-**Request example**
+ |
+|ChildInstanceId|String|vpc-m5ex5mr548eb5f6\*\*\*\*| The ID of the network.
 
-``` {#createVPCpub}
-https://cbn.aliyuncs.com/?Action=DescribeCenAttachedChildInstances
-&CenId=cen-kojok19x3j0q6kx
-&Common parameters
+ |
+|ChildInstanceOwnerId|Long|123456789| The ID of the account to which the network belongs.
+
+ |
+|ChildInstanceRegionId|String|cn-qingdao| The ID of the region to which the network belongs.
+
+ |
+|ChildInstanceType|String|VPC| The type of the network. Valid values:
+
+ -   **VPC**
+-   **VBR**
+-   **CCN**
+
+ |
+|Status|String|attaching| The status of the network. Valid values:
+
+ -   **attaching**: The network is being associated.
+-   **attached**: The network is already associated with the CEN instance.
+-   **detaching**: The network is being disassociated from the CEN instance.
+
+ |
+|PageNumber|Integer|1| The current page number.
+
+ |
+|PageSize|Integer|12| The number of entries per page.
+
+ |
+|RequestId|String|CDE065A6-D24D-4CE9-A45D-3BBD45B22311| The ID of the request.
+
+ |
+|TotalCount|Integer|1| The total number of queried entries.
+
+ |
+
+## Examples {#demo .section}
+
+Request example
+
+``` {#request_demo}
+
+http(s)://[Endpoint]/? Action=DescribeCenAttachedChildInstances
+&CenId=cen-7qthudw0ll6jmcx****
+&<CommonParameters>
+
 ```
 
- **Response example** 
+Response examples
 
--   XML format
+`XML` format
 
-    ```
-    <? xml version="1.0" encoding="UTF-8"? >
-    <DescribeCenAttachedChildInstancesResponse>
-       <ChildInstances <ChildInstance>
-                <CenId>cen-kojok19x3j0q6kx5qf</CenId>
-                <ChildInstanceId>vpc-hp3kz27b1uv9hsmm9vqiv</ChildInstanceId>
-                <ChildInstanceOwnerId>189457327282****</ChildInstanceOwnerId>
-                <ChildInstanceRegionId>cn-huhehaote</ChildInstanceRegionId>
-                <ChildInstanceType>VPC</ChildInstanceType>
-                <Status>Attached</Satus>
-            </ChildIntance>
-            <ChildInstance>
-                <CenId>cen-kojok19x3j0q6kx5qf</CenId>
-                <ChildInstanceId>vpc-gw85r5kr8urw957szm455</ChildInstanceId>
-                <ChildInstanceOwnerId>189457327282****</ChildInstanceOwnerId>
-                <ChildInstanceRegionId>eu-central-1</ChildInstanceRegionId>
-                <ChildInstanceType>VPC</ChildInstanceType>
-                <Status>Attched</Status>
-        e>
-          </ChildInstance>
-       </ChildInstances>
-       <PageNumber>1</PageNumber>
-       <PageSize>10</PageSize>
-       <RequestId>50F8E0AB-A225-41C0-AC88-FFB51A4F5C72</RequestId>
-       <TotalCount>3</TotalCount>
-    </DescribeCenAttachedChildInstancesResponse>
-    ```
+``` {#xml_return_success_demo}
+<DescribeCenAttachedChildInstancesResponse>
+	  <PageNumber>1</PageNumber>
+	  <ChildInstances>
+		    <ChildInstance>
+			      <Status>Attached</Status>
+			      <ChildInstanceOwnerId>123456789</ChildInstanceOwnerId>
+			      <ChildInstanceId>vpc-hp3kz27b1uv9hsmm9****</ChildInstanceId>
+			      <ChildInstanceRegionId>cn-huhehaote</ChildInstanceRegionId>
+			      <CenId>cen-kojok19x3j0q6k****</CenId>
+			      <ChildInstanceType>VPC</ChildInstanceType>
+		    </ChildInstance>
+		    <ChildInstance>
+			      <Status>Attached</Status>
+			      <ChildInstanceOwnerId>123456789</ChildInstanceOwnerId>
+			      <ChildInstanceId>vpc-gw85r5kr8urw957sz****</ChildInstanceId>
+			      <ChildInstanceRegionId>eu-central-1</ChildInstanceRegionId>
+			      <CenId>cen-kojok19x3j0q6k****</CenId>
+			      <ChildInstanceType>VPC</ChildInstanceType>
+		    </ChildInstance>
+	  </ChildInstances>
+	  <TotalCount>3</TotalCount>
+	  <PageSize>10</PageSize>
+	  <RequestId>50F8E0AB-A225-41C0-AC88-FFB51A4F5C72</RequestId>
+</DescribeCenAttachedChildInstancesResponse>
+```
 
--   JSON format
+`JSON` format
 
-    ```
-    {
-       "PageNumber":1,
-       "ChildInstances":{
-          "ChildInstance":[
-             {
-                "Status":"Attached",
-                "ChildInstanceOwnerId":"189457327282****",
-                "ChildInstanceId":"vpc-hp3kz27b1uv9hsmm9vqiv",
-                "ChildInstanceRegionId":"cn-huhehaote",
-                "CenId":"cen-kojok19x3j0q6kx5qf",
-                "ChildInstanceType":"VPC"
-             },
-             {
-                "Status":"Attached",
-                "ChildInstanceOwnerId":"189457327282****",
-                "ChildInstanceId":"vpc-gw85r5kr8urw957szm455",
-                "ChildInstanceRegionId":"eu-central-1",
-                "CenId":"cen-kojok19x3j0q6kx5qf",
-                "ChildInstanceType":"VPC"
-             }
-          ]
-       },
-       "TotalCount":3,
-       "PageSize":10,
-       "RequestId":"50F8E0AB-A225-41C0-AC88-FFB51A4F5C72"
-    }
-    ```
+``` {#json_return_success_demo}
+{
+	"PageNumber":1,
+	"ChildInstances":{
+		"ChildInstance":[
+			{
+				"Status":"Attached",
+				"ChildInstanceOwnerId":"123456789",
+				"ChildInstanceId":"vpc-hp3kz27b1uv9hsmm9****",
+				"ChildInstanceRegionId":"cn-huhehaote",
+				"CenId":"cen-kojok19x3j0q6k****",
+				"ChildInstanceType":"VPC"
+			},
+			{
+				"Status":"Attached",
+				"ChildInstanceOwnerId":"123456789",
+				"ChildInstanceId":"vpc-gw85r5kr8urw957sz****",
+				"ChildInstanceRegionId":"eu-central-1",
+				"CenId":"cen-kojok19x3j0q6k****",
+				"ChildInstanceType":"VPC"
+			}
+		]
+	},
+	"TotalCount":3,
+	"PageSize":10,
+	"RequestId":"50F8E0AB-A225-41C0-AC88-FFB51A4F5C72"
+}
+```
 
+## Errors {#section_mt7_cgg_70t .section}
 
