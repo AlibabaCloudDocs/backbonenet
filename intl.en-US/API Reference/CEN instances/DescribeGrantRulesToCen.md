@@ -1,89 +1,113 @@
-# DescribeGrantRulesToCen {#reference_i4w_xmt_ndb .reference}
+# DescribeGrantRulesToCen {#doc_api_Cbn_DescribeGrantRulesToCen .reference}
 
-Query the networks that have been authorized to CEN.
+Queries the authorization relationship between the associated networks and a CEN instance in a specified region.
 
-**Note:** This API is an API of VPC. Therefore, the endpoint of the API is`vpc.aliyuncs.com` and the API version is 2016-04-28.
+**Note:** This API is a VPC API. Therefore, the endpoint of this API is `vpc.aliyuncs.com`. The API version is 2016-04-28.
 
-## Request parameters {#section_dmr_mhp_tdb .section}
+## Debug {#api_explorer .section}
 
-|Name|Type|Required|Description|
-|:---|:---|:-------|:----------|
-| Action|String|Yes| The action to perform. Valid value:
+[Use OpenAPI Explorer to perform debug operations and generate SDK code examples.](https://api.aliyun.com/#product=Cbn&api=DescribeGrantRulesToCen&type=RPC&version=2017-09-12)
 
-  DescribeGrantRulesToCen 
+## Request parameters {#parameters .section}
+
+|Parameter|Type|Required?|Example value|Description|
+|---------|----|---------|-------------|-----------|
+|CenId|String|Yes|cen-7qthudw0ll6jmxx\*\*\*\*| The ID of the CEN instance.
 
  |
-| RegionId|String|Yes|The ID of the region where the network is located.|
-| InstanceId|String|Yes|The ID of the network.|
-| InstanceType|String|Yes|The type of the network. Valid value: VPC | VBR |
+|ProductType|String|Yes|VPC| The product type.
 
-## Response parameters {#section_ugs_f1g_cz .section}
+ |
+|RegionId|String|Yes|cn-hangzou| The ID of the region to which the network belongs.
 
-|Name|Type|Description|
-|:---|:---|:----------|
-| RequestId|String|The ID of the request.|
-| TotalCount|String|The number of queried entries.|
-| PageNumber|Integer|The current page number.|
-| PageSize|String|The number of entries on the current page.|
-| CenGrantRules|List|A list of the authorized networks.|
+ |
+|Action|String|No|DescribeGrantRulesToCen| Optional. The name of this action. Value: **DescribeGrantRulesToCen**
 
-|Name|Type|Description|
-|:---|:---|:----------|
-| CenInstanceId|String|The ID of the CEN instance.|
-| CenOwnerId|String|The account ID that the network belongs to.|
-| CreationTime|String|The time at which the network instance is authorized in the format of YYYY-MM-DDThh:mmZ.|
+ |
 
-## Examples {#section_ix5_h1g_cz .section}
+## Response parameters {#resultMapping .section}
 
- **Request example**
+|Parameter|Type|Example value|Description|
+|---------|----|-------------|-----------|
+|GrantRules| | | The details of the authorization relationship.
 
-``` {#createVPCpub}
-https://vpc.aliyuncs.com/?Action=DescribeGrantRulesToCen
-&InstanceId=vpc-o6wcsp5lcdf4b5kcdcytm
-&RegionId=cn-hangzhou-test-306
-&InstanceType=VPC
-&CommonParameters
+ |
+|CenId|String|cen-7qthudw0ll6jmccc\*\*\*\*| The ID of the CEN instance.
+
+ |
+|ChildInstanceId|String|vpc-bp18sth14qii3pnvc\*\*\*\*| The ID of the associated network \(VPC or VBR\).
+
+ |
+|ChildInstanceOwnerId|Long|1231579085529123| The ID of the account to which the network belongs.
+
+ |
+|ChildInstanceRegionId|String|cn-hangzhou| The ID of the region to which the network belongs.
+
+ |
+|ChildInstanceType|String|VPC| The type of the network. Valid values:
+
+ -   **VPC**
+-   **VBR**
+-   **CCN**
+
+ |
+|RequestId|String|330714D1-F335-4CE2-9D29-F54445937387| The ID of the request.
+
+ |
+
+## Examples {#demo .section}
+
+Request example
+
+``` {#request_demo}
+
+http(s)://[Endpoint]/? Action=DescribeGrantRulesToCen
+&CenId=cen-7qthudw0ll6jmxx****
+&ProductType=VPC
+&RegionId=cn-hangzou
+&<CommonParameters>
+
 ```
 
- **Response example** 
+Response examples
 
--   XML format
+`XML` format
 
-    ```
-    <? xml version="1.0" encoding="UTF-8"? >
-    <DescribeGrantRulesToCenResponse>
-        <TotalCount>1</TotalCount>
-        <PageNumber>1</PageNumber>
-        <CbnGrantRules>
+``` {#xml_return_success_demo}
+<DescribeGrantRulesToCenResponse>
+      <TotalCount>1</TotalCount>
+      <PageNumber>1</PageNumber>
+      <CbnGrantRules>
             <CbnGrantRule>
-                <CbnInstanceId>cbn-6ugox0vl0zff4gl0b8</CbnInstanceId>
-                <Cbnownerid> 101664776284**** </cbnownerid>
-                <CreationTime>2018-01-18T11:49:09Z</CreationTime>
+                  <CbnInstanceId>cbn-6ugox0vl0zff4g****</CbnInstanceId>
+                  <CbnOwnerId>101664776xxxx</CbnOwnerId>
+                  <CreationTime>2018-01-18T11:49:09Z</CreationTime>
             </CbnGrantRule>
-        </CbnGrantRules>
-        <PageSize>10</PageSize>
-        <RequestId>330714D1-F335-4CE2-9D29-F54445937387</RequestId>
-    </DescribeGrantRulesToCenResponse>
-    ```
+      </CbnGrantRules>
+      <PageSize>10</PageSize>
+      <RequestId>330714D1-F335-4CE2-9D29-F54445937387</RequestId>
+</DescribeGrantRulesToCenResponse>
+```
 
--   JSON format
+`JSON` format
 
-    ```
-    {
-      "TotalCount": 1,
-      "PageNumber": 1,
-      "CbnGrantRules": {
-        "CbnGrantRule": [
-          {
-            "CbnInstanceId": "cbn-6ugox0vl0zff4gl0b8",
-            "CbnOwnerId": 101664776284****,
-            "CreationTime": "2018-01-18T11:49:09Z"
-          }
-        ]
-      },
-      "PageSize": 10,
-      "RequestId": "330714D1-F335-4CE2-9D29-F54445937387"
-    }
-    ```
+``` {#json_return_success_demo}
+{
+	"PageNumber":1,
+	"CbnGrantRules":{
+		"CbnGrantRule":[
+			{
+				"CreationTime":"2018-01-18T11:49:09Z",
+				"CbnInstanceId":"cbn-6ugox0vl0zff4g****",
+				"CbnOwnerId":"101664776xxxx"
+			}
+		]
+	},
+	"TotalCount":1,
+	"PageSize":10,
+	"RequestId":"330714D1-F335-4CE2-9D29-F54445937387"
+}
+```
 
+## Errors {#section_67b_4zw_w7p .section}
 
