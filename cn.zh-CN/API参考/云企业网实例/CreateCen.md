@@ -19,7 +19,7 @@
 |Description|String|否|云企业网|云企业网实例的描述信息。长度为2~256个字符，必须以字母或中文开头，但不能以`http://`或`https://`开头。
 
  |
-|Name|String|否|test|云企业网实例的名称。长度为2~128个字符，必须以字母或中文开头，可包含数字，点号（.），下划线（\_）和短横线（-），但不能以`http://`或`https://`开头。
+|Name|String|否|test|云企业网实例的名称。长度为2~128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（\_）和短横线（-），但不能以`http://`或`https://`开头。
 
  |
 |ProtectionLevel|String|否|FULL|设置网段重叠冲突的级别，取值：
@@ -73,5 +73,5 @@ http(s)://[Endpoint]/?Action=CreateCen
 
 ## 错误码 { .section}
 
-访问[错误中心](https://error-center.aliyun.com/status/product/Cbn)查看更多错误码。
+访问[错误中心](https://error-center.alibabacloud.com/status/product/Cbn)查看更多错误码。
 
