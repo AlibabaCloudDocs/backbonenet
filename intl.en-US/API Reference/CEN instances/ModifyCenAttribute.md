@@ -1,64 +1,75 @@
-# ModifyCenAttribute {#reference_i4w_xmt_ndb .reference}
+# ModifyCenAttribute {#doc_api_Cbn_ModifyCenAttribute .reference}
 
-Modify the name and description of a CEN instance.
+Modifies the name and description of a CEN instance.
 
-## Request parameters {#section_cch_pjg_mdb .section}
+## Debug {#api_explorer .section}
 
-|Name|Type|Required|Description|
-|:---|:---|:-------|:----------|
-|Action|String|Yes| The action to perform. Valid value:
+[Use OpenAPI Explorer to perform debug operations and generate SDK code examples.](https://api.aliyun.com/#product=Cbn&api=ModifyCenAttribute&type=RPC&version=2017-09-12)
 
- ModifyCenAttribute
+## Request parameters {#parameters .section}
 
- |
-|CenId|String|Yes| The ID of the CEN instance.
-
- |
-|Name|String|No| The name of the instance.
-
- The name can contain \[2,128\] characters and numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with `http://` or `https://`.
+|Parameter|Type|Required?|Example value|Description|
+|---------|----|---------|-------------|-----------|
+|CenId|String|Yes|cen-7qthudw0ll6jmc\*\*\*\*| The ID of the CEN instance.
 
  |
-|Description|String|No| The description of the instance.
+|Action|String|No|ModifyCenAttribute| Optional. The name of this action. Value: **ModifyCenAttribute**.
 
- The description can contain \[2,256\] characters and must start with English letters, but cannot start with `http://` or `https://`.
+ |
+|Description|String|No|cen| Optional. The description of the CEN instance. The description must be 2 to 256 characters in length. It must start with a letter or a Chinese character, and cannot start with `http://` or `https://`.
+
+ |
+|Name|String|No|test| Optional. The name of the CEN instance. The name must be 2 to 128 characters in length and can contain letters, numbers, periods \(.\), underscores \(\_\), and hyphens \(-\). The name must start with a letter or a Chinese character. It cannot start with `http://` or `https://`.
+
+ |
+|ProtectionLevel|String|No|FULL| Optional. The level of the routing overlapping function. Valid values:
+
+ -   **FULL**: No overlapped routes are allowed.
+-   **REDUCE**: Overlapped routes are allowed. However, the overlapped routes cannot be the same.
 
  |
 
-## Response parameters {#section_ugs_f1g_cz .section}
+## Response parameters {#resultMapping .section}
 
-|Name|Type|Description|
-|:---|:---|:----------|
-|RequestId|String|The ID of the request.|
+|Parameter|Type|Example value|Description|
+|---------|----|-------------|-----------|
+|RequestId|String|455AC20C-7061-446A-BDBD-B3BEE0856304| The ID of the request.
 
-## Examples {#section_ix5_h1g_cz .section}
+ |
 
-**Request example**
+## Examples {#demo .section}
 
-``` {#createVPCpub}
-https://cbn.aliyuncs.com/?Action=ModifyCenAttribute
-&CenId=cen-04sgjpvkc062ahzd26
-&Name=cen1
-&Common parameters
+Request example
+
+``` {#request_demo}
+
+http(s)://[Endpoint]/? Action=ModifyCenAttribute
+&CenId=cen-7qthudw0ll6jmc****
+&<CommonParameters>
+
 ```
 
-**Response example**
+Response examples
 
--   XML format
+`XML` format
 
-    ```
-    <? xml version="1.0" encoding="UTF-8"? >
-    <ModifyCenAttributeResponse>
-         <RequestId>13526224-5780-4426-8BDF-BC8B08700F22</RequestId>
-    </ModifyCenAttributeResponse>
-    ```
+``` {#xml_return_success_demo}
+<ModifyCenAttributeResponse>
+       <RequestId>13526224-5780-4426-8BDF-BC8B08700F22</RequestId>
+</ModifyCenAttributeResponse>
+```
 
--   JSON format
+`JSON` format
 
-    ```
-    
-        "RequestId":"13526224-5780-4426-8BDF-BC8B08700F22"
-    
-    ```
+``` {#json_return_success_demo}
+{
+	"RequestId":"13526224-5780-4426-8BDF-BC8B08700F22"
+}
+```
 
+## Errors {#section_1r6_6nd_w9o .section}
+
+|HTTP status code|Error code|Error message|Description|
+|----------------|----------|-------------|-----------|
+|400|InvalidOperation.EnhanceProtectionLevel|Your request to enhance CBN protection level cannot be processed. Please contact customer support to continue this operation.|The request to increase the CBN level cannot be processed. If you must perform this operation, contact the customer service.|
 
