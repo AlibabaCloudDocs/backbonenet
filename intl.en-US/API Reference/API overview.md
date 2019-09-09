@@ -15,8 +15,6 @@ This topic lists available APIs for Cloud Enterprise Network \(CEN\).
 |[DescribeCenAttachedChildInstances](reseller.en-US/API Reference/CEN instances/DescribeCenAttachedChildInstances.md)|Views the network instances attached to the CEN instance.|
 |[DetachCenChildInstance](reseller.en-US/API Reference/CEN instances/DetachCenChildInstance.md)|Detaches a network instance from a CEN instance.|
 |[DescribeGrantRulesToCen](reseller.en-US/API Reference/CEN instances/DescribeGrantRulesToCen.md)|Views the permissions that a network instance grants to a CEN instance.|
-|[GrantInstanceToCen](reseller.en-US/API Reference/CEN instances/GrantInstanceToCen.md)|Grants permissions to a CEN instance before attaching any network instance that belongs to another account to the CEN instance.|
-|[RevokeInstanceFromCen](reseller.en-US/API Reference/CEN instances/RevokeInstanceFromCen.md)|Revokes the permissions granted to a CEN instance by a network instance.|
 |[DescribeChildInstanceRegions](reseller.en-US/API Reference/CEN instances/DescribeChildInstanceRegions.md)|Queries the regions of the network instances of the same network type.|
 
 ## Bandwidth package APIs {#section_a1x_pjm_hly .section}
