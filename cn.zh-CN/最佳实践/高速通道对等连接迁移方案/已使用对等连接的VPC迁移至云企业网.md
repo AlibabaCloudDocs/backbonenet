@@ -10,7 +10,7 @@
 
 **说明：** 如果存在未开启网络重叠功能的老实例，请开启网络重叠功能。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630333/156811164849935_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630333/156811210149935_zh-CN.png)
 
 ## 迁移操作 {#section_lof_6p8_d68 .section}
 
@@ -18,11 +18,11 @@
 
 **说明：** 在迁移前，确保您已经完成所需的准备工作。
 
-1.  登录[云企业网控制台](https://cen.console.aliyun.com)。
+1.  登录[云企业网管理控制台](https://cen.console.aliyun.com)。
 2.  在云企业网实例页面，单击CEN实例ID链接。
 3.  在网络实例管理页面，单击**加载网络实例**加载要迁移的VPC实例。详细说明，请参见[加载网络实例](../cn.zh-CN/用户指南/管理网络实例/加载网络实例.md#)。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811164849889_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811210249889_zh-CN.png)
 
 4.  如果需要跨地域互通，请在CEN实例中购买带宽包并配置私网互通带宽。
 
@@ -30,15 +30,15 @@
 
 5.  如果VPC中存在指向ECS实例、VPN网关、HAVIP等路由条目，请根据连通性需求，在VPC控制台将这些路由发布到CEN中。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811164949940_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811210249940_zh-CN.png)
 
-6.  登录[云企业网控制台](https://cen.console.aliyun.com)，在**路由信息**页面查看路由配置。确保加载VPC后，不存在冲突路由。
+6.  登录[云企业网管理控制台](https://cen.console.aliyun.com)，在**路由信息**页面查看路由配置。确保加载VPC后，不存在冲突路由。
 
     高速通道对等连接配置的静态路由优先于CEN的动态路由。即如果存在高速通道静态路由，不允许任何比该静态路由更明细或与该静态路由相同的CEN路由学习进来。此时建议您将高速通道路由进行拆分，在CEN完成路由学习后再删除拆分的路由，保证平稳迁移。
 
     以下图中的CEN路由172.16.1.0/24为例，该路由比指向高速通道的路由172.16.0.0/16更明细，所以出现了路由冲突。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811164949944_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811210249944_zh-CN.png)
 
     -   如果采用闪断迁移，可以（在VPC控制台上）直接删除高速通道路由172.16.0.0/16，CEN路由自动生效，完成该路由的迁移。
 
@@ -48,15 +48,15 @@
         1.  在[专有网络管理控制台](https://vpcnext.console.aliyun.com/nat/)，找到要拆分的路由条目所在的路由表。
         2.  单击**添加路由条目**分别添加两条目标网段为172.16.1.0/25和172.16.1.128/25，下一跳为高速通道路由器接口的路由条目。
 
-            ![查看路由条目](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811164949945_zh-CN.png)
+            ![查看路由条目](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811210249945_zh-CN.png)
 
         3.  添加成功后，在VPC路由表中单击**删除**删除高速通道路由172.16.0.0/16。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811164949946_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811210249946_zh-CN.png)
 
         4.  单击**刷新**查看CEN路由是否生效。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811164949947_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630439/156811210349947_zh-CN.png)
 
         5.  CEN路由生效后，在VPC路由表中删除172.16.1.0/25和172.16.1.128/25两条明细路由，完成该条路由的平滑迁移。
 
