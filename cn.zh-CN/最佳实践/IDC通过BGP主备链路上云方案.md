@@ -12,7 +12,7 @@
 
 2.  配置健康检查
 
-    设置健康检查，是保障等价冗余专线链路中一条链路中断后，流量可以切换到另外一条链路的前提。详情参见[健康检查](../../../../intl.zh-CN/用户指南/健康检查.md#)。
+    设置健康检查，是保障等价冗余专线链路中一条链路中断后，流量可以切换到另外一条链路的前提。详情参见[设置健康检查](../../../../cn.zh-CN/用户指南/健康检查/设置健康检查.md#)。
 
 3.  加载网络实例将需要互通的VBR和VPC加载到已创建的云企业网实例中。
 4.  配置路由
@@ -36,17 +36,17 @@
     |上海VPC|192.168.3.0/24|
 
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156687114_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15681130047114_zh-CN.png)
 
 ## IDC侧宣告BGP路由并设置权重 {#section_kvd_hqn_l2b .section}
 
-假设IDC和边界路由器之间分别已经建立起BGP邻居关系（详情参见[创建BGP邻居](../../../../intl.zh-CN/历史文档/BGP/管理BGP邻居.md#section_fxm_rbb_ydb)）。
+假设IDC和边界路由器之间分别已经建立起BGP邻居关系（详情参见[创建BGP邻居](../../../../cn.zh-CN/历史文档/BGP/管理BGP邻居.md#section_fxm_rbb_ydb)）。
 
 现在需要在IDC侧配置向阿里云宣告的BGP路由（10.1.1.0/24），并通过设置AS-Path来确定选路权重，实现阿里云到IDC路由的主备模式。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156687115_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15681130047115_zh-CN.png)
 
-如上图所示绿色链路（CPE1）为主链路，红色链路（CPE2）为备份链路，则IDC侧分别在两个CPE的BGP配置如下表所示。
+如上图所示，绿色链路（CPE1）为主链路，红色链路（CPE2）为备份链路，则IDC侧分别在两个CPE的BGP配置如下表所示。
 
 您可以通过设置AS-Path的长度来确定路由选路的优先级。As-Path长度越短，优先级越高。
 
@@ -62,17 +62,17 @@
 
 -   边界路由器BGP路由
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156687116_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15681130047116_zh-CN.png)
 
-    如下图所示，在VBR1和VBR2可以看到从对端邻居学到的路由信息和下一跳。由于VBR已经加载到云企业网中，所以VBR会将从IDC侧学来的BGP路由信息发送到云企业网，包括AS-Path。
+    如上图所示，在VBR1和VBR2可以看到从对端邻居学到的路由信息和下一跳。由于VBR已经加载到云企业网中，所以VBR会将从IDC侧学来的BGP路由信息发送到云企业网，包括AS-Path。
 
 -   全量路由配置
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15565156687117_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15706/15681130047117_zh-CN.png)
 
     由于VBR和VPC均已加载到云企业网中，那么从VBR上学来的BGP路由也会发布到云企业网中，云企业网会基于选路权重等信息，将路由同步到云企业网内部。
 
-    两个VBR从IDC侧学习到的BGP路由目标网段一致，但是路由权重不同，VBR1作为主选路（AS-Path短），VBR2是备选（AS-Path长），那么云企业网会将该路由的属性通知到云企业网中的其他网络实例比如VPC。从VPC的路由表中就可以看到去往10.1.1.0/24的路由均指向VBR1。
+    两个VBR从IDC侧学习到的BGP路由目标网段一致，但是路由权重不同，VBR1作为主选路（AS-Path短），VBR2是备选（AS-Path长），那么云企业网会将该路由的属性通知到云企业网中的其他网络实例例如VPC。从VPC的路由表中就可以看到去往10.1.1.0/24的路由均指向VBR1。
 
     云企业网也会将云企业网内系统路由重发布到BGP中，所以在IDC的BGP路由表中就可以看到学习到的云企业网中的路由信息，并且下一跳分别指向与IDC建立邻居的两个VBR的接口IP。
 
