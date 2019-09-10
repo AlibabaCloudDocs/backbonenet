@@ -67,7 +67,7 @@
 |ClientToken|String|否|SSJFLAFHHFHFF-SJSJJFBWHHE-SHHFJJDBD|客户端token，用于保证请求的幂等性。由客户端生成该参数值，要保证在不同请求间唯一，最大值不超过64个ASCII字符。
 
  |
-|Name|String|否|cen|带宽包的名称。长度为2~128个字符，必须以字母或中文开头，可包含数字，点号（.）、下划线（\_）和短横线（-），但不能以`http://`或`https://`开头。
+|Name|String|否|cen|带宽包的名称。长度为2~128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（\_）和短横线（-），但不能以`http://`或`https://`开头。
 
  |
 |Description|String|否|带宽包|带宽包描述。
