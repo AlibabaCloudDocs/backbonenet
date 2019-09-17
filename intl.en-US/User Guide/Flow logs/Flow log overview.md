@@ -1,9 +1,10 @@
 # Flow log overview {#concept_778527 .concept}
 
-This topic describes the flow log function of Cloud Enterprise Networks \(CENs\). A flow log is used to capture the traffic data of the network instances that belong to different regions associated with a CEN instance. After you enable the flow log function, you can use the data aggregated in flow logs to analyze cross-region traffic flows, minimize traffic costs, and troubleshoot network faults.
+This topic describes the flow log function of Cloud Enterprise Networks \(CENs\). By using the flow log function, you can capture the traffic data of the network instances in different regions of a CEN. You can also use the data aggregated in flow logs to analyze cross-region traffic flows, minimize traffic costs, and troubleshoot network faults.
 
 **Note:** 
 
+-   To add your account to the whitelist for the flow log function, open a ticket.
 -   Flow logs only capture cross-region traffic data of mutual access. Traffic between two VPCs in a region, or traffic among VPCs, VBRs, and on-premises data centers in a region, are not captured.
 -   The flow log function is supported in China \(Hangzhou\), China \(Shanghai\), China \(Zhangjiakou\), China \(Shenzhen\), China \(Beijing\), China \(Hohhot\), China \(Hong Kong\), UK \(London\), US \(Silicon Valley\), US \(Virginia\), Germany \(Frankfurt\), India \(Mumbai\), Singapore, Indonesia \(Jakarta\), Australia \(Sydney\), and Malaysia \(Kuala Lumpur\).
 
@@ -19,25 +20,25 @@ The following table describes the fields of a flow log record.
 
 |Field|Description|
 |-----|-----------|
-|account-id|The account ID.|
+|account-id|Account ID|
 |cen-id|The ID of the CEN instance.|
 |srcaddr|The source IP address.|
 |srcport|The source port.|
 |dstaddr|The destination IP address.|
 |dstport|The destination port.|
 |protocol|The protocol type.|
-|direction|The direction of the traffic. -   in: Indicates inbound traffic.
--   out: Indicates outbound traffic.
+|direction|The direction of the traffic. Valid values: -   in: indicates inbound traffic.
+-   out: indicates outbound traffic.
 
  |
 |packets|The number of data packets.|
-|bytes|The size of data packets.|
+|bytes|The number of data packets.|
 |rtt|The latency.|
 |start|The start time of the capture window.|
 |end|The end time of the capture window.|
-|log-status|The status of the flow log record. -   OK: Traffic data was recorded normally.
--   NODATA: No traffic data was detected during the capture window.
--   SKIPDATA: Some flow log records were skipped during the capture window.
+|log-status|The status of the flow log record. Valid values: -   OK: indicates that traffic data was successfullly recorded.
+-   NODATA: indicates that no traffic data was detected during the capture window.
+-   SKIPDATA: indicates that some flow log records were skipped during the capture window.
 
  |
 
@@ -45,15 +46,15 @@ The following table describes the fields of a flow log record.
 
 The following figure shows the procedure for configuring the flow log function.
 
-![Procedure for flow log configuration](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630431/156686950950102_en-US.png)
+![Procedure](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/630431/156871087650102_en-US.png)
 
 1.  Activate Log Service.
 
     The traffic data captured by the flow log function is stored in Alibaba Cloud Log Service. Therefore, you need to activate Log Service before you create a flow log.
 
-2.  Optional. Create an Access Key.
+2.  Optional. Create an AccessKey.
 
-    If you want to write data to Log Service through APIs or SDKs, you must first create an Access Key \(AK\). However, if you want to collect logs by using Logtail, you do not need to create an AK.
+    f you want to write data to Log Service through APIs or SDKs, you must first create an AccessKey \(AK\). However, if you want to collect logs by using Logtail, you do not need to create an AK.
 
 3.  Create a Project.
 
