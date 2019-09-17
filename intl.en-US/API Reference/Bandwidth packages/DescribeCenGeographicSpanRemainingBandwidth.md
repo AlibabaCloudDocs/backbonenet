@@ -1,6 +1,6 @@
 # DescribeCenGeographicSpanRemainingBandwidth {#doc_api_Cbn_DescribeCenGeographicSpanRemainingBandwidth .reference}
 
-Queries the remaining available bandwidth of a bandwidth package.
+Queries the remaining bandwidth of a specified bandwidth package.
 
 ## Debug {#api_explorer .section}
 
@@ -10,16 +10,22 @@ Queries the remaining available bandwidth of a bandwidth package.
 
 |Parameter|Type|Required?|Example value|Description|
 |---------|----|---------|-------------|-----------|
-|CenId|String|Yes|cen-nh98vzx8gfhlwn\*\*\*\*| The ID of the CEN instance to which the bandwidth package belongs.
+|CenId|String|Yes|cen-nh98vzx8gfhlwn\*\*\*\*|The ID of the CEN instance to which the bandwidth package belongs.
 
  |
-|GeographicRegionAId|String|Yes|China| One area connected through the bandwidth package. Valid values: **China** | **North-America** | **Asia-Pacific** | **Europe** | **Middle-East**
+|GeographicRegionAId|String|Yes|China|The first area to which the bandwidth package is used to connect. Valid values: **China**|**North-America**|**Asia-Pacific**|**Europe**|**Australia**.
 
  |
-|GeographicRegionBId|String|Yes|North-America| The other area connected through the bandwidth package. Valid values: **China** | **North-America** | **Asia-Pacific** | **Europe** | **Middle-East**
+|GeographicRegionBId|String|Yes|North-America|The second area to which the bandwidth package is used to connect. Valid values: **China**|**North-America**|**Asia-Pacific**|**Europe**|**Australia**.
 
  |
-|Action|String|No|DescribeCenGeographicSpanRemainingBandwidth| Optional. The name of this action. Value: **DescribeCenGeographicSpanRemainingBandwidth**
+|Action|String|No|DescribeCenGeographicSpanRemainingBandwidth|The name of this action. Value: **DescribeCenGeographicSpanRemainingBandwidth**.
+
+ |
+|PageNumber|Integer|No|1|The page number. Default value: **1**.
+
+ |
+|PageSize|Integer|No|10|The number of entries per page for a paged query. Maximum value: **50**. Default value: **10**.
 
  |
 
@@ -27,10 +33,10 @@ Queries the remaining available bandwidth of a bandwidth package.
 
 |Parameter|Type|Example value|Description|
 |---------|----|-------------|-----------|
-|RemainingBandwidth|Long|2| The remaining bandwidth of the bandwidth package.
+|RemainingBandwidth|Long|2|The remaining bandwidth of the bandwidth package.
 
  |
-|RequestId|String|E4B345CD-2CBA-4881-AF6D-E5D9BAE1CA7B| The ID of the request.
+|RequestId|String|E4B345CD-2CBA-4881-AF6D-E5D9BAE1CA7B|The ID of the request.
 
  |
 
@@ -48,7 +54,7 @@ http(s)://[Endpoint]/? Action=DescribeCenGeographicSpanRemainingBandwidth
 
 ```
 
-Response examples
+Response example
 
 `XML` format
 
@@ -68,5 +74,5 @@ Response examples
 }
 ```
 
-## Errors {#section_rwg_3ix_ssu .section}
+## Errors { .section}
 
